@@ -1,61 +1,158 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { SMOOTH_EASE } from "@/lib/easing";
 
 const LINKS = [
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Universal Receive", href: "#universal-receive" },
-  { label: "Why Arc", href: "#why-arc" },
+  { label: "Universal Receive", href: "/#universal-receive" },
+  { label: "Billy", href: "/#billy" },
+  { label: "FAQ", href: "/#faq" },
   { label: "Docs", href: "/docs" },
 ];
+
+type Theme = "light" | "dark";
 
 export function Nav({ appUrl }: { appUrl: string }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<Theme>("light");
+  const headerRef = useRef<HTMLElement | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
+    let rafId: number | null = null;
+
+    const compute = () => {
+      rafId = null;
+      setScrolled(window.scrollY > 12);
+
+      // Find any [data-theme] element overlapping the nav band (0..80px from top).
+      const nodes = document.querySelectorAll<HTMLElement>("[data-theme]");
+      let nextTheme: Theme = "light";
+      for (const node of nodes) {
+        if (node === headerRef.current) continue;
+        const rect = node.getBoundingClientRect();
+        if (rect.top <= 80 && rect.bottom > 0) {
+          const t = node.getAttribute("data-theme");
+          if (t === "dark" || t === "light") {
+            nextTheme = t;
+          }
+        }
+      }
+      setTheme(nextTheme);
+    };
+
+    const onScroll = () => {
+      if (rafId !== null) return;
+      rafId = window.requestAnimationFrame(compute);
+    };
+
+    compute();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (rafId !== null) window.cancelAnimationFrame(rafId);
+    };
   }, []);
 
+  const isDark = theme === "dark";
+
+  const headerClass = [
+    "fixed inset-x-0 top-0 z-[100] transition-colors duration-200",
+    scrolled
+      ? isDark
+        ? "border-b border-white/10 bg-[#041f3d]"
+        : "border-b border-[#041f3d]/10 bg-white"
+      : isDark
+        ? "border-b border-transparent bg-transparent"
+        : "border-b border-transparent bg-white",
+    isDark ? "text-white" : "text-[#041f3d]",
+  ].join(" ");
+
+  const linkClass = isDark
+    ? "group/link relative inline-flex items-center text-sm font-semibold text-white transition-colors hover:text-white"
+    : "group/link relative inline-flex items-center text-sm font-semibold text-[#041f3d] transition-colors hover:text-[#041f3d]";
+
+  const pillClass = isDark
+    ? "rounded-full border border-white/25 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white"
+    : "rounded-full border border-[#041f3d]/25 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#041f3d]";
+
+  const sheetClass = isDark
+    ? "border-t border-white/10 bg-[#041f3d] text-white md:hidden"
+    : "border-t border-[#041f3d]/10 bg-white text-[#041f3d] md:hidden";
+
+  const sheetLinkClass = isDark
+    ? "rounded-xl px-3 py-3 text-base font-medium text-white/90"
+    : "rounded-xl px-3 py-3 text-base font-medium text-[#041f3d]/85";
+
+  const ctaShadow = isDark
+    ? "shadow-md shadow-white/10 hover:shadow-lg hover:shadow-white/20"
+    : "shadow-md shadow-[#041f3d]/15 hover:shadow-lg hover:shadow-[#041f3d]/25";
+
+  const ctaClass = [
+    "group/cta inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold transition-all duration-300 [transition-timing-function:var(--ease-smooth)] hover:scale-[1.02]",
+    isDark
+      ? "bg-white text-[#041f3d] hover:bg-[#e8eef7]"
+      : "bg-[#041f3d] text-white hover:bg-[#1a4877]",
+    ctaShadow,
+  ].join(" ");
+
+  const isLinkActive = (href: string) => {
+    if (!pathname) return false;
+    if (href.startsWith("#")) return false;
+    if (href === "/") return pathname === "/";
+    return pathname === href || pathname.startsWith(`${href}/`);
+  };
+
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-[100] transition-all duration-200 ${
-        scrolled
-          ? "border-b border-white/10 bg-[#041f3d]/85 backdrop-blur-lg"
-          : "border-b border-transparent bg-transparent"
-      }`}
-    >
+    <header ref={headerRef} className={headerClass} data-theme={theme}>
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
-        <Link href="/" className="tap-press flex items-center gap-2">
-          <Image
-            src="/glidepay-wordmark.png"
-            alt="glidepay"
-            width={1205}
-            height={397}
-            priority
-            className="h-7 w-auto"
+        <Link href="/" className="tap-press flex items-center gap-2.5">
+          <span
+            aria-label="glidepay"
+            role="img"
+            className="block h-7"
+            style={{
+              width: 88,
+              backgroundColor: isDark ? "#ffffff" : "#041f3d",
+              WebkitMaskImage: "url(/glidepay-wordmark.png)",
+              maskImage: "url(/glidepay-wordmark.png)",
+              WebkitMaskRepeat: "no-repeat",
+              maskRepeat: "no-repeat",
+              WebkitMaskSize: "contain",
+              maskSize: "contain",
+              WebkitMaskPosition: "left center",
+              maskPosition: "left center",
+            }}
           />
-          <span className="rounded-full border border-white/15 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white/70">
-            Testnet
-          </span>
+          <span className={pillClass}>Testnet</span>
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
-          {LINKS.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-white/75 transition-colors hover:text-white"
-            >
-              {l.label}
-            </Link>
-          ))}
+        <nav className="hidden items-center gap-8 md:flex">
+          {LINKS.map((l) => {
+            const active = isLinkActive(l.href);
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                data-active={active}
+                className={linkClass}
+              >
+                <span>{l.label}</span>
+                <span
+                  aria-hidden
+                  data-active={active}
+                  className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300 [transition-timing-function:var(--ease-smooth)] group-hover/link:scale-x-100 data-[active=true]:scale-x-100"
+                />
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden md:block">
@@ -63,10 +160,13 @@ export function Nav({ appUrl }: { appUrl: string }) {
             href={appUrl}
             target="_blank"
             rel="noreferrer"
-            className="btn-primary"
+            className={ctaClass}
           >
             Open app
-            <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
+            <ArrowUpRight
+              className="h-4 w-4 transition-transform duration-300 [transition-timing-function:var(--ease-smooth)] group-hover/cta:-translate-y-px group-hover/cta:translate-x-px"
+              strokeWidth={2.5}
+            />
           </Link>
         </div>
 
@@ -84,32 +184,44 @@ export function Nav({ appUrl }: { appUrl: string }) {
         </button>
       </div>
 
-      {menuOpen ? (
-        <div className="border-t border-white/10 bg-[#041f3d] md:hidden">
-          <div className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-4">
-            {LINKS.map((l) => (
+      <AnimatePresence>
+        {menuOpen ? (
+          <motion.div
+            key="mobile-sheet"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.28, ease: SMOOTH_EASE }}
+            className={sheetClass}
+          >
+            <div className="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-4">
+              {LINKS.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setMenuOpen(false)}
+                  className={sheetLinkClass}
+                >
+                  {l.label}
+                </Link>
+              ))}
               <Link
-                key={l.href}
-                href={l.href}
+                href={appUrl}
+                target="_blank"
+                rel="noreferrer"
+                className={`mt-2 ${ctaClass}`}
                 onClick={() => setMenuOpen(false)}
-                className="rounded-xl px-3 py-3 text-base font-medium text-white/90"
               >
-                {l.label}
+                Open app
+                <ArrowUpRight
+                  className="h-4 w-4 transition-transform duration-300 [transition-timing-function:var(--ease-smooth)] group-hover/cta:-translate-y-px group-hover/cta:translate-x-px"
+                  strokeWidth={2.5}
+                />
               </Link>
-            ))}
-            <Link
-              href={appUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="btn-primary mt-2"
-              onClick={() => setMenuOpen(false)}
-            >
-              Open app
-              <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
-            </Link>
-          </div>
-        </div>
-      ) : null}
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </header>
   );
 }

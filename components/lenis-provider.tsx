@@ -1,31 +1,11 @@
 "use client";
 
-import Lenis from "lenis";
-import { useEffect } from "react";
+import { useLenis } from "@/hooks/use-lenis";
 
-/** Buttery wheel + trackpad scroll across the whole marketing site.
- * iOS Safari handles touch momentum natively; don't fight it. */
+/** Mounts the Lenis instance for the entire app. Delegates all the touch /
+ * reduced-motion / `prevent` logic to the hook so non-component callers
+ * (e.g. anchor scroll-to-top) can grab the same instance via `getLenis()`. */
 export function LenisProvider({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-      syncTouch: false,
-    });
-
-    let frame = 0;
-    const raf = (time: number) => {
-      lenis.raf(time);
-      frame = requestAnimationFrame(raf);
-    };
-    frame = requestAnimationFrame(raf);
-
-    return () => {
-      cancelAnimationFrame(frame);
-      lenis.destroy();
-    };
-  }, []);
-
+  useLenis();
   return <>{children}</>;
 }

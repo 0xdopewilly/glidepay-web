@@ -10,7 +10,7 @@ export default function Page() {
     <DocsShell title="Billy">
       <p>
         Billy is glidepay&apos;s in-app AI assistant. He moves money on your
-        behalf — sends, requests, splits, swaps, bridges — through plain
+        behalf (sends, requests, splits, swaps, bridges) through plain
         conversation. Tap the sparkle tab.
       </p>
 
@@ -27,41 +27,41 @@ export default function Page() {
 
       <h2>Safety</h2>
       <p>
-        Every money action that moves funds <em>out</em> of your wallet — send,
-        request, split — shows a{" "}
+        Every money action that moves funds <em>out</em> of your wallet (send,
+        request, split) shows a{" "}
         <strong>Confirm / Cancel</strong> card before anything happens. Billy
         can hallucinate; the confirm card is the seatbelt.
       </p>
       <p>
         Saying any of <em>stop</em>, <em>cancel</em>, <em>don&apos;t</em>,{" "}
         <em>nevermind</em>, <em>wait</em>, or <em>abort</em> in chat hard-stops
-        all money actions for that turn — even if the LLM tries to fire one.
+        all money actions for that turn, even if the LLM tries to fire one.
       </p>
 
       <h2>Slash commands (power users)</h2>
       <p>
-        Skip the LLM entirely. Commands are parsed deterministically — zero
+        Skip the LLM entirely. Commands are parsed deterministically. Zero
         cost, zero hallucination risk:
       </p>
       <ul>
         <li>
-          <code>/send 5 @khadee</code> — send $5 to a pay tag
+          <code>/send 5 @khadee</code>. Send $5 to a pay tag.
         </li>
         <li>
-          <code>/swap 10</code> — swap $10 to EURC
+          <code>/swap 10</code>. Swap $10 to EURC.
         </li>
         <li>
-          <code>/bridge 5 base</code> — bridge to Base
+          <code>/bridge 5 base</code>. Bridge to Base.
         </li>
         <li>
-          <code>/request 20 @aisha</code> — ask Aisha to pay you
+          <code>/request 20 @aisha</code>. Ask Aisha to pay you.
         </li>
         <li>
-          <code>/balance</code>, <code>/activity</code>, <code>/receive</code>{" "}
-          — open those screens
+          <code>/balance</code>, <code>/activity</code>, <code>/receive</code>.
+          Open those screens.
         </li>
         <li>
-          <code>/help</code> — list all commands
+          <code>/help</code>. List all commands.
         </li>
       </ul>
 

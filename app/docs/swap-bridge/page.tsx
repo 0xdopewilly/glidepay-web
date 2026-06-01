@@ -21,7 +21,7 @@ export default function Page() {
       <h2>Bridge</h2>
       <p>
         Move USDC <em>out</em> of Arc to Base, Ethereum, Polygon, or Arbitrum.
-        Uses the same CCTP V2 plumbing that powers Universal Receive — except
+        Uses the same CCTP V2 plumbing that powers Universal Receive, except
         in the reverse direction.
       </p>
       <p>
@@ -34,7 +34,7 @@ export default function Page() {
       <h2>What about cirBTC?</h2>
       <p>
         cirBTC <strong>can</strong> be swapped (USDC ↔ cirBTC ↔ EURC) but{" "}
-        <strong>cannot</strong> be bridged — Circle&apos;s bridge kit is
+        <strong>cannot</strong> be bridged. Circle&apos;s bridge kit is
         USDC-only today. We&apos;ll wire this in when Circle ships cirBTC
         bridge support.
       </p>

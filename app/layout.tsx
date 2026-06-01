@@ -3,7 +3,6 @@ import { Geist, Geist_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { LenisProvider } from "@/components/lenis-provider";
 import { Nav } from "@/components/nav";
-import { Footer } from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,11 +35,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "glidepay — money like a text",
-    template: "%s — glidepay",
+    default: "glidepay, money like a text",
+    template: "%s, glidepay",
   },
   description:
-    "A Cash App for stablecoins. Send and receive USDC, EURC, and cirBTC on Arc — Circle's payments chain.",
+    "A Cash App for stablecoins. Send and receive USDC, EURC, and cirBTC on Arc, Circle's payments chain.",
   applicationName: "glidepay",
   keywords: [
     "USDC wallet",
@@ -56,7 +55,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "glidepay",
-    title: "glidepay — money like a text",
+    title: "glidepay, money like a text",
     description:
       "Send and receive stablecoins instantly. A Cash App for USDC on Arc.",
     url: SITE_URL,
@@ -82,7 +81,6 @@ export default function RootLayout({
         <LenisProvider>
           <Nav appUrl={APP_URL} />
           <main>{children}</main>
-          <Footer appUrl={APP_URL} />
         </LenisProvider>
       </body>
     </html>

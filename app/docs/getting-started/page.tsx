@@ -13,7 +13,7 @@ export default function Page() {
     <DocsShell title="Getting started">
       <p>
         Glidepay is a mobile-first stablecoin wallet. Sign up takes about 30
-        seconds — no seed phrases, no wallet extensions.
+        seconds. No seed phrases, no wallet extensions.
       </p>
 
       <h2>1. Open the app</h2>
@@ -23,7 +23,7 @@ export default function Page() {
           {APP_URL.replace(/^https?:\/\//, "")}
         </Link>{" "}
         in your phone&apos;s browser. On iPhone, tap Share → Add to Home Screen
-        to install it as a PWA — feels like a real app. On Android, Chrome
+        to install it as a PWA. It feels like a real app. On Android, Chrome
         prompts you to install on first visit.
       </p>
 
@@ -36,7 +36,7 @@ export default function Page() {
 
       <h2>3. Pick your handle</h2>
       <p>
-        Pick a unique <code>@username</code>. This is your pay tag — friends
+        Pick a unique <code>@username</code>. This is your pay tag, so friends
         can send to you by name instead of by a 0x address.
       </p>
 
@@ -60,7 +60,7 @@ export default function Page() {
       <h2>5. Try Universal Receive</h2>
       <p>
         On the Receive page, tap Base / Ethereum / Polygon / Arbitrum. Each gives
-        you a unique address on that chain. Send USDC from any wallet — it
+        you a unique address on that chain. Send USDC from any wallet and it
         auto-bridges to Arc in ~60 seconds. See{" "}
         <Link href="/docs/universal-receive">Universal Receive</Link> for the
         full story.
@@ -69,7 +69,7 @@ export default function Page() {
       <h2>Next</h2>
       <ul>
         <li>
-          <Link href="/docs/billy">Ask Billy to do things for you</Link> — try
+          <Link href="/docs/billy">Ask Billy to do things for you</Link>. Try
           &quot;split $60 with @fifi and @khadee&quot;.
         </li>
         <li>

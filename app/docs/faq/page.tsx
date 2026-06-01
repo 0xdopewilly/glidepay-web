@@ -24,14 +24,14 @@ export default function Page() {
       <p>
         Email{" "}
         <a href="mailto:support@glidepay.cash">support@glidepay.cash</a>. We
-        coordinate with Clerk on recovery — we&apos;ll verify identity through
+        coordinate with Clerk on recovery. We&apos;ll verify identity through
         a related email and help you regain access.
       </p>
 
       <h2>Can I export my wallet?</h2>
       <p>
         Not today. Server-custodial wallets via Circle don&apos;t expose
-        private keys — that&apos;s the point. If/when Circle adds a key-export
+        private keys. That&apos;s the point. If/when Circle adds a key-export
         path for end users, we&apos;ll plug it in.
       </p>
 
@@ -53,7 +53,7 @@ export default function Page() {
 
       <h2>Is glidepay regulated?</h2>
       <p>
-        No, and it doesn&apos;t need to be on testnet — no real money moves.
+        No, and it doesn&apos;t need to be on testnet. No real money moves.
         On mainnet, this depends on jurisdiction and the eventual product
         scope. We&apos;ll surface the relevant licensing as we work through
         it.

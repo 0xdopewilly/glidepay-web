@@ -15,15 +15,15 @@ export default function Page() {
       </p>
       <ul>
         <li>
-          <strong>Pay tag</strong> — type <code>@khadee</code> or just{" "}
+          <strong>Pay tag</strong>. Type <code>@khadee</code> or just{" "}
           <code>khadee</code>. Resolves to their Arc address instantly.
         </li>
         <li>
-          <strong>Saved contact</strong> — if you&apos;ve sent to someone
+          <strong>Saved contact</strong>. If you&apos;ve sent to someone
           before and tapped &quot;Save&quot;, just type their name.
         </li>
         <li>
-          <strong>0x address</strong> — for sending to wallets outside
+          <strong>0x address</strong>. For sending to wallets outside
           glidepay. The address is validated as you type.
         </li>
       </ul>
@@ -38,27 +38,27 @@ export default function Page() {
         Open the in-app <strong>Receive</strong> screen. By default it shows
         your Arc address with a QR. Tap the chain pills to switch to your
         per-chain receive address (Base, Ethereum, Polygon, Arbitrum). Any
-        USDC sent to one of those addresses auto-sweeps to Arc — see{" "}
+        USDC sent to one of those addresses auto-sweeps to Arc. See{" "}
         <Link href="/docs/universal-receive">Universal Receive</Link>.
       </p>
 
       <h2>Tokens supported</h2>
       <ul>
         <li>
-          <strong>USDC</strong> — Circle&apos;s USD stablecoin (1:1 USD-backed)
+          <strong>USDC</strong>. Circle&apos;s USD stablecoin (1:1 USD-backed).
         </li>
         <li>
-          <strong>EURC</strong> — Circle&apos;s EUR stablecoin (1:1 EUR-backed)
+          <strong>EURC</strong>. Circle&apos;s EUR stablecoin (1:1 EUR-backed).
         </li>
         <li>
-          <strong>cirBTC</strong> — Circle&apos;s tokenized Bitcoin (1:1
+          <strong>cirBTC</strong>. Circle&apos;s tokenized Bitcoin (1:1
           BTC-backed). 8 decimal places.
         </li>
       </ul>
 
       <h2>Notes & payment requests</h2>
       <p>
-        Add a note on the send screen — visible to the recipient in their
+        Add a note on the send screen, visible to the recipient in their
         Activity feed. To <em>ask</em> someone to pay you, use the{" "}
         <strong>Request</strong> screen: type an amount, optional note, and
         either share the generated link/QR or send it directly to a pay tag.

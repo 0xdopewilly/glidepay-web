@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import { SMOOTH_EASE } from "@/lib/easing";
 
 const DOCS_NAV: { section: string; links: { href: string; label: string }[] }[] = [
   {
@@ -50,7 +51,7 @@ export function DocsShell({
           <nav className="space-y-6">
             {DOCS_NAV.map((section) => (
               <div key={section.section}>
-                <p className="mb-2 text-xs font-bold uppercase tracking-wider text-white/45">
+                <p className="mb-2 text-xs font-bold uppercase tracking-wider text-[#041f3d]/55">
                   {section.section}
                 </p>
                 <ul className="space-y-1">
@@ -60,12 +61,7 @@ export function DocsShell({
                       <li key={l.href}>
                         <Link
                           href={l.href}
-                          className="relative block rounded-lg px-3 py-1.5 text-sm transition-colors"
-                          style={{
-                            color: active
-                              ? "#ffffff"
-                              : "rgba(255, 255, 255, 0.7)",
-                          }}
+                          className={`relative block rounded-lg px-3 py-1.5 text-sm transition-colors ${active ? "text-[#041f3d] font-semibold" : "text-[#041f3d]/65 hover:text-[#041f3d]"}`}
                         >
                           {/* Sliding active pill (Arcium-style). Shared
                               layout id makes it animate between links as the
@@ -73,21 +69,14 @@ export function DocsShell({
                           {active ? (
                             <motion.span
                               layoutId="docs-active-pill"
-                              className="absolute inset-0 rounded-lg bg-white/10"
-                              transition={{
-                                type: "spring",
-                                stiffness: 380,
-                                damping: 32,
-                                mass: 0.7,
-                              }}
+                              className="absolute inset-0 rounded-lg bg-[#f3f5f9]"
+                              transition={{ duration: 0.32, ease: SMOOTH_EASE }}
                             />
                           ) : null}
                           <span className="relative z-10 flex items-center justify-between">
-                            <span className={active ? "font-semibold" : ""}>
-                              {l.label}
-                            </span>
+                            <span>{l.label}</span>
                             {active ? (
-                              <ChevronRight className="h-3.5 w-3.5 text-white" />
+                              <ChevronRight className="h-3.5 w-3.5 text-[#041f3d]" />
                             ) : null}
                           </span>
                         </Link>
@@ -100,25 +89,21 @@ export function DocsShell({
           </nav>
         </aside>
 
-        {/* Content fades + slides in each time you navigate between docs
-            pages. Keyed by pathname so the same DocsShell re-runs the
-            animation on route change. */}
+        {/* Cross-fade between docs pages. Opacity + a barely-perceptible
+            scale (0.992 → 1 → 0.996) — no slide, no shift, no layout work. */}
         <article className="min-w-0">
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={pathname}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -12 }}
-              transition={{
-                duration: 0.32,
-                ease: [0.32, 0.72, 0, 1],
-              }}
+              initial={{ opacity: 0, scale: 0.992 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.996 }}
+              transition={{ duration: 0.42, ease: SMOOTH_EASE }}
             >
-              <h1 className="text-[2rem] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[2.75rem]">
+              <h1 className="text-[2rem] font-bold leading-tight tracking-[-0.03em] text-[#041f3d] sm:text-[2.75rem]">
                 {title}
               </h1>
-              <div className="prose-doc mt-8 space-y-5 text-[15px] leading-[1.7] text-white/75">
+              <div className="prose-doc mt-8 space-y-5 text-[15px] leading-[1.7] text-[#041f3d]/75">
                 {children}
               </div>
             </motion.div>

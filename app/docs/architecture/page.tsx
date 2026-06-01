@@ -16,45 +16,45 @@ export default function Page() {
       <h2>The pieces</h2>
       <ul>
         <li>
-          <strong>Next.js 16 (App Router)</strong> — UI and server routes.
+          <strong>Next.js 16 (App Router)</strong>. UI and server routes.
           Deployed on Vercel.
         </li>
         <li>
-          <strong>Clerk</strong> — authentication. Email and Google sign-in.
+          <strong>Clerk</strong>. Authentication. Email and Google sign-in.
           We never touch passwords.
         </li>
         <li>
-          <strong>Circle Developer-Controlled Wallets</strong> — smart
+          <strong>Circle Developer-Controlled Wallets</strong>. Smart
           accounts on Arc and the other supported chains. Server-side signing
           via Circle&apos;s API. No private keys ever land in the client.
         </li>
         <li>
-          <strong>Circle App Kit</strong> — swap and bridge primitives. USDC ↔
+          <strong>Circle App Kit</strong>. Swap and bridge primitives. USDC ↔
           EURC ↔ cirBTC on Arc, plus CCTP V2 cross-chain.
         </li>
         <li>
-          <strong>Supabase Postgres + Prisma</strong> — user metadata,
+          <strong>Supabase Postgres + Prisma</strong>. User metadata,
           contacts, payment requests, scheduled transfers, activity records,
           chat history. Source of truth for off-chain state.
         </li>
         <li>
-          <strong>Groq</strong> — Llama 3.1 8B-instant for Billy. ~400ms
+          <strong>Groq</strong>. Llama 3.1 8B-instant for Billy. ~400ms
           structured JSON responses.
         </li>
         <li>
-          <strong>Web Push (VAPID)</strong> — real-time push for incoming
+          <strong>Web Push (VAPID)</strong>. Real-time push for incoming
           USDC, paid requests, completed swaps. Native APNs / FCM coming via
           Capacitor on iOS / Android.
         </li>
         <li>
-          <strong>Capacitor</strong> — iOS and Android shells that load the
+          <strong>Capacitor</strong>. iOS and Android shells that load the
           live PWA. Adds native push, biometrics, status bar, haptics,
           share sheet.
         </li>
       </ul>
 
       <h2>The flow when you send</h2>
-      <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-white/72">
+      <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-[#041f3d]/72">
         <li>You tap Send → fill recipient + amount → tap Pay</li>
         <li>
           Client POSTs <code>/api/send</code> with{" "}
@@ -89,7 +89,7 @@ export default function Page() {
         Browser-side wallet management means: MetaMask popups, seed phrases,
         users who lose access permanently. Server-side custody (via Circle)
         means: email-and-Google sign-in, accounts you can recover, a UX that
-        looks like Venmo. The trade-off is trust — you trust glidepay and
+        looks like Venmo. The trade-off is trust. You trust glidepay and
         Circle to operate your wallet honestly. On testnet that&apos;s no
         meaningful trust burden. See{" "}
         <Link href="/docs/security">Security model</Link> for the longer

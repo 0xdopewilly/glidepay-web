@@ -1,22 +1,22 @@
-/**
- * Full-bleed brand wordmark just before the footer, à la Arcium's giant
- * "ARCIUM" treatment. Scales fluidly with the viewport so the type runs
- * edge-to-edge on every screen size. Pure CSS — no JS, no images.
- */
+import Image from "next/image";
+
+/** Full-bleed brand wordmark before the footer. Uses the real glidepay
+ * logo (with the trailing period — that punctuation IS the brand). Pure
+ * CSS, no JS, no animation, no recoloring. */
 export function WordmarkBand() {
   return (
-    <section className="relative z-[55] overflow-hidden border-t border-white/10 bg-[#031629] pt-16 pb-0">
-      <p
-        className="select-none whitespace-nowrap text-center font-black uppercase leading-none tracking-[-0.06em] text-white"
-        style={{
-          fontSize: "clamp(6rem, 23vw, 24rem)",
-          letterSpacing: "-0.06em",
-          fontFamily: "var(--font-jakarta), system-ui, sans-serif",
-        }}
-        aria-hidden
-      >
-        glidepay
-      </p>
+    <section
+      aria-hidden
+      data-theme="dark"
+      className="overflow-hidden border-t border-white/10 bg-[#03070d] pt-12 pb-8"
+    >
+      <Image
+        src="/glidepay-wordmark.png"
+        alt=""
+        width={1205}
+        height={397}
+        className="w-[82vw] max-w-[1400px] mx-auto block h-auto select-none"
+      />
     </section>
   );
 }

@@ -11,7 +11,7 @@ export default function Page() {
       <p>
         Universal Receive is glidepay&apos;s flagship feature: one handle, any
         chain. USDC sent to your glidepay address from Ethereum, Base, Polygon,
-        or Arbitrum automatically lands in your wallet on Arc — usually within
+        or Arbitrum automatically lands in your wallet on Arc, usually within
         60 seconds.
       </p>
 
@@ -34,7 +34,7 @@ export default function Page() {
       </p>
 
       <h2>What actually happens under the hood</h2>
-      <ol className="mt-4 list-decimal space-y-1.5 pl-5 text-white/72">
+      <ol className="mt-4 list-decimal space-y-1.5 pl-5 text-[#041f3d]/72">
         <li>Inbound USDC at the user&apos;s receive address triggers a Circle webhook.</li>
         <li>Our handler claims the event atomically (dedup against retries).</li>
         <li>If the user&apos;s source-chain wallet is low on native gas, our
@@ -46,13 +46,13 @@ export default function Page() {
 
       <h2>Supported chains</h2>
       <ul>
-        <li><strong>Base Sepolia</strong> — fastest, lowest gas</li>
-        <li><strong>Ethereum Sepolia</strong> — most expensive (L1), still ~$0.01</li>
-        <li><strong>Polygon Amoy</strong> — native MATIC for gas</li>
-        <li><strong>Arbitrum Sepolia</strong> — L2, fast and cheap</li>
+        <li><strong>Base Sepolia</strong>. Fastest, lowest gas.</li>
+        <li><strong>Ethereum Sepolia</strong>. Most expensive (L1), still ~$0.01.</li>
+        <li><strong>Polygon Amoy</strong>. Native MATIC for gas.</li>
+        <li><strong>Arbitrum Sepolia</strong>. L2, fast and cheap.</li>
       </ul>
       <p>
-        Solana support is on the roadmap — uses Circle&apos;s Solana CCTP path.
+        Solana support is on the roadmap. It uses Circle&apos;s Solana CCTP path.
       </p>
 
       <h2>What about gas?</h2>
@@ -65,7 +65,7 @@ export default function Page() {
 
       <h2>Why this works only on Arc</h2>
       <p>
-        Arc is a first-class citizen on Circle&apos;s CCTP V2 — the same
+        Arc is a first-class citizen on Circle&apos;s CCTP V2, the same
         protocol that powers cross-chain USDC for the rest of the ecosystem.
         Combined with Arc&apos;s sub-second finality and USDC-as-gas, it&apos;s
         the only chain where this UX feels native instead of bridged.

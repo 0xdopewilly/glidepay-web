@@ -56,10 +56,10 @@ export default function Page() {
 
       <h2>What we don&apos;t store</h2>
       <ul>
-        <li>Private keys, seed phrases, signing credentials — Circle&apos;s
-          domain, not ours</li>
+        <li>Private keys, seed phrases, signing credentials. Circle&apos;s
+          domain, not ours.</li>
         <li>Marketing trackers, behavioural analytics, device fingerprints</li>
-        <li>Card / bank details — there&apos;s no fiat onramp</li>
+        <li>Card / bank details. There&apos;s no fiat onramp.</li>
       </ul>
 
       <h2>On-chain data</h2>
@@ -73,7 +73,7 @@ export default function Page() {
       <p>
         Profile → Delete account hard-deletes your glidepay profile, all
         related rows, and your Clerk account. <strong>On-chain balances stay
-        on Arc</strong> — they aren&apos;t ours to delete. Withdraw them first
+        on Arc</strong>. They aren&apos;t ours to delete. Withdraw them first
         if you want them.
       </p>
 
@@ -83,7 +83,7 @@ export default function Page() {
         (same recipient, amount, token, last 10s) and short-circuits if one
         exists. Money-out chat intents require an explicit confirmation tap.
         Webhook retries from Circle can&apos;t trigger duplicate Universal
-        Receive sweeps — the claim is atomically locked by a DB unique
+        Receive sweeps. The claim is atomically locked by a DB unique
         constraint.
       </p>
 
