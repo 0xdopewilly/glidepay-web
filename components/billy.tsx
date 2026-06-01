@@ -3,7 +3,7 @@ import { Reveal } from "@/components/reveal";
 
 export function Billy() {
   return (
-    <section className="relative border-t border-white/5 px-5 py-28 sm:px-8 sm:py-36">
+    <section className="relative z-40 border-t border-white/10 bg-[#062349] px-5 py-28 sm:px-8 sm:py-36">
       <div className="mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-2">
         <div>
           <Reveal>

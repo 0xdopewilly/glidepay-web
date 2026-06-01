@@ -1,5 +1,6 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -59,16 +60,36 @@ export function DocsShell({
                       <li key={l.href}>
                         <Link
                           href={l.href}
-                          className={`flex items-center justify-between rounded-lg px-3 py-1.5 text-sm transition-colors ${
-                            active
-                              ? "bg-white/10 font-semibold text-white"
-                              : "text-white/70 hover:bg-white/[0.04] hover:text-white"
-                          }`}
+                          className="relative block rounded-lg px-3 py-1.5 text-sm transition-colors"
+                          style={{
+                            color: active
+                              ? "#ffffff"
+                              : "rgba(255, 255, 255, 0.7)",
+                          }}
                         >
-                          {l.label}
+                          {/* Sliding active pill (Arcium-style). Shared
+                              layout id makes it animate between links as the
+                              user navigates between docs pages. */}
                           {active ? (
-                            <ChevronRight className="h-3.5 w-3.5 text-white" />
+                            <motion.span
+                              layoutId="docs-active-pill"
+                              className="absolute inset-0 rounded-lg bg-white/10"
+                              transition={{
+                                type: "spring",
+                                stiffness: 380,
+                                damping: 32,
+                                mass: 0.7,
+                              }}
+                            />
                           ) : null}
+                          <span className="relative z-10 flex items-center justify-between">
+                            <span className={active ? "font-semibold" : ""}>
+                              {l.label}
+                            </span>
+                            {active ? (
+                              <ChevronRight className="h-3.5 w-3.5 text-white" />
+                            ) : null}
+                          </span>
                         </Link>
                       </li>
                     );
@@ -79,13 +100,29 @@ export function DocsShell({
           </nav>
         </aside>
 
+        {/* Content fades + slides in each time you navigate between docs
+            pages. Keyed by pathname so the same DocsShell re-runs the
+            animation on route change. */}
         <article className="min-w-0">
-          <h1 className="text-[2rem] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[2.75rem]">
-            {title}
-          </h1>
-          <div className="prose-doc mt-8 space-y-5 text-[15px] leading-[1.7] text-white/75">
-            {children}
-          </div>
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.div
+              key={pathname}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{
+                duration: 0.32,
+                ease: [0.32, 0.72, 0, 1],
+              }}
+            >
+              <h1 className="text-[2rem] font-bold leading-tight tracking-[-0.03em] text-white sm:text-[2.75rem]">
+                {title}
+              </h1>
+              <div className="prose-doc mt-8 space-y-5 text-[15px] leading-[1.7] text-white/75">
+                {children}
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </article>
       </div>
     </div>

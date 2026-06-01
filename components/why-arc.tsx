@@ -23,7 +23,7 @@ export function WhyArc() {
   return (
     <section
       id="why-arc"
-      className="relative scroll-mt-20 border-t border-white/5 px-5 py-28 sm:px-8 sm:py-36"
+      className="relative z-30 scroll-mt-20 border-t border-white/10 bg-[#041f3d] px-5 py-28 sm:px-8 sm:py-36"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal>

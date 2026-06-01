@@ -4,7 +4,7 @@ import { Reveal } from "@/components/reveal";
 
 export function Hero({ appUrl }: { appUrl: string }) {
   return (
-    <section className="relative overflow-hidden pt-36 pb-28 sm:pt-44 sm:pb-36">
+    <section className="sticky top-0 z-0 h-screen overflow-hidden pt-32 sm:pt-40 flex flex-col justify-center">
       {/* Subtle backdrop layers */}
       <div className="absolute inset-0 bg-grid opacity-60" aria-hidden />
       <div className="absolute inset-0 bg-brand-glow" aria-hidden />

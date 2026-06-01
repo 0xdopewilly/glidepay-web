@@ -23,7 +23,7 @@ export function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="relative scroll-mt-20 border-t border-white/5 px-5 py-28 sm:px-8 sm:py-36"
+      className="relative z-20 scroll-mt-20 border-t border-white/10 bg-[#062349] px-5 py-28 sm:px-8 sm:py-36"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal>

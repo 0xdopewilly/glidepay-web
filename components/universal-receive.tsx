@@ -12,7 +12,7 @@ export function UniversalReceive() {
   return (
     <section
       id="universal-receive"
-      className="relative scroll-mt-20 border-t border-white/5 px-5 py-28 sm:px-8 sm:py-36"
+      className="relative z-10 scroll-mt-20 border-t border-white/10 bg-[#041f3d] px-5 py-28 sm:px-8 sm:py-36"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal>

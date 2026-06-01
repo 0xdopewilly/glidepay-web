@@ -4,7 +4,7 @@ import { Reveal } from "@/components/reveal";
 
 export function Cta({ appUrl }: { appUrl: string }) {
   return (
-    <section className="relative border-t border-white/5 px-5 py-28 sm:px-8 sm:py-36">
+    <section className="relative z-50 border-t border-white/10 bg-[#041f3d] px-5 py-28 sm:px-8 sm:py-36">
       <div className="absolute inset-0 bg-brand-glow" aria-hidden />
       <div className="relative mx-auto max-w-3xl text-center">
         <Reveal>
