@@ -25,7 +25,7 @@ export function Nav({ appUrl }: { appUrl: string }) {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-200 ${
+      className={`fixed inset-x-0 top-0 z-[100] transition-all duration-200 ${
         scrolled
           ? "border-b border-white/10 bg-[#041f3d]/85 backdrop-blur-lg"
           : "border-b border-transparent bg-transparent"

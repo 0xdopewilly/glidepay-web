@@ -13,7 +13,16 @@ const APP_URL =
 export default function HomePage() {
   return (
     <>
+      {/*
+        Arcium-style pinned scroll. The hero is position:fixed, occupying the
+        viewport from page-load. The h-screen spacer creates the first
+        viewport of scroll where the hero is visible alone. After that, the
+        subsequent sections (each z-10+ with solid backgrounds) scroll
+        upward over the hero and cover it permanently.
+      */}
       <Hero appUrl={APP_URL} />
+      <div className="h-screen" aria-hidden />
+
       <UniversalReceive />
       <Stats />
       <HowItWorks />
