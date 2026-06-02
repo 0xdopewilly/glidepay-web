@@ -145,20 +145,15 @@ export function Nav({ appUrl }: { appUrl: string }) {
                 className={linkClass}
               >
                 {active && (
-                  <motion.svg
-                    layoutId="nav-active-teardrop"
-                    width="12"
-                    height="14"
-                    viewBox="0 0 12 14"
-                    transition={{ type: "spring", stiffness: 280, damping: 28, mass: 0.6 }}
-                    className="pointer-events-none absolute left-1/2 -bottom-4 -translate-x-1/2"
+                  <motion.span
                     aria-hidden
-                  >
-                    <path
-                      d="M6 0 C6 4 12 6 12 9.5 C12 12.5 9.31 14 6 14 C2.69 14 0 12.5 0 9.5 C0 6 6 4 6 0 Z"
-                      fill="currentColor"
-                    />
-                  </motion.svg>
+                    layoutId="nav-active-tab"
+                    transition={{ type: "spring", stiffness: 260, damping: 30, mass: 0.8 }}
+                    className="pointer-events-none absolute -inset-x-4 -top-2 -bottom-5 -z-10 rounded-[24px]"
+                    style={{
+                      backgroundColor: isDark ? "rgba(255,255,255,0.14)" : "rgba(4,31,61,0.07)",
+                    }}
+                  />
                 )}
                 <span>{l.label}</span>
                 <span
