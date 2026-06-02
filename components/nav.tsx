@@ -149,9 +149,9 @@ export function Nav({ appUrl }: { appUrl: string }) {
                     aria-hidden
                     layoutId="nav-active-tab"
                     transition={{ type: "spring", stiffness: 260, damping: 30, mass: 0.8 }}
-                    className="pointer-events-none absolute -inset-x-4 -top-2 -bottom-5 -z-10 rounded-[24px]"
+                    className="pointer-events-none absolute -inset-x-5 -top-[14px] -bottom-[42px] -z-10 rounded-[28px]"
                     style={{
-                      backgroundColor: isDark ? "rgba(255,255,255,0.14)" : "rgba(4,31,61,0.07)",
+                      backgroundColor: isDark ? "rgba(255,255,255,0.20)" : "#f3f5f9",
                     }}
                   />
                 )}
