@@ -76,8 +76,8 @@ export function Nav({ appUrl }: { appUrl: string }) {
   ].join(" ");
 
   const linkClass = isDark
-    ? "group/link relative inline-flex items-center text-sm font-semibold text-white transition-colors hover:text-white"
-    : "group/link relative inline-flex items-center text-sm font-semibold text-[#041f3d] transition-colors hover:text-[#041f3d]";
+    ? "group/link relative inline-flex items-center text-sm font-semibold text-white transition-colors hover:text-white/80 data-[active=true]:font-bold"
+    : "group/link relative inline-flex items-center text-sm font-semibold text-[#041f3d] transition-colors hover:text-[#1a4877] data-[active=true]:font-bold";
 
   const pillClass = isDark
     ? "rounded-full border border-white/25 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white"
@@ -144,49 +144,11 @@ export function Nav({ appUrl }: { appUrl: string }) {
                 data-active={active}
                 className={linkClass}
               >
-                {active && (
-                  <motion.span
-                    aria-hidden
-                    layoutId="nav-active-tab"
-                    transition={{ type: "spring", stiffness: 260, damping: 30, mass: 0.8 }}
-                    className="pointer-events-none absolute -inset-x-5 top-0 -bottom-[42px] -z-10 rounded-t-none rounded-b-[32px]"
-                    style={{
-                      backgroundColor: isDark ? "rgba(255,255,255,0.20)" : "#f3f5f9",
-                    }}
-                  >
-                    <span
-                      aria-hidden
-                      className="absolute -left-3 top-0 h-3 w-3 overflow-hidden"
-                    >
-                      <span
-                        className="absolute inset-0"
-                        style={{
-                          backgroundColor: isDark ? "#041f3d" : "#ffffff",
-                          WebkitMaskImage: "radial-gradient(circle at top left, transparent 12px, black 12px)",
-                          maskImage: "radial-gradient(circle at top left, transparent 12px, black 12px)",
-                        }}
-                      />
-                    </span>
-                    <span
-                      aria-hidden
-                      className="absolute -right-3 top-0 h-3 w-3 overflow-hidden"
-                    >
-                      <span
-                        className="absolute inset-0"
-                        style={{
-                          backgroundColor: isDark ? "#041f3d" : "#ffffff",
-                          WebkitMaskImage: "radial-gradient(circle at top right, transparent 12px, black 12px)",
-                          maskImage: "radial-gradient(circle at top right, transparent 12px, black 12px)",
-                        }}
-                      />
-                    </span>
-                  </motion.span>
-                )}
                 <span>{l.label}</span>
                 <span
                   aria-hidden
                   data-active={active}
-                  className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300 [transition-timing-function:var(--ease-smooth)] group-hover/link:scale-x-100 data-[active=true]:scale-x-100"
+                  className="pointer-events-none absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-current transition-all duration-300 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] group-hover/link:scale-x-100 data-[active=true]:scale-x-100 data-[active=true]:h-0.5"
                 />
               </Link>
             );
