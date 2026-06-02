@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/reveal";
+import { SMOOTH_EASE } from "@/lib/easing";
 
 const ITEMS: { question: string; answer: string }[] = [
   {
@@ -86,11 +88,22 @@ export function Faq() {
                       }
                     />
                   </button>
-                  {open && (
-                    <p className="pb-5 pr-12 text-white/70 leading-relaxed text-sm sm:text-base">
-                      {item.answer}
-                    </p>
-                  )}
+                  <AnimatePresence initial={false}>
+                    {open && (
+                      <motion.div
+                        key="answer"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.32, ease: SMOOTH_EASE }}
+                        style={{ overflow: "hidden" }}
+                      >
+                        <p className="pb-5 pr-12 text-white/70 leading-relaxed text-sm sm:text-base">
+                          {item.answer}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </Reveal>
             );

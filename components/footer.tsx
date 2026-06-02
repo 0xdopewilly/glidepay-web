@@ -88,9 +88,13 @@ function FooterColumn({
               href={l.href}
               target={l.external ? "_blank" : undefined}
               rel={l.external ? "noreferrer" : undefined}
-              className="text-sm text-white/65 transition-colors hover:text-white"
+              className="group/footer-link relative inline-flex text-sm text-white/65 transition-colors hover:text-white"
             >
-              {l.label}
+              <span>{l.label}</span>
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300 [transition-timing-function:cubic-bezier(0.22,1,0.36,1)] group-hover/footer-link:scale-x-100"
+              />
             </Link>
           </li>
         ))}

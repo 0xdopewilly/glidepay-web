@@ -144,6 +144,14 @@ export function Nav({ appUrl }: { appUrl: string }) {
                 data-active={active}
                 className={linkClass}
               >
+                {active && (
+                  <motion.span
+                    layoutId="nav-active-pill"
+                    transition={{ type: "spring", stiffness: 360, damping: 32, mass: 0.7 }}
+                    className="absolute inset-x-[-12px] inset-y-[-8px] -z-10 rounded-2xl"
+                    style={{ backgroundColor: isDark ? "rgba(255,255,255,0.10)" : "rgba(4,31,61,0.07)" }}
+                  />
+                )}
                 <span>{l.label}</span>
                 <span
                   aria-hidden
