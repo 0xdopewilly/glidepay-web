@@ -149,11 +149,38 @@ export function Nav({ appUrl }: { appUrl: string }) {
                     aria-hidden
                     layoutId="nav-active-tab"
                     transition={{ type: "spring", stiffness: 260, damping: 30, mass: 0.8 }}
-                    className="pointer-events-none absolute -inset-x-5 -top-[14px] -bottom-[42px] -z-10 rounded-[28px]"
+                    className="pointer-events-none absolute -inset-x-5 top-0 -bottom-[42px] -z-10 rounded-t-none rounded-b-[32px]"
                     style={{
                       backgroundColor: isDark ? "rgba(255,255,255,0.20)" : "#f3f5f9",
                     }}
-                  />
+                  >
+                    <span
+                      aria-hidden
+                      className="absolute -left-3 top-0 h-3 w-3 overflow-hidden"
+                    >
+                      <span
+                        className="absolute inset-0"
+                        style={{
+                          backgroundColor: isDark ? "#041f3d" : "#ffffff",
+                          WebkitMaskImage: "radial-gradient(circle at top left, transparent 12px, black 12px)",
+                          maskImage: "radial-gradient(circle at top left, transparent 12px, black 12px)",
+                        }}
+                      />
+                    </span>
+                    <span
+                      aria-hidden
+                      className="absolute -right-3 top-0 h-3 w-3 overflow-hidden"
+                    >
+                      <span
+                        className="absolute inset-0"
+                        style={{
+                          backgroundColor: isDark ? "#041f3d" : "#ffffff",
+                          WebkitMaskImage: "radial-gradient(circle at top right, transparent 12px, black 12px)",
+                          maskImage: "radial-gradient(circle at top right, transparent 12px, black 12px)",
+                        }}
+                      />
+                    </span>
+                  </motion.span>
                 )}
                 <span>{l.label}</span>
                 <span
