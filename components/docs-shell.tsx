@@ -51,7 +51,7 @@ export function DocsShell({
           <nav className="space-y-6">
             {DOCS_NAV.map((section) => (
               <div key={section.section}>
-                <p className="mb-2 text-xs font-bold uppercase tracking-wider text-[#041f3d]/55">
+                <p className="mb-2 text-xs font-bold uppercase tracking-wider text-[#64748B]">
                   {section.section}
                 </p>
                 <ul className="space-y-1">
@@ -61,7 +61,7 @@ export function DocsShell({
                       <li key={l.href}>
                         <Link
                           href={l.href}
-                          className={`relative block rounded-lg px-3 py-1.5 text-sm transition-colors ${active ? "text-[#041f3d] font-semibold" : "text-[#041f3d]/65 hover:text-[#041f3d]"}`}
+                          className={`relative block rounded-lg px-3 py-1.5 text-sm transition-colors ${active ? "text-[#0F172A] font-semibold" : "text-[#64748B] hover:text-[#0F172A]"}`}
                         >
                           {/* Sliding active pill (Arcium-style). Shared
                               layout id makes it animate between links as the
@@ -69,14 +69,14 @@ export function DocsShell({
                           {active ? (
                             <motion.span
                               layoutId="docs-active-pill"
-                              className="absolute inset-0 rounded-lg bg-[#f3f5f9]"
+                              className="absolute inset-0 rounded-lg bg-[#F8FAFC]"
                               transition={{ duration: 0.32, ease: SMOOTH_EASE }}
                             />
                           ) : null}
                           <span className="relative z-10 flex items-center justify-between">
                             <span>{l.label}</span>
                             {active ? (
-                              <ChevronRight className="h-3.5 w-3.5 text-[#041f3d]" />
+                              <ChevronRight className="h-3.5 w-3.5 text-[#0D9488]" />
                             ) : null}
                           </span>
                         </Link>
@@ -100,10 +100,10 @@ export function DocsShell({
               exit={{ opacity: 0, scale: 0.996 }}
               transition={{ duration: 0.42, ease: SMOOTH_EASE }}
             >
-              <h1 className="text-[2rem] font-bold leading-tight tracking-[-0.03em] text-[#041f3d] sm:text-[2.75rem]">
+              <h1 className="text-[2rem] font-bold leading-tight tracking-[-0.03em] text-[#0F172A] sm:text-[2.75rem]">
                 {title}
               </h1>
-              <div className="prose-doc mt-8 space-y-5 text-[15px] leading-[1.7] text-[#041f3d]/75">
+              <div className="prose-doc mt-8 space-y-5 text-[15px] leading-[1.7] text-[#0F172A]/75">
                 {children}
               </div>
             </motion.div>

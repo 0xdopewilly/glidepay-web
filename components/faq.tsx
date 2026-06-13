@@ -46,18 +46,18 @@ export function Faq() {
     <section
       id="faq"
       data-theme="dark"
-      className="bg-[#041f3d] border-t border-white/10 px-5 sm:px-8 py-28 sm:py-36"
+      className="bg-[#0A0F0F] border-t border-[#1E293B] px-5 sm:px-8 py-28 sm:py-36"
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_2fr] gap-12">
         <div>
           <h2
-            className="font-black text-white leading-[0.85] tracking-[-0.04em]"
+            className="font-black text-[#F1F5F9] leading-[0.85] tracking-[-0.04em]"
             style={{ fontSize: "clamp(5rem, 12vw, 10rem)" }}
           >
             FAQ
           </h2>
           <div className="mt-10">
-            <p className="text-sm text-white/55">Have more questions?</p>
+            <p className="text-sm text-[#94A3B8]">Have more questions?</p>
             <a
               href="mailto:support@glidepay.cash"
               className="btn-primary mt-4 inline-flex"
@@ -73,17 +73,17 @@ export function Faq() {
             const isLast = i === ITEMS.length - 1;
             return (
               <Reveal key={item.question} delay={i * 60}>
-                <div className={isLast ? "border-b border-white/15" : ""}>
+                <div className={isLast ? "border-b border-[#1E293B]" : ""}>
                   <button
-                    className="w-full flex items-center justify-between py-5 text-left border-t border-white/15"
+                    className="w-full flex items-center justify-between py-5 text-left border-t border-[#1E293B]"
                     onClick={() => setOpenIdx(open ? null : i)}
                   >
-                    <span className="text-base sm:text-lg font-semibold text-white pr-6">
+                    <span className="text-base sm:text-lg font-semibold text-[#F1F5F9] pr-6">
                       {item.question}
                     </span>
                     <ChevronDown
                       className={
-                        "h-5 w-5 text-white/60 shrink-0 transition-transform duration-300 " +
+                        "h-5 w-5 text-[#94A3B8] shrink-0 transition-transform duration-300 " +
                         (open ? "rotate-180" : "")
                       }
                     />
@@ -98,7 +98,7 @@ export function Faq() {
                         transition={{ duration: 0.32, ease: SMOOTH_EASE }}
                         style={{ overflow: "hidden" }}
                       >
-                        <p className="pb-5 pr-12 text-white/70 leading-relaxed text-sm sm:text-base">
+                        <p className="pb-5 pr-12 text-[#F1F5F9]/70 leading-relaxed text-sm sm:text-base">
                           {item.answer}
                         </p>
                       </motion.div>

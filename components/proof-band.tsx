@@ -21,11 +21,11 @@ export function ProofBand({ appUrl }: { appUrl: string }) {
   return (
     <section
       data-theme="dark"
-      className="flex min-h-[60vh] items-center border-t border-white/10 bg-[#03070d] px-5 py-24 sm:px-8"
+      className="flex min-h-[60vh] items-center border-t border-[#1E293B] bg-[#0A0F0F] px-5 py-24 sm:px-8"
     >
       <div className="mx-auto w-full max-w-6xl">
         <h2
-          className="text-center font-black tracking-[-0.04em] text-white"
+          className="text-center font-black tracking-[-0.04em] text-[#F1F5F9]"
           style={{
             fontFamily: "var(--font-jakarta), system-ui, sans-serif",
             fontSize: "clamp(2.75rem, 7vw, 6.5rem)",
@@ -39,7 +39,7 @@ export function ProofBand({ appUrl }: { appUrl: string }) {
             60-second receives.
           </Reveal>
           <Reveal as="span" delay={160} className="block">
-            Live <span className="text-white/55">now.</span>
+            Live <span className="text-[#94A3B8]">now.</span>
           </Reveal>
         </h2>
 
@@ -48,7 +48,7 @@ export function ProofBand({ appUrl }: { appUrl: string }) {
             <Reveal key={d.label} delay={(i + 3) * 80}>
               <div>
                 <span className="eyebrow">{d.label}</span>
-                <p className="mt-3 text-white/70">{d.body}</p>
+                <p className="mt-3 text-[#F1F5F9]/70">{d.body}</p>
               </div>
             </Reveal>
           ))}

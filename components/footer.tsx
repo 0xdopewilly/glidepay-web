@@ -1,27 +1,36 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export function Footer({ appUrl }: { appUrl: string }) {
   return (
     <footer
       data-theme="dark"
-      className="border-t border-white/10 bg-[#03070d]"
+      className="border-t border-[#1E293B] bg-[#0A0F0F]"
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-14 grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
         <div>
           <Link href="/" className="inline-flex items-center gap-2">
-            <Image
-              src="/glidepay-wordmark.png"
-              width={1205}
-              height={397}
-              alt="glidepay"
-              className="h-7 w-auto"
+            <span
+              aria-label="glidepay"
+              role="img"
+              className="block h-7"
+              style={{
+                width: 88,
+                backgroundColor: "#F1F5F9",
+                WebkitMaskImage: "url(/glidepay-wordmark.png)",
+                maskImage: "url(/glidepay-wordmark.png)",
+                WebkitMaskRepeat: "no-repeat",
+                maskRepeat: "no-repeat",
+                WebkitMaskSize: "contain",
+                maskSize: "contain",
+                WebkitMaskPosition: "left center",
+                maskPosition: "left center",
+              }}
             />
-            <span className="rounded-full border border-white/15 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white/70">
+            <span className="rounded-full border border-[#1E293B] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#F1F5F9]/70">
               Testnet
             </span>
           </Link>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/65">
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#F1F5F9]/65">
             A Cash App for stablecoins. Send and receive USDC, EURC, and cirBTC
             on Arc, Circle&apos;s payments chain.
           </p>
@@ -61,8 +70,8 @@ export function Footer({ appUrl }: { appUrl: string }) {
         />
       </div>
 
-      <div className="border-t border-white/5">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/45">
+      <div className="border-t border-[#1E293B]">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#94A3B8]">
           <span>© 2026 glidepay. Testnet, no real money at risk.</span>
           <span>Built on Arc.</span>
         </div>
@@ -88,7 +97,7 @@ function FooterColumn({
               href={l.href}
               target={l.external ? "_blank" : undefined}
               rel={l.external ? "noreferrer" : undefined}
-              className="group/footer-link relative inline-flex text-sm text-white/65 transition-colors hover:text-white"
+              className="group/footer-link relative inline-flex text-sm text-[#F1F5F9]/65 transition-colors hover:text-[#14B8A6]"
             >
               <span>{l.label}</span>
               <span

@@ -1,20 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  /* Glidepay palette: white + dark blue + black. No third hue.
-     This is the only place these values live — anywhere else uses opacity. */
-  --color-brand-bg: #041f3d;
-  --color-brand-bg-dark: #03070d;
-  --color-brand-bg-light: #f5f7fb;
-  --color-brand-white: #ffffff;
-  --color-brand-accent: #1a4877;
+  /* Glidepay palette: teal primary + neutral surfaces.
+     Tokens live here. Components reference via var(--brand-*) etc. */
 
-  --color-text-on-light: #041f3d;
-  --color-text-on-light-muted: rgba(4, 31, 61, 0.55);
-  --color-text-on-light-soft: rgba(4, 31, 61, 0.75);
-  --color-text-on-dark: #ffffff;
-  --color-text-on-dark-muted: rgba(255, 255, 255, 0.55);
-  --color-text-on-dark-soft: rgba(255, 255, 255, 0.75);
+  /* Brand primary (teal) */
+  --brand-primary: #0D9488;
+  --brand-primary-hover: #0F766E;
+
+  /* Surfaces */
+  --background: #FFFFFF;
+  --surface: #F8FAFC;
+  --surface-elevated: #FFFFFF;
+  --border: #E2E8F0;
+
+  /* Text */
+  --text-primary: #0F172A;
+  --text-secondary: #64748B;
+
+  /* Status */
+  --success: #22C55E;
+  --error: #EF4444;
+  --accent: #F59E0B;
+
+  /* Legacy color names mapped to the new palette so any straggling
+     references keep working. */
+  --color-brand-bg: var(--text-primary);
+  --color-brand-bg-dark: #0A0F0F;
+  --color-brand-bg-light: var(--surface);
+  --color-brand-white: #ffffff;
+  --color-brand-accent: var(--brand-primary);
+
+  --color-text-on-light: var(--text-primary);
+  --color-text-on-light-muted: rgba(15, 23, 42, 0.55);
+  --color-text-on-light-soft: rgba(15, 23, 42, 0.75);
+  --color-text-on-dark: #F1F5F9;
+  --color-text-on-dark-muted: rgba(241, 245, 249, 0.55);
+  --color-text-on-dark-soft: rgba(241, 245, 249, 0.75);
 
   --font-sans: var(--font-geist-sans), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -22,39 +44,53 @@
 
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* Component theming. These get re-bound by [data-theme="dark"] below.
-     Tailwind v4 leaves variable bindings alone — unlike attribute-selector
-     rules that target the same class, which it tries to collapse into one. */
-  --btn-primary-bg: #041f3d;
-  --btn-primary-bg-hover: #1a4877;
+  /* Component theming — light defaults. Re-bound under [data-theme="dark"]. */
+  --btn-primary-bg: var(--brand-primary);
+  --btn-primary-bg-hover: var(--brand-primary-hover);
   --btn-primary-fg: #ffffff;
 
-  --btn-ghost-border: rgba(4, 31, 61, 0.25);
-  --btn-ghost-border-hover: rgba(4, 31, 61, 0.45);
-  --btn-ghost-bg-hover: rgba(4, 31, 61, 0.04);
-  --btn-ghost-fg: #041f3d;
+  --btn-ghost-border: rgba(15, 23, 42, 0.25);
+  --btn-ghost-border-hover: rgba(15, 23, 42, 0.45);
+  --btn-ghost-bg-hover: rgba(15, 23, 42, 0.04);
+  --btn-ghost-fg: var(--text-primary);
 
-  --eyebrow-fg: rgba(4, 31, 61, 0.55);
+  --eyebrow-fg: var(--text-secondary);
 
-  --border-hairline: rgba(4, 31, 61, 0.1);
+  --border-hairline: var(--border);
 }
 
-/* Re-bind the same variables inside any subtree whose root opts into the
-   dark palette. Children read whatever's currently bound — no duplicate
-   class rules for Tailwind to collapse. */
+/* Re-bind variables under the dark subtree. Tailwind v4 leaves variable
+   bindings alone, unlike attribute-selector rules. */
 [data-theme="dark"] {
-  --btn-primary-bg: #ffffff;
-  --btn-primary-bg-hover: #e8eef7;
-  --btn-primary-fg: #041f3d;
+  /* Dark-mode palette */
+  --brand-primary: #14B8A6;
+  --brand-primary-hover: #2DD4BF;
 
-  --btn-ghost-border: rgba(255, 255, 255, 0.25);
-  --btn-ghost-border-hover: rgba(255, 255, 255, 0.45);
-  --btn-ghost-bg-hover: rgba(255, 255, 255, 0.04);
-  --btn-ghost-fg: #ffffff;
+  --background: #0A0F0F;
+  --surface: #111827;
+  --surface-elevated: #111827;
+  --border: #1E293B;
 
-  --eyebrow-fg: rgba(255, 255, 255, 0.5);
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
 
-  --border-hairline: rgba(255, 255, 255, 0.1);
+  --success: #4ADE80;
+  --error: #F87171;
+  --accent: #FBBF24;
+
+  /* CTA in dark sections: teal fill, white text. */
+  --btn-primary-bg: var(--brand-primary);
+  --btn-primary-bg-hover: var(--brand-primary-hover);
+  --btn-primary-fg: #0A0F0F;
+
+  --btn-ghost-border: rgba(241, 245, 249, 0.25);
+  --btn-ghost-border-hover: rgba(241, 245, 249, 0.45);
+  --btn-ghost-bg-hover: rgba(241, 245, 249, 0.04);
+  --btn-ghost-fg: var(--text-primary);
+
+  --eyebrow-fg: var(--text-secondary);
+
+  --border-hairline: rgba(241, 245, 249, 0.1);
 }
 
 * {
@@ -63,14 +99,14 @@
 
 html {
   background: #ffffff;
-  color: #041f3d;
+  color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 body {
   background: #ffffff;
-  color: #041f3d;
+  color: var(--text-primary);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
@@ -187,34 +223,34 @@ html.lenis body {
   font-size: 1.375rem;
   font-weight: 700;
   letter-spacing: -0.015em;
-  color: #041f3d;
+  color: var(--text-primary);
 }
 .prose-doc h3 {
   margin-top: 1.75rem;
   margin-bottom: 0.5rem;
   font-size: 1.125rem;
   font-weight: 600;
-  color: #041f3d;
+  color: var(--text-primary);
 }
 .prose-doc p {
-  color: rgba(4, 31, 61, 0.75);
+  color: rgba(15, 23, 42, 0.75);
 }
 .prose-doc a {
-  color: #041f3d;
-  border-bottom: 1px solid rgba(4, 31, 61, 0.25);
+  color: var(--brand-primary);
+  border-bottom: 1px solid rgba(13, 148, 136, 0.3);
   transition: border-color 180ms var(--ease-smooth);
 }
 .prose-doc a:hover {
-  border-bottom-color: rgba(4, 31, 61, 0.6);
+  border-bottom-color: rgba(13, 148, 136, 0.7);
 }
 .prose-doc code {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-size: 0.875em;
-  background: rgba(4, 31, 61, 0.07);
-  border: 1px solid rgba(4, 31, 61, 0.1);
+  background: rgba(15, 23, 42, 0.07);
+  border: 1px solid rgba(15, 23, 42, 0.1);
   border-radius: 6px;
   padding: 0.1em 0.4em;
-  color: #041f3d;
+  color: var(--text-primary);
 }
 .prose-doc ul {
   margin-top: 0.5rem;
@@ -222,17 +258,17 @@ html.lenis body {
   list-style: disc;
 }
 .prose-doc ul li {
-  color: rgba(4, 31, 61, 0.75);
+  color: rgba(15, 23, 42, 0.75);
   margin-top: 0.4rem;
 }
 .prose-doc strong {
-  color: #041f3d;
+  color: var(--text-primary);
   font-weight: 600;
 }
 .prose-doc blockquote {
-  border-left: 2px solid rgba(4, 31, 61, 0.2);
+  border-left: 2px solid rgba(15, 23, 42, 0.2);
   padding-left: 1rem;
-  color: rgba(4, 31, 61, 0.6);
+  color: rgba(15, 23, 42, 0.6);
   font-style: italic;
 }
 

@@ -41,21 +41,21 @@ export function GetStarted({ appUrl }: { appUrl: string }) {
   ];
 
   return (
-    <section className="relative overflow-hidden border-t border-[#041f3d]/10 bg-white px-5 py-28 sm:px-8 sm:py-36">
+    <section className="relative overflow-hidden border-t border-[#E2E8F0] bg-white px-5 py-28 sm:px-8 sm:py-36">
       <DotGrid tint="light" position="left" className="top-32" />
       <DotGrid tint="light" position="right" className="bottom-32" />
 
       <div className="mx-auto grid max-w-6xl gap-14 md:grid-cols-2">
         <div>
           <Reveal>
-            <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-[#041f3d]">
+            <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-[#0F172A]">
               How to
               <br />
-              <span className="text-[#1a4877]">Get Started</span>
+              <span className="text-[#0D9488]">Get Started</span>
             </h2>
           </Reveal>
           <Reveal delay={80}>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-[#041f3d]/75">
+            <p className="mt-6 max-w-md text-base leading-relaxed text-[#0F172A]/75">
               Three doors in. Pick the one that fits.
             </p>
           </Reveal>
@@ -72,20 +72,20 @@ export function GetStarted({ appUrl }: { appUrl: string }) {
                 <Link
                   href={card.href}
                   {...linkProps}
-                  className="group flex items-center justify-between gap-6 rounded-3xl border border-[#041f3d]/10 bg-[#f5f7fb] p-7 transition-colors hover:bg-[#eef1f7]"
+                  className="group flex items-center justify-between gap-6 rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-7 transition-colors hover:bg-[#F1F5F9]"
                 >
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-[#041f3d]/55">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-[#64748B]">
                       {card.label}
                     </p>
-                    <h3 className="mt-2 text-xl font-bold text-[#041f3d]">
+                    <h3 className="mt-2 text-xl font-bold text-[#0F172A]">
                       {card.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-[#041f3d]/75">
+                    <p className="mt-3 text-sm leading-relaxed text-[#0F172A]/75">
                       {card.body}
                     </p>
                   </div>
-                  <Icon className="h-5 w-5 shrink-0 text-[#041f3d]" />
+                  <Icon className="h-5 w-5 shrink-0 text-[#0D9488]" />
                 </Link>
               </Reveal>
             );

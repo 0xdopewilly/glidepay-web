@@ -15,13 +15,13 @@ export default function SupportPage() {
     <>
       <article className="mx-auto max-w-3xl px-5 sm:px-8 pt-32 pb-24 sm:pt-40">
         <p className="eyebrow mb-4">GET HELP</p>
-        <h1 className="font-bold text-[clamp(2rem,4vw,3.25rem)] tracking-[-0.03em] leading-[1.05] text-[#041f3d]">
+        <h1 className="font-bold text-[clamp(2rem,4vw,3.25rem)] tracking-[-0.03em] leading-[1.05] text-[#0F172A]">
           Support
         </h1>
-        <p className="mt-4 text-sm text-[#041f3d]/55">
+        <p className="mt-4 text-sm text-[#64748B]">
           Last updated: 2026-06-01.
         </p>
-        <div className="prose-doc mt-10 space-y-6 text-[15px] leading-[1.7] text-[#041f3d]/75">
+        <div className="prose-doc mt-10 space-y-6 text-[15px] leading-[1.7] text-[#0F172A]/75">
           <p>
             Need help with glidepay? We&apos;re a small team and respond as
             fast as we can. Below are the fastest ways to reach us depending on
