@@ -7,14 +7,14 @@ export function WordmarkBand() {
     <section
       aria-hidden
       data-theme="dark"
-      className="overflow-hidden border-t border-[#1E293B] bg-[#0A0F0F] pt-12 pb-8"
+      className="overflow-hidden border-t border-[rgba(74,222,128,0.18)] bg-[#050505] pt-12 pb-8"
     >
       <div
         aria-hidden
         className="w-[82vw] max-w-[1400px] mx-auto block select-none"
         style={{
           aspectRatio: "1205 / 397",
-          backgroundColor: "#F1F5F9",
+          backgroundColor: "#FFFFFF",
           WebkitMaskImage: "url(/glidepay-wordmark.png)",
           maskImage: "url(/glidepay-wordmark.png)",
           WebkitMaskRepeat: "no-repeat",

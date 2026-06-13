@@ -54,7 +54,7 @@ export default function Page() {
       </ul>
 
       <h2>The flow when you send</h2>
-      <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-[#0F172A]/72">
+      <ol className="mt-3 list-decimal space-y-1.5 pl-5 text-[#0A0A0A]/72">
         <li>You tap Send → fill recipient + amount → tap Pay</li>
         <li>
           Client POSTs <code>/api/send</code> with{" "}

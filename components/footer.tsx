@@ -4,7 +4,7 @@ export function Footer({ appUrl }: { appUrl: string }) {
   return (
     <footer
       data-theme="dark"
-      className="border-t border-[#1E293B] bg-[#0A0F0F]"
+      className="border-t border-[rgba(74,222,128,0.18)] bg-[#050505]"
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-14 grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
         <div>
@@ -15,7 +15,7 @@ export function Footer({ appUrl }: { appUrl: string }) {
               className="block h-7"
               style={{
                 width: 88,
-                backgroundColor: "#F1F5F9",
+                backgroundColor: "#FFFFFF",
                 WebkitMaskImage: "url(/glidepay-wordmark.png)",
                 maskImage: "url(/glidepay-wordmark.png)",
                 WebkitMaskRepeat: "no-repeat",
@@ -26,11 +26,11 @@ export function Footer({ appUrl }: { appUrl: string }) {
                 maskPosition: "left center",
               }}
             />
-            <span className="rounded-full border border-[#1E293B] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#F1F5F9]/70">
+            <span className="rounded-full border border-[rgba(74,222,128,0.18)] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#FFFFFF]/70">
               Testnet
             </span>
           </Link>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#F1F5F9]/65">
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#FFFFFF]/65">
             A Cash App for stablecoins. Send and receive USDC, EURC, and cirBTC
             on Arc, Circle&apos;s payments chain.
           </p>
@@ -70,8 +70,8 @@ export function Footer({ appUrl }: { appUrl: string }) {
         />
       </div>
 
-      <div className="border-t border-[#1E293B]">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#94A3B8]">
+      <div className="border-t border-[rgba(74,222,128,0.18)]">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#A1A1AA]">
           <span>© 2026 glidepay. Testnet, no real money at risk.</span>
           <span>Built on Arc.</span>
         </div>
@@ -97,7 +97,7 @@ function FooterColumn({
               href={l.href}
               target={l.external ? "_blank" : undefined}
               rel={l.external ? "noreferrer" : undefined}
-              className="group/footer-link relative inline-flex text-sm text-[#F1F5F9]/65 transition-colors hover:text-[#14B8A6]"
+              className="group/footer-link relative inline-flex text-sm text-[#FFFFFF]/65 transition-colors hover:text-[#4ADE80]"
             >
               <span>{l.label}</span>
               <span

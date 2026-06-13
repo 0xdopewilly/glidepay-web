@@ -32,7 +32,7 @@ export function Hero({ appUrl }: { appUrl: string }) {
     <motion.section
       ref={ref}
       style={heroStyle}
-      className="relative min-h-screen overflow-hidden bg-white px-5 pt-32 sm:px-8 sm:pt-40"
+      className="relative min-h-screen overflow-hidden bg-[#DCFCE7] px-5 pt-32 sm:px-8 sm:pt-40"
     >
       <DotGrid tint="light" position="left" className="top-32" />
       <DotGrid tint="light" position="right" className="top-32" />
@@ -48,16 +48,16 @@ export function Hero({ appUrl }: { appUrl: string }) {
 
           <Reveal delay={80}>
             <h1
-              className="mt-6 font-bold leading-[1.02] tracking-[-0.04em] text-[#0F172A]"
+              className="mt-6 font-bold leading-[1.02] tracking-[-0.04em] text-[#0A0A0A]"
               style={{ fontSize: "clamp(2.75rem, 5.5vw, 5.25rem)" }}
             >
               <span className="block">Money like a text.</span>
-              <span className="block text-[#64748B]">On Arc.</span>
+              <span className="block text-[#475569]">On Arc.</span>
             </h1>
           </Reveal>
 
           <Reveal delay={160}>
-            <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-[#0F172A]/75 sm:text-lg md:mx-0">
+            <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-[#0A0A0A]/75 sm:text-lg md:mx-0">
               A Cash App for stablecoins. Send and receive USDC, EURC, and
               cirBTC on Arc, Circle&apos;s payments chain. No seed phrases, no
               gas tokens, no jargon.
@@ -85,11 +85,11 @@ export function Hero({ appUrl }: { appUrl: string }) {
           </Reveal>
 
           <Reveal delay={320}>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs font-medium text-[#64748B] md:justify-start">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs font-medium text-[#475569] md:justify-start">
               <span>Free</span>
-              <span className="h-3 w-px bg-[#E2E8F0]" />
+              <span className="h-3 w-px bg-[rgba(34,197,94,0.18)]" />
               <span>Email or Google sign-in</span>
-              <span className="h-3 w-px bg-[#E2E8F0]" />
+              <span className="h-3 w-px bg-[rgba(34,197,94,0.18)]" />
               <span>No wallet extension needed</span>
             </div>
           </Reveal>
@@ -98,7 +98,7 @@ export function Hero({ appUrl }: { appUrl: string }) {
         {/* RIGHT: phone mockup */}
         <Reveal delay={200}>
           <div className="relative mx-auto aspect-[902/1586] w-full max-w-[360px]">
-            <div className="relative h-full w-full overflow-hidden rounded-[2.75rem] border border-[#E2E8F0] bg-[#F8FAFC] p-1.5 shadow-[0_30px_80px_-30px_rgba(13,148,136,0.25)]">
+            <div className="glow-green relative h-full w-full overflow-hidden rounded-[2.75rem] border border-[rgba(74,222,128,0.18)] bg-[#0A0A0A] p-1.5">
               <Image
                 src="/screens/home.png"
                 alt="The glidepay home screen, showing balance across USDC, EURC, and cirBTC on Arc."
@@ -109,8 +109,8 @@ export function Hero({ appUrl }: { appUrl: string }) {
                 className="block h-auto w-full rounded-[2.25rem]"
               />
             </div>
-            <div className="absolute -bottom-3 -left-3 flex items-center gap-2 rounded-2xl border border-[#E2E8F0] bg-white px-3.5 py-2.5 text-xs font-medium text-[#0F172A] shadow-lg sm:-bottom-4 sm:-left-4">
-              <span className="h-2 w-2 rounded-full bg-[#22C55E]" />
+            <div className="absolute -bottom-3 -left-3 flex items-center gap-2 rounded-2xl border border-[rgba(34,197,94,0.18)] bg-white px-3.5 py-2.5 text-xs font-medium text-[#0A0A0A] shadow-lg sm:-bottom-4 sm:-left-4">
+              <span className="h-2 w-2 rounded-full bg-[#4ADE80]" />
               Received +$20 via Base
             </div>
           </div>

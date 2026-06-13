@@ -41,21 +41,21 @@ export function GetStarted({ appUrl }: { appUrl: string }) {
   ];
 
   return (
-    <section className="relative overflow-hidden border-t border-[#E2E8F0] bg-white px-5 py-28 sm:px-8 sm:py-36">
+    <section className="relative overflow-hidden border-t border-[rgba(34,197,94,0.18)] bg-[#DCFCE7] px-5 py-28 sm:px-8 sm:py-36">
       <DotGrid tint="light" position="left" className="top-32" />
       <DotGrid tint="light" position="right" className="bottom-32" />
 
       <div className="mx-auto grid max-w-6xl gap-14 md:grid-cols-2">
         <div>
           <Reveal>
-            <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-[#0F172A]">
+            <h2 className="text-[clamp(2.5rem,5vw,4.5rem)] font-bold leading-[1.02] tracking-[-0.03em] text-[#0A0A0A]">
               How to
               <br />
-              <span className="text-[#0D9488]">Get Started</span>
+              <span className="text-[#22C55E]">Get Started</span>
             </h2>
           </Reveal>
           <Reveal delay={80}>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-[#0F172A]/75">
+            <p className="mt-6 max-w-md text-base leading-relaxed text-[#0A0A0A]/75">
               Three doors in. Pick the one that fits.
             </p>
           </Reveal>
@@ -72,20 +72,20 @@ export function GetStarted({ appUrl }: { appUrl: string }) {
                 <Link
                   href={card.href}
                   {...linkProps}
-                  className="group flex items-center justify-between gap-6 rounded-3xl border border-[#E2E8F0] bg-[#F8FAFC] p-7 transition-colors hover:bg-[#F1F5F9]"
+                  className="group glow-green-soft flex items-center justify-between gap-6 rounded-3xl border border-[rgba(74,222,128,0.18)] bg-[#0A0A0A] p-7 transition-all duration-300 [transition-timing-function:var(--ease-smooth)] hover:-translate-y-0.5 hover:[box-shadow:0_0_0_1px_rgba(74,222,128,0.25),0_24px_70px_-20px_rgba(74,222,128,0.45),0_0_90px_-20px_rgba(74,222,128,0.3)]"
                 >
                   <div>
-                    <p className="text-[11px] font-bold uppercase tracking-wider text-[#64748B]">
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-[#A1A1AA]">
                       {card.label}
                     </p>
-                    <h3 className="mt-2 text-xl font-bold text-[#0F172A]">
+                    <h3 className="mt-2 text-xl font-bold text-[#FFFFFF]">
                       {card.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-[#0F172A]/75">
+                    <p className="mt-3 text-sm leading-relaxed text-[#FFFFFF]/75">
                       {card.body}
                     </p>
                   </div>
-                  <Icon className="h-5 w-5 shrink-0 text-[#0D9488]" />
+                  <Icon className="h-5 w-5 shrink-0 text-[#4ADE80]" />
                 </Link>
               </Reveal>
             );

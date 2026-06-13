@@ -32,19 +32,19 @@ export function ScreensGallery() {
   return (
     <section
       data-theme="dark"
-      className="border-t border-[#1E293B] bg-[#0A0F0F] px-5 py-28 sm:px-8 sm:py-36"
+      className="border-t border-[rgba(74,222,128,0.18)] bg-[#050505] px-5 py-28 sm:px-8 sm:py-36"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <span className="eyebrow">EVERY SCREEN, REAL</span>
         </Reveal>
         <Reveal delay={80}>
-          <h2 className="mt-5 max-w-3xl text-[clamp(2.25rem,5vw,3.5rem)] font-bold tracking-[-0.03em] text-[#F1F5F9]">
-            What it actually <span className="text-[#94A3B8]">looks like.</span>
+          <h2 className="mt-5 max-w-3xl text-[clamp(2.25rem,5vw,3.5rem)] font-bold tracking-[-0.03em] text-[#FFFFFF]">
+            What it actually <span className="text-[#A1A1AA]">looks like.</span>
           </h2>
         </Reveal>
         <Reveal delay={160}>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#F1F5F9]/70 sm:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#FFFFFF]/70 sm:text-lg">
             No mocks. These are screenshots straight from the live testnet
             app. Same surfaces you&apos;ll see thirty seconds after sign-in.
           </p>
@@ -54,7 +54,7 @@ export function ScreensGallery() {
           {SCREENS.map((s, i) => (
             <Reveal key={s.src} delay={i * 90}>
               <figure className="flex h-full flex-col">
-                <div className="overflow-hidden rounded-[2rem] border border-[#1E293B] bg-[#111827] p-1.5">
+                <div className="overflow-hidden rounded-[2rem] border border-[rgba(74,222,128,0.18)] bg-[#0F0F0F] p-1.5">
                   <Image
                     src={s.src}
                     alt={`${s.title} screen in the glidepay testnet app.`}
@@ -65,10 +65,10 @@ export function ScreensGallery() {
                   />
                 </div>
                 <figcaption className="mt-5">
-                  <p className="text-sm font-bold tracking-tight text-[#F1F5F9]">
+                  <p className="text-sm font-bold tracking-tight text-[#FFFFFF]">
                     {s.title}
                   </p>
-                  <p className="mt-1 text-xs leading-relaxed text-[#94A3B8]">
+                  <p className="mt-1 text-xs leading-relaxed text-[#A1A1AA]">
                     {s.caption}
                   </p>
                 </figcaption>

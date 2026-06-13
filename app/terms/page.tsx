@@ -13,11 +13,11 @@ export default function TermsPage() {
     <>
       <article className="mx-auto max-w-3xl px-5 sm:px-8 pt-32 pb-24 sm:pt-40">
         <p className="eyebrow mb-4">LEGAL</p>
-        <h1 className="font-bold text-[clamp(2rem,4vw,3.25rem)] tracking-[-0.03em] leading-[1.05] text-[#0F172A]">
+        <h1 className="font-bold text-[clamp(2rem,4vw,3.25rem)] tracking-[-0.03em] leading-[1.05] text-[#0A0A0A]">
           Terms of Service
         </h1>
-        <p className="mt-4 text-sm text-[#64748B]">Last updated: 2026-06-01.</p>
-        <div className="prose-doc mt-10 space-y-6 text-[15px] leading-[1.7] text-[#0F172A]/75">
+        <p className="mt-4 text-sm text-[#475569]">Last updated: 2026-06-01.</p>
+        <div className="prose-doc mt-10 space-y-6 text-[15px] leading-[1.7] text-[#0A0A0A]/75">
           <p>
             Welcome to glidepay. By using the app you agree to these terms. Read
             them, they are short.

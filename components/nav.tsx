@@ -67,40 +67,35 @@ export function Nav({ appUrl }: { appUrl: string }) {
     "fixed inset-x-0 top-0 z-[100] transition-colors duration-200",
     scrolled
       ? isDark
-        ? "border-b border-white/10 bg-[#0A0F0F]"
-        : "border-b border-[#E2E8F0] bg-white"
+        ? "border-b border-white/10 bg-[#050505]"
+        : "border-b border-[rgba(34,197,94,0.18)] bg-[#DCFCE7]"
       : isDark
         ? "border-b border-transparent bg-transparent"
-        : "border-b border-transparent bg-white",
-    isDark ? "text-[#F1F5F9]" : "text-[#0F172A]",
+        : "border-b border-transparent bg-[#DCFCE7]",
+    isDark ? "text-[#FFFFFF]" : "text-[#0A0A0A]",
   ].join(" ");
 
   const linkClass = isDark
-    ? "group/link relative inline-flex items-center text-sm font-semibold text-[#F1F5F9] transition-colors hover:text-[#14B8A6] data-[active=true]:font-bold"
-    : "group/link relative inline-flex items-center text-sm font-semibold text-[#0F172A] transition-colors hover:text-[#0D9488] data-[active=true]:font-bold";
+    ? "group/link relative inline-flex items-center text-sm font-semibold text-[#FFFFFF] transition-colors hover:text-[#4ADE80] data-[active=true]:font-bold"
+    : "group/link relative inline-flex items-center text-sm font-semibold text-[#0A0A0A] transition-colors hover:text-[#22C55E] data-[active=true]:font-bold";
 
   const pillClass = isDark
-    ? "rounded-full border border-[#F1F5F9]/25 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#F1F5F9]"
-    : "rounded-full border border-[#0F172A]/25 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#0F172A]";
+    ? "rounded-full border border-[#FFFFFF]/25 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#FFFFFF]"
+    : "rounded-full border border-[#0A0A0A]/25 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#0A0A0A]";
 
   const sheetClass = isDark
-    ? "border-t border-white/10 bg-[#0A0F0F] text-[#F1F5F9] md:hidden"
-    : "border-t border-[#E2E8F0] bg-white text-[#0F172A] md:hidden";
+    ? "border-t border-white/10 bg-[#050505] text-[#FFFFFF] md:hidden"
+    : "border-t border-[rgba(34,197,94,0.18)] bg-[#DCFCE7] text-[#0A0A0A] md:hidden";
 
   const sheetLinkClass = isDark
-    ? "rounded-xl px-3 py-3 text-base font-medium text-[#F1F5F9]/90"
-    : "rounded-xl px-3 py-3 text-base font-medium text-[#0F172A]/85";
-
-  const ctaShadow = isDark
-    ? "shadow-md shadow-[#14B8A6]/20 hover:shadow-lg hover:shadow-[#14B8A6]/30"
-    : "shadow-md shadow-[#0D9488]/20 hover:shadow-lg hover:shadow-[#0D9488]/30";
+    ? "rounded-xl px-3 py-3 text-base font-medium text-[#FFFFFF]/90"
+    : "rounded-xl px-3 py-3 text-base font-medium text-[#0A0A0A]/85";
 
   const ctaClass = [
-    "group/cta inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold transition-all duration-300 [transition-timing-function:var(--ease-smooth)] hover:scale-[1.02]",
+    "group/cta glow-green inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold transition-all duration-300 [transition-timing-function:var(--ease-smooth)] hover:scale-[1.02]",
     isDark
-      ? "bg-[#14B8A6] text-[#0A0F0F] hover:bg-[#2DD4BF]"
-      : "bg-[#0D9488] text-white hover:bg-[#0F766E]",
-    ctaShadow,
+      ? "bg-[#4ADE80] text-[#0A0A0A] hover:bg-[#6EE7A2]"
+      : "bg-[#4ADE80] text-[#0A0A0A] hover:bg-[#22C55E]",
   ].join(" ");
 
   const isLinkActive = (href: string) => {
@@ -120,7 +115,7 @@ export function Nav({ appUrl }: { appUrl: string }) {
             className="block h-7"
             style={{
               width: 88,
-              backgroundColor: isDark ? "#F1F5F9" : "#0F172A",
+              backgroundColor: isDark ? "#FFFFFF" : "#0A0A0A",
               WebkitMaskImage: "url(/glidepay-wordmark.png)",
               maskImage: "url(/glidepay-wordmark.png)",
               WebkitMaskRepeat: "no-repeat",

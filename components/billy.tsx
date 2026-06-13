@@ -7,25 +7,25 @@ export function Billy() {
     <section
       id="billy"
       data-theme="dark"
-      className="border-t border-[#1E293B] bg-[#0A0F0F] px-5 py-28 sm:px-8 sm:py-36"
+      className="border-t border-[rgba(74,222,128,0.18)] bg-[#050505] px-5 py-28 sm:px-8 sm:py-36"
     >
       <div className="mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-2">
         <div>
           <Reveal>
             <div className="flex items-center gap-2">
-              <Sparkles className="h-3.5 w-3.5 text-[#14B8A6]" />
+              <Sparkles className="h-3.5 w-3.5 text-[#4ADE80]" />
               <span className="eyebrow">Meet Billy</span>
             </div>
           </Reveal>
           <Reveal delay={80}>
-            <h2 className="mt-5 font-bold tracking-[-0.03em] text-[#F1F5F9] text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.05]">
+            <h2 className="mt-5 font-bold tracking-[-0.03em] text-[#FFFFFF] text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.05]">
               Just ask.
               <br />
-              <span className="text-[#94A3B8]">Billy moves money.</span>
+              <span className="text-[#A1A1AA]">Billy moves money.</span>
             </h2>
           </Reveal>
           <Reveal delay={160}>
-            <p className="mt-6 text-base leading-relaxed text-[#F1F5F9]/70 sm:text-lg">
+            <p className="mt-6 text-base leading-relaxed text-[#FFFFFF]/70 sm:text-lg">
               Glidepay&apos;s in-app AI assistant. Send, request, swap, bridge,
               and split bills conversationally. No taps through screens, no
               hunting for buttons. Every money move surfaces a confirm card
@@ -42,7 +42,7 @@ export function Billy() {
               ].map((q) => (
                 <li
                   key={q}
-                  className="rounded-full border border-[#1E293B] bg-[#111827] px-3 py-1.5 text-xs font-medium text-[#F1F5F9]/85"
+                  className="rounded-full border border-[rgba(74,222,128,0.18)] bg-[#0F0F0F] px-3 py-1.5 text-xs font-medium text-[#FFFFFF]/85"
                 >
                   {q}
                 </li>
@@ -53,7 +53,7 @@ export function Billy() {
 
         <Reveal delay={320}>
           <div className="mx-auto w-full max-w-[340px]">
-            <div className="relative overflow-hidden rounded-[2.75rem] border border-[#1E293B] bg-[#111827] p-1.5 shadow-2xl">
+            <div className="glow-green-soft relative overflow-hidden rounded-[2.75rem] border border-[rgba(74,222,128,0.18)] bg-[#0F0F0F] p-1.5">
               <Image
                 src="/screens/billy.png"
                 alt="Billy chat showing a conversational money move: a natural-language request, a confirm card, and a payment-sent receipt."

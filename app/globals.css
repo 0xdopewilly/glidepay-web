@@ -1,42 +1,51 @@
 @import "tailwindcss";
 
 @theme {
-  /* Glidepay palette: teal primary + neutral surfaces.
-     Tokens live here. Components reference via var(--brand-*) etc. */
+  /* Glidepay palette: Spendly-inspired bright green primary on a pale mint
+     light surface, near-black dark-card sections. Tokens live here.
+     Components reference via var(--brand-*) etc. */
 
-  /* Brand primary (teal) */
-  --brand-primary: #0D9488;
-  --brand-primary-hover: #0F766E;
+  /* Brand primary (bright friendly green) */
+  --brand-primary: #4ADE80;
+  --brand-primary-hover: #22C55E;
+  --brand-primary-deep: #16A34A;
 
-  /* Surfaces */
-  --background: #FFFFFF;
-  --surface: #F8FAFC;
+  /* Surfaces — light defaults. Page bg is pale mint; white is reserved
+     for elevated cards / inputs. */
+  --background: #DCFCE7;
+  --surface: #FFFFFF;
   --surface-elevated: #FFFFFF;
-  --border: #E2E8F0;
+  --surface-dark-card: #0A0A0A;
+  --border: rgba(34, 197, 94, 0.18);
 
   /* Text */
-  --text-primary: #0F172A;
-  --text-secondary: #64748B;
+  --text-primary: #0A0A0A;
+  --text-secondary: #475569;
+  --text-on-dark: #FFFFFF;
+  --text-on-dark-muted: #A1A1AA;
 
   /* Status */
-  --success: #22C55E;
+  --success: #4ADE80;
   --error: #EF4444;
-  --accent: #F59E0B;
+  --accent: #84CC16;
+
+  /* Brand glow halo (light mode) */
+  --brand-glow: rgba(74, 222, 128, 0.35);
 
   /* Legacy color names mapped to the new palette so any straggling
-     references keep working. */
-  --color-brand-bg: var(--text-primary);
-  --color-brand-bg-dark: #0A0F0F;
+     references keep working. Cards on the mint bg are NEAR BLACK now. */
+  --color-brand-bg: #0A0A0A;
+  --color-brand-bg-dark: #050505;
   --color-brand-bg-light: var(--surface);
   --color-brand-white: #ffffff;
   --color-brand-accent: var(--brand-primary);
 
   --color-text-on-light: var(--text-primary);
-  --color-text-on-light-muted: rgba(15, 23, 42, 0.55);
-  --color-text-on-light-soft: rgba(15, 23, 42, 0.75);
-  --color-text-on-dark: #F1F5F9;
-  --color-text-on-dark-muted: rgba(241, 245, 249, 0.55);
-  --color-text-on-dark-soft: rgba(241, 245, 249, 0.75);
+  --color-text-on-light-muted: rgba(10, 10, 10, 0.55);
+  --color-text-on-light-soft: rgba(10, 10, 10, 0.75);
+  --color-text-on-dark: #FFFFFF;
+  --color-text-on-dark-muted: rgba(255, 255, 255, 0.6);
+  --color-text-on-dark-soft: rgba(255, 255, 255, 0.78);
 
   --font-sans: var(--font-geist-sans), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
@@ -47,11 +56,11 @@
   /* Component theming — light defaults. Re-bound under [data-theme="dark"]. */
   --btn-primary-bg: var(--brand-primary);
   --btn-primary-bg-hover: var(--brand-primary-hover);
-  --btn-primary-fg: #ffffff;
+  --btn-primary-fg: #0A0A0A;
 
-  --btn-ghost-border: rgba(15, 23, 42, 0.25);
-  --btn-ghost-border-hover: rgba(15, 23, 42, 0.45);
-  --btn-ghost-bg-hover: rgba(15, 23, 42, 0.04);
+  --btn-ghost-border: rgba(10, 10, 10, 0.25);
+  --btn-ghost-border-hover: rgba(10, 10, 10, 0.45);
+  --btn-ghost-bg-hover: rgba(10, 10, 10, 0.04);
   --btn-ghost-fg: var(--text-primary);
 
   --eyebrow-fg: var(--text-secondary);
@@ -63,34 +72,38 @@
    bindings alone, unlike attribute-selector rules. */
 [data-theme="dark"] {
   /* Dark-mode palette */
-  --brand-primary: #14B8A6;
-  --brand-primary-hover: #2DD4BF;
+  --brand-primary: #4ADE80;
+  --brand-primary-hover: #6EE7A2;
+  --brand-primary-deep: #22C55E;
 
-  --background: #0A0F0F;
-  --surface: #111827;
-  --surface-elevated: #111827;
-  --border: #1E293B;
+  --background: #050505;
+  --surface: #0F0F0F;
+  --surface-elevated: #1A1A1A;
+  --surface-dark-card: #0F0F0F;
+  --border: rgba(74, 222, 128, 0.18);
 
-  --text-primary: #F1F5F9;
-  --text-secondary: #94A3B8;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A1A1AA;
 
   --success: #4ADE80;
   --error: #F87171;
-  --accent: #FBBF24;
+  --accent: #84CC16;
 
-  /* CTA in dark sections: teal fill, white text. */
+  --brand-glow: rgba(74, 222, 128, 0.45);
+
+  /* CTA in dark sections: green fill, dark text for contrast. */
   --btn-primary-bg: var(--brand-primary);
   --btn-primary-bg-hover: var(--brand-primary-hover);
-  --btn-primary-fg: #0A0F0F;
+  --btn-primary-fg: #0A0A0A;
 
-  --btn-ghost-border: rgba(241, 245, 249, 0.25);
-  --btn-ghost-border-hover: rgba(241, 245, 249, 0.45);
-  --btn-ghost-bg-hover: rgba(241, 245, 249, 0.04);
+  --btn-ghost-border: rgba(255, 255, 255, 0.25);
+  --btn-ghost-border-hover: rgba(255, 255, 255, 0.45);
+  --btn-ghost-bg-hover: rgba(255, 255, 255, 0.04);
   --btn-ghost-fg: var(--text-primary);
 
   --eyebrow-fg: var(--text-secondary);
 
-  --border-hairline: rgba(241, 245, 249, 0.1);
+  --border-hairline: rgba(74, 222, 128, 0.18);
 }
 
 * {
@@ -98,14 +111,14 @@
 }
 
 html {
-  background: #ffffff;
+  background: #DCFCE7;
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
 body {
-  background: #ffffff;
+  background: #DCFCE7;
   color: var(--text-primary);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
@@ -165,6 +178,21 @@ html.lenis body {
   color: var(--eyebrow-fg);
 }
 
+/* Green halo. Apply sparingly to primary CTAs + the focal-point card on a
+   section. The hairline ring + outer + soft inner blur give the Spendly feel. */
+.glow-green {
+  box-shadow:
+    0 0 0 1px rgba(74, 222, 128, 0.18),
+    0 20px 60px -20px rgba(74, 222, 128, 0.35),
+    0 0 80px -20px rgba(74, 222, 128, 0.25);
+}
+.glow-green-soft {
+  box-shadow:
+    0 0 0 1px rgba(74, 222, 128, 0.12),
+    0 12px 36px -16px rgba(74, 222, 128, 0.2),
+    0 0 50px -20px rgba(74, 222, 128, 0.15);
+}
+
 /* Primary pill button. */
 .btn-primary {
   display: inline-flex;
@@ -177,12 +205,21 @@ html.lenis body {
   color: var(--btn-primary-fg);
   font-weight: 700;
   font-size: 14px;
+  box-shadow:
+    0 0 0 1px rgba(74, 222, 128, 0.18),
+    0 20px 60px -20px rgba(74, 222, 128, 0.35),
+    0 0 80px -20px rgba(74, 222, 128, 0.25);
   transition:
     transform 0.22s var(--ease-smooth),
-    background-color 0.18s var(--ease-smooth);
+    background-color 0.18s var(--ease-smooth),
+    box-shadow 0.22s var(--ease-smooth);
 }
 .btn-primary:hover {
   background: var(--btn-primary-bg-hover);
+  box-shadow:
+    0 0 0 1px rgba(74, 222, 128, 0.25),
+    0 24px 70px -20px rgba(74, 222, 128, 0.45),
+    0 0 90px -20px rgba(74, 222, 128, 0.3);
 }
 .btn-primary:active {
   transform: scale(0.96);
@@ -233,21 +270,21 @@ html.lenis body {
   color: var(--text-primary);
 }
 .prose-doc p {
-  color: rgba(15, 23, 42, 0.75);
+  color: rgba(10, 10, 10, 0.75);
 }
 .prose-doc a {
-  color: var(--brand-primary);
-  border-bottom: 1px solid rgba(13, 148, 136, 0.3);
+  color: var(--brand-primary-deep);
+  border-bottom: 1px solid rgba(34, 197, 94, 0.3);
   transition: border-color 180ms var(--ease-smooth);
 }
 .prose-doc a:hover {
-  border-bottom-color: rgba(13, 148, 136, 0.7);
+  border-bottom-color: rgba(34, 197, 94, 0.7);
 }
 .prose-doc code {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-size: 0.875em;
-  background: rgba(15, 23, 42, 0.07);
-  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(10, 10, 10, 0.07);
+  border: 1px solid rgba(10, 10, 10, 0.1);
   border-radius: 6px;
   padding: 0.1em 0.4em;
   color: var(--text-primary);
@@ -258,7 +295,7 @@ html.lenis body {
   list-style: disc;
 }
 .prose-doc ul li {
-  color: rgba(15, 23, 42, 0.75);
+  color: rgba(10, 10, 10, 0.75);
   margin-top: 0.4rem;
 }
 .prose-doc strong {
@@ -266,9 +303,9 @@ html.lenis body {
   font-weight: 600;
 }
 .prose-doc blockquote {
-  border-left: 2px solid rgba(15, 23, 42, 0.2);
+  border-left: 2px solid rgba(10, 10, 10, 0.2);
   padding-left: 1rem;
-  color: rgba(15, 23, 42, 0.6);
+  color: rgba(10, 10, 10, 0.6);
   font-style: italic;
 }
 
