@@ -32,7 +32,7 @@ export function ScreensGallery() {
   return (
     <section
       data-theme="dark"
-      className="border-t border-[rgba(74,222,128,0.18)] bg-[#050505] px-5 py-28 sm:px-8 sm:py-36"
+      className="border-t border-[rgba(255,255,255,0.08)] bg-[#041f3d] px-5 py-28 sm:px-8 sm:py-36"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal>
@@ -40,7 +40,7 @@ export function ScreensGallery() {
         </Reveal>
         <Reveal delay={80}>
           <h2 className="mt-5 max-w-3xl text-[clamp(2.25rem,5vw,3.5rem)] font-bold tracking-[-0.03em] text-[#FFFFFF]">
-            What it actually <span className="text-[#A1A1AA]">looks like.</span>
+            What it actually <span className="text-[rgba(255,255,255,0.65)]">looks like.</span>
           </h2>
         </Reveal>
         <Reveal delay={160}>
@@ -54,7 +54,7 @@ export function ScreensGallery() {
           {SCREENS.map((s, i) => (
             <Reveal key={s.src} delay={i * 90}>
               <figure className="flex h-full flex-col">
-                <div className="overflow-hidden rounded-[2rem] border border-[rgba(74,222,128,0.18)] bg-[#0F0F0F] p-1.5">
+                <div className="overflow-hidden rounded-[2rem] border border-[rgba(255,255,255,0.08)] bg-[#0a2a4d] p-1.5">
                   <Image
                     src={s.src}
                     alt={`${s.title} screen in the glidepay testnet app.`}
@@ -68,7 +68,7 @@ export function ScreensGallery() {
                   <p className="text-sm font-bold tracking-tight text-[#FFFFFF]">
                     {s.title}
                   </p>
-                  <p className="mt-1 text-xs leading-relaxed text-[#A1A1AA]">
+                  <p className="mt-1 text-xs leading-relaxed text-[rgba(255,255,255,0.65)]">
                     {s.caption}
                   </p>
                 </figcaption>

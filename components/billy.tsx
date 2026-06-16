@@ -7,13 +7,13 @@ export function Billy() {
     <section
       id="billy"
       data-theme="dark"
-      className="border-t border-[rgba(74,222,128,0.18)] bg-[#050505] px-5 py-28 sm:px-8 sm:py-36"
+      className="border-t border-[rgba(255,255,255,0.08)] bg-[#041f3d] px-5 py-28 sm:px-8 sm:py-36"
     >
       <div className="mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-2">
         <div>
           <Reveal>
             <div className="flex items-center gap-2">
-              <Sparkles className="h-3.5 w-3.5 text-[#4ADE80]" />
+              <Sparkles className="h-3.5 w-3.5 text-[#FFFFFF]" />
               <span className="eyebrow">Meet Billy</span>
             </div>
           </Reveal>
@@ -21,7 +21,7 @@ export function Billy() {
             <h2 className="mt-5 font-bold tracking-[-0.03em] text-[#FFFFFF] text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.05]">
               Just ask.
               <br />
-              <span className="text-[#A1A1AA]">Billy moves money.</span>
+              <span className="text-[rgba(255,255,255,0.65)]">Billy moves money.</span>
             </h2>
           </Reveal>
           <Reveal delay={160}>
@@ -42,7 +42,7 @@ export function Billy() {
               ].map((q) => (
                 <li
                   key={q}
-                  className="rounded-full border border-[rgba(74,222,128,0.18)] bg-[#0F0F0F] px-3 py-1.5 text-xs font-medium text-[#FFFFFF]/85"
+                  className="rounded-full border border-[rgba(255,255,255,0.08)] bg-[#0a2a4d] px-3 py-1.5 text-xs font-medium text-[#FFFFFF]/85"
                 >
                   {q}
                 </li>
@@ -53,7 +53,7 @@ export function Billy() {
 
         <Reveal delay={320}>
           <div className="mx-auto w-full max-w-[340px]">
-            <div className="glow-green-soft relative overflow-hidden rounded-[2.75rem] border border-[rgba(74,222,128,0.18)] bg-[#0F0F0F] p-1.5">
+            <div className="glow-green-soft relative overflow-hidden rounded-[2.75rem] border border-[rgba(255,255,255,0.08)] bg-[#0a2a4d] p-1.5">
               <Image
                 src="/screens/billy.png"
                 alt="Billy chat showing a conversational money move: a natural-language request, a confirm card, and a payment-sent receipt."

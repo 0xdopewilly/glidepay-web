@@ -4,7 +4,7 @@ export function RealMoneyStatement() {
   return (
     <section
       data-theme="dark"
-      className="flex min-h-[80vh] items-center bg-[#050505] px-5 py-28 sm:px-8"
+      className="flex min-h-[80vh] items-center bg-[#041f3d] px-5 py-28 sm:px-8"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal delay={0}>
@@ -24,7 +24,7 @@ export function RealMoneyStatement() {
             <span className="block">Real money.</span>
             <span className="block">Real chains.</span>
             <span className="block">
-              Running <span className="text-[#A1A1AA]">now.</span>
+              Running <span className="text-[rgba(255,255,255,0.65)]">now.</span>
             </span>
           </h2>
         </Reveal>

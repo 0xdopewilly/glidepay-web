@@ -23,7 +23,7 @@ export function DotGrid({
   className = "top-24",
 }: DotGridProps) {
   const fill =
-    tint === "light" ? "rgba(10, 10, 10, 0.18)" : "rgba(255, 255, 255, 0.18)";
+    tint === "light" ? "rgba(4, 31, 61, 0.18)" : "rgba(255, 255, 255, 0.18)";
   const width = COLS * GAP;
   const height = ROWS * GAP;
 

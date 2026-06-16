@@ -46,7 +46,7 @@ export function Faq() {
     <section
       id="faq"
       data-theme="dark"
-      className="bg-[#050505] border-t border-[rgba(74,222,128,0.18)] px-5 sm:px-8 py-28 sm:py-36"
+      className="bg-[#041f3d] border-t border-[rgba(255,255,255,0.08)] px-5 sm:px-8 py-28 sm:py-36"
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_2fr] gap-12">
         <div>
@@ -57,7 +57,7 @@ export function Faq() {
             FAQ
           </h2>
           <div className="mt-10">
-            <p className="text-sm text-[#A1A1AA]">Have more questions?</p>
+            <p className="text-sm text-[rgba(255,255,255,0.65)]">Have more questions?</p>
             <a
               href="mailto:support@glidepay.cash"
               className="btn-primary mt-4 inline-flex"
@@ -73,9 +73,9 @@ export function Faq() {
             const isLast = i === ITEMS.length - 1;
             return (
               <Reveal key={item.question} delay={i * 60}>
-                <div className={isLast ? "border-b border-[rgba(74,222,128,0.18)]" : ""}>
+                <div className={isLast ? "border-b border-[rgba(255,255,255,0.08)]" : ""}>
                   <button
-                    className="w-full flex items-center justify-between py-5 text-left border-t border-[rgba(74,222,128,0.18)]"
+                    className="w-full flex items-center justify-between py-5 text-left border-t border-[rgba(255,255,255,0.08)]"
                     onClick={() => setOpenIdx(open ? null : i)}
                   >
                     <span className="text-base sm:text-lg font-semibold text-[#FFFFFF] pr-6">
@@ -83,7 +83,7 @@ export function Faq() {
                     </span>
                     <ChevronDown
                       className={
-                        "h-5 w-5 text-[#A1A1AA] shrink-0 transition-transform duration-300 " +
+                        "h-5 w-5 text-[rgba(255,255,255,0.65)] shrink-0 transition-transform duration-300 " +
                         (open ? "rotate-180" : "")
                       }
                     />

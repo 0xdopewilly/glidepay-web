@@ -21,7 +21,7 @@ export function ProofBand({ appUrl }: { appUrl: string }) {
   return (
     <section
       data-theme="dark"
-      className="flex min-h-[60vh] items-center border-t border-[rgba(74,222,128,0.18)] bg-[#050505] px-5 py-24 sm:px-8"
+      className="flex min-h-[60vh] items-center border-t border-[rgba(255,255,255,0.08)] bg-[#041f3d] px-5 py-24 sm:px-8"
     >
       <div className="mx-auto w-full max-w-6xl">
         <h2
@@ -39,7 +39,7 @@ export function ProofBand({ appUrl }: { appUrl: string }) {
             60-second receives.
           </Reveal>
           <Reveal as="span" delay={160} className="block">
-            Live <span className="text-[#A1A1AA]">now.</span>
+            Live <span className="text-[rgba(255,255,255,0.65)]">now.</span>
           </Reveal>
         </h2>
 

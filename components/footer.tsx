@@ -4,7 +4,7 @@ export function Footer({ appUrl }: { appUrl: string }) {
   return (
     <footer
       data-theme="dark"
-      className="border-t border-[rgba(74,222,128,0.18)] bg-[#050505]"
+      className="border-t border-[rgba(255,255,255,0.08)] bg-[#041f3d]"
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-14 grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
         <div>
@@ -26,7 +26,7 @@ export function Footer({ appUrl }: { appUrl: string }) {
                 maskPosition: "left center",
               }}
             />
-            <span className="rounded-full border border-[rgba(74,222,128,0.18)] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#FFFFFF]/70">
+            <span className="rounded-full border border-[rgba(255,255,255,0.25)] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#FFFFFF]/70">
               Testnet
             </span>
           </Link>
@@ -70,8 +70,8 @@ export function Footer({ appUrl }: { appUrl: string }) {
         />
       </div>
 
-      <div className="border-t border-[rgba(74,222,128,0.18)]">
-        <div className="mx-auto max-w-6xl px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#A1A1AA]">
+      <div className="border-t border-[rgba(255,255,255,0.08)]">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[rgba(255,255,255,0.65)]">
           <span>© 2026 glidepay. Testnet, no real money at risk.</span>
           <span>Built on Arc.</span>
         </div>
@@ -97,7 +97,7 @@ function FooterColumn({
               href={l.href}
               target={l.external ? "_blank" : undefined}
               rel={l.external ? "noreferrer" : undefined}
-              className="group/footer-link relative inline-flex text-sm text-[#FFFFFF]/65 transition-colors hover:text-[#4ADE80]"
+              className="group/footer-link relative inline-flex text-sm text-[#FFFFFF]/65 transition-colors hover:text-[#FFFFFF]"
             >
               <span>{l.label}</span>
               <span

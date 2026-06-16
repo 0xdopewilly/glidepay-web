@@ -67,35 +67,35 @@ export function Nav({ appUrl }: { appUrl: string }) {
     "fixed inset-x-0 top-0 z-[100] transition-colors duration-200",
     scrolled
       ? isDark
-        ? "border-b border-white/10 bg-[#050505]"
-        : "border-b border-[rgba(34,197,94,0.18)] bg-[#DCFCE7]"
+        ? "border-b border-white/10 bg-[#041f3d]"
+        : "border-b border-[rgba(4,31,61,0.08)] bg-[#FFFFFF]"
       : isDark
         ? "border-b border-transparent bg-transparent"
-        : "border-b border-transparent bg-[#DCFCE7]",
-    isDark ? "text-[#FFFFFF]" : "text-[#0A0A0A]",
+        : "border-b border-transparent bg-[#FFFFFF]",
+    isDark ? "text-[#FFFFFF]" : "text-[#041f3d]",
   ].join(" ");
 
   const linkClass = isDark
-    ? "group/link relative inline-flex items-center text-sm font-semibold text-[#FFFFFF] transition-colors hover:text-[#4ADE80] data-[active=true]:font-bold"
-    : "group/link relative inline-flex items-center text-sm font-semibold text-[#0A0A0A] transition-colors hover:text-[#22C55E] data-[active=true]:font-bold";
+    ? "group/link relative inline-flex items-center text-sm font-semibold text-[#FFFFFF] transition-colors hover:text-[rgba(255,255,255,0.7)] data-[active=true]:font-bold"
+    : "group/link relative inline-flex items-center text-sm font-semibold text-[#041f3d] transition-colors hover:text-[#1a4877] data-[active=true]:font-bold";
 
   const pillClass = isDark
     ? "rounded-full border border-[#FFFFFF]/25 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#FFFFFF]"
-    : "rounded-full border border-[#0A0A0A]/25 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#0A0A0A]";
+    : "rounded-full border border-[#041f3d]/25 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#041f3d]";
 
   const sheetClass = isDark
-    ? "border-t border-white/10 bg-[#050505] text-[#FFFFFF] md:hidden"
-    : "border-t border-[rgba(34,197,94,0.18)] bg-[#DCFCE7] text-[#0A0A0A] md:hidden";
+    ? "border-t border-white/10 bg-[#041f3d] text-[#FFFFFF] md:hidden"
+    : "border-t border-[rgba(4,31,61,0.08)] bg-[#FFFFFF] text-[#041f3d] md:hidden";
 
   const sheetLinkClass = isDark
     ? "rounded-xl px-3 py-3 text-base font-medium text-[#FFFFFF]/90"
-    : "rounded-xl px-3 py-3 text-base font-medium text-[#0A0A0A]/85";
+    : "rounded-xl px-3 py-3 text-base font-medium text-[#041f3d]/85";
 
   const ctaClass = [
     "group/cta glow-green inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold transition-all duration-300 [transition-timing-function:var(--ease-smooth)] hover:scale-[1.02]",
     isDark
-      ? "bg-[#4ADE80] text-[#0A0A0A] hover:bg-[#6EE7A2]"
-      : "bg-[#4ADE80] text-[#0A0A0A] hover:bg-[#22C55E]",
+      ? "bg-[#FFFFFF] text-[#041f3d] hover:bg-[rgba(255,255,255,0.85)]"
+      : "bg-[#041f3d] text-[#FFFFFF] hover:bg-[#1a4877]",
   ].join(" ");
 
   const isLinkActive = (href: string) => {
@@ -115,7 +115,7 @@ export function Nav({ appUrl }: { appUrl: string }) {
             className="block h-7"
             style={{
               width: 88,
-              backgroundColor: isDark ? "#FFFFFF" : "#0A0A0A",
+              backgroundColor: isDark ? "#FFFFFF" : "#041f3d",
               WebkitMaskImage: "url(/glidepay-wordmark.png)",
               maskImage: "url(/glidepay-wordmark.png)",
               WebkitMaskRepeat: "no-repeat",
