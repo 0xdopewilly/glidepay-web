@@ -4,7 +4,7 @@ export function RealMoneyStatement() {
   return (
     <section
       data-theme="dark"
-      className="flex min-h-[80vh] items-center bg-[#060B1C] px-5 py-28 sm:px-8"
+      className="flex min-h-[80vh] items-center bg-[#062448] px-5 py-28 sm:px-8"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal delay={0}>

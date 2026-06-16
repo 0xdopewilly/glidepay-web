@@ -7,7 +7,7 @@ export function Billy() {
     <section
       id="billy"
       data-theme="dark"
-      className="border-t border-[rgba(255,255,255,0.08)] bg-[#060B1C] px-5 py-28 sm:px-8 sm:py-36"
+      className="border-t border-[rgba(255,255,255,0.08)] bg-[#062448] px-5 py-28 sm:px-8 sm:py-36"
     >
       <div className="mx-auto grid max-w-6xl items-center gap-14 md:grid-cols-2">
         <div>
@@ -42,7 +42,7 @@ export function Billy() {
               ].map((q) => (
                 <li
                   key={q}
-                  className="rounded-full border border-[rgba(255,255,255,0.08)] bg-[#101935] px-3 py-1.5 text-xs font-medium text-[#FFFFFF]/85"
+                  className="rounded-full border border-[rgba(255,255,255,0.08)] bg-[#0A2F5C] px-3 py-1.5 text-xs font-medium text-[#FFFFFF]/85"
                 >
                   {q}
                 </li>
@@ -53,7 +53,7 @@ export function Billy() {
 
         <Reveal delay={320}>
           <div className="mx-auto w-full max-w-[340px]">
-            <div className="glow-green-soft relative overflow-hidden rounded-[2.75rem] border border-[rgba(255,255,255,0.08)] bg-[#101935] p-1.5">
+            <div className="glow-green-soft relative overflow-hidden rounded-[2.75rem] border border-[rgba(255,255,255,0.08)] bg-[#0A2F5C] p-1.5">
               <Image
                 src="/screens/billy.png"
                 alt="Billy chat showing a conversational money move: a natural-language request, a confirm card, and a payment-sent receipt."

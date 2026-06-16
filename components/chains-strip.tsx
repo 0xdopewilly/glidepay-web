@@ -13,7 +13,7 @@ export function ChainsStrip() {
   return (
     <section
       data-theme="dark"
-      className="border-y border-[rgba(255,255,255,0.08)] bg-[#060B1C] px-5 py-10 sm:px-8 sm:py-14"
+      className="border-y border-[rgba(255,255,255,0.08)] bg-[#062448] px-5 py-10 sm:px-8 sm:py-14"
     >
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
         <div>
@@ -30,7 +30,7 @@ export function ChainsStrip() {
         <div className="grid grid-cols-3 gap-3 md:grid-cols-5">
           {CHAINS.map((c, i) => (
             <Reveal key={c.name} delay={i * 70}>
-              <div className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[#101935] px-2 py-4">
+              <div className="flex flex-col items-center justify-center gap-2 rounded-2xl border border-[rgba(255,255,255,0.08)] bg-[#0A2F5C] px-2 py-4">
                 <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-full bg-white">
                   <Image
                     src={c.src}

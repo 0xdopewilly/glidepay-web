@@ -13,7 +13,7 @@ export default function Icon() {
           justifyContent: "center",
           width: "100%",
           height: "100%",
-          background: "#060B1C",
+          background: "#062448",
           borderRadius: 7,
           color: "#FFFFFF",
           fontSize: 24,

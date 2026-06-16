@@ -67,35 +67,35 @@ export function Nav({ appUrl }: { appUrl: string }) {
     "fixed inset-x-0 top-0 z-[100] transition-colors duration-200",
     scrolled
       ? isDark
-        ? "border-b border-white/10 bg-[#060B1C]"
-        : "border-b border-[rgba(31,41,55,0.08)] bg-[#FFFFFF]"
+        ? "border-b border-white/10 bg-[#062448]"
+        : "border-b border-[#E7EDF5] bg-[#F7F9FC]"
       : isDark
         ? "border-b border-transparent bg-transparent"
-        : "border-b border-transparent bg-[#FFFFFF]",
-    isDark ? "text-[#FFFFFF]" : "text-[#1F2937]",
+        : "border-b border-transparent bg-[#F7F9FC]",
+    isDark ? "text-[#FFFFFF]" : "text-[#062448]",
   ].join(" ");
 
   const linkClass = isDark
     ? "group/link relative inline-flex items-center text-sm font-semibold text-[#FFFFFF] transition-colors hover:text-[rgba(255,255,255,0.7)] data-[active=true]:font-bold"
-    : "group/link relative inline-flex items-center text-sm font-semibold text-[#1F2937] transition-colors hover:text-[#8B5CF6] data-[active=true]:font-bold";
+    : "group/link relative inline-flex items-center text-sm font-semibold text-[#062448] transition-colors hover:text-[#5B3DF5] data-[active=true]:font-bold";
 
   const pillClass = isDark
     ? "rounded-full border border-[#FFFFFF]/25 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#FFFFFF]"
-    : "rounded-full border border-[#1F2937]/25 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#1F2937]";
+    : "rounded-full border border-[#062448]/25 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#062448]";
 
   const sheetClass = isDark
-    ? "border-t border-white/10 bg-[#060B1C] text-[#FFFFFF] md:hidden"
-    : "border-t border-[rgba(31,41,55,0.08)] bg-[#FFFFFF] text-[#1F2937] md:hidden";
+    ? "border-t border-white/10 bg-[#062448] text-[#FFFFFF] md:hidden"
+    : "border-t border-[#E7EDF5] bg-[#F7F9FC] text-[#062448] md:hidden";
 
   const sheetLinkClass = isDark
     ? "rounded-xl px-3 py-3 text-base font-medium text-[#FFFFFF]/90"
-    : "rounded-xl px-3 py-3 text-base font-medium text-[#1F2937]/85";
+    : "rounded-xl px-3 py-3 text-base font-medium text-[#062448]/85";
 
   const ctaClass = [
     "group/cta glow-green inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold transition-all duration-300 [transition-timing-function:var(--ease-smooth)] hover:scale-[1.02]",
     isDark
-      ? "bg-[#A78BFA] text-[#060B1C] hover:bg-[#C4B5FD]"
-      : "bg-[#8B5CF6] text-[#FFFFFF] hover:bg-[#7C3AED]",
+      ? "bg-[#5B3DF5] text-[#FFFFFF] hover:bg-[#4A2EE0]"
+      : "bg-[#5B3DF5] text-[#FFFFFF] hover:bg-[#4A2EE0]",
   ].join(" ");
 
   const isLinkActive = (href: string) => {
@@ -115,7 +115,7 @@ export function Nav({ appUrl }: { appUrl: string }) {
             className="block h-7"
             style={{
               width: 88,
-              backgroundColor: isDark ? "#FFFFFF" : "#1F2937",
+              backgroundColor: isDark ? "#FFFFFF" : "#062448",
               WebkitMaskImage: "url(/glidepay-wordmark.png)",
               maskImage: "url(/glidepay-wordmark.png)",
               WebkitMaskRepeat: "no-repeat",

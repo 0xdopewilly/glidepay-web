@@ -35,7 +35,7 @@ export function UniversalReceive() {
   return (
     <section
       id="universal-receive"
-      className="relative overflow-hidden border-t border-[rgba(31,41,55,0.08)] px-5 sm:px-8 py-28 sm:py-36 scroll-mt-20"
+      className="relative overflow-hidden border-t border-[#E7EDF5] px-5 sm:px-8 py-28 sm:py-36 scroll-mt-20"
     >
       <DotGrid tint="light" position="left" className="top-24" />
       <DotGrid tint="light" position="right" className="top-1/2" />
@@ -43,19 +43,19 @@ export function UniversalReceive() {
       <div className="max-w-6xl mx-auto">
         <Reveal>
           <div className="flex items-center gap-2">
-            <Zap className="h-3.5 w-3.5 text-[#1F2937]" />
+            <Zap className="h-3.5 w-3.5 text-[#062448]" />
             <span className="eyebrow">UNIVERSAL RECEIVE</span>
           </div>
         </Reveal>
 
         <Reveal delay={80}>
-          <h2 className="font-bold text-[clamp(2.25rem,5vw,3.5rem)] tracking-[-0.03em] text-[#1F2937] max-w-3xl mt-5">
-            One handle. <span className="text-[#6B7280]">Any chain.</span>
+          <h2 className="font-bold text-[clamp(2.25rem,5vw,3.5rem)] tracking-[-0.03em] text-[#062448] max-w-3xl mt-5">
+            One handle. <span className="text-[#5D6B85]">Any chain.</span>
           </h2>
         </Reveal>
 
         <Reveal delay={160}>
-          <p className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-[#1F2937]/75">
+          <p className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-[#062448]/75">
             USDC sent to your glidepay @handle from Ethereum, Base, Polygon, or
             Arbitrum automatically lands in your wallet on Arc, usually inside
             60 seconds. The sender doesn&apos;t need to know what Arc is. The
@@ -68,17 +68,17 @@ export function UniversalReceive() {
             const Icon = item.icon;
             return (
               <Reveal key={item.title} delay={i * 80}>
-                <div className="rounded-3xl border border-[rgba(31,41,55,0.08)] bg-white p-6 h-full">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-2xl border border-[rgba(31,41,55,0.08)] bg-[#F8FAFC]">
+                <div className="rounded-3xl border border-[#E7EDF5] bg-white p-6 h-full">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-2xl border border-[#E7EDF5] bg-[#F7F9FC]">
                     <Icon
-                      className="h-4 w-4 text-[#1F2937]"
+                      className="h-4 w-4 text-[#062448]"
                       strokeWidth={2.25}
                     />
                   </span>
-                  <h3 className="mt-5 text-base font-bold text-[#1F2937]">
+                  <h3 className="mt-5 text-base font-bold text-[#062448]">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#6B7280]">
+                  <p className="mt-2 text-sm leading-relaxed text-[#5D6B85]">
                     {item.body}
                   </p>
                 </div>
