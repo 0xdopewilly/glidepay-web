@@ -46,7 +46,7 @@ export function Faq() {
     <section
       id="faq"
       data-theme="dark"
-      className="bg-[#041f3d] border-t border-[rgba(255,255,255,0.08)] px-5 sm:px-8 py-28 sm:py-36"
+      className="bg-[#060B1C] border-t border-[rgba(255,255,255,0.08)] px-5 sm:px-8 py-28 sm:py-36"
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_2fr] gap-12">
         <div>

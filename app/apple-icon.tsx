@@ -13,7 +13,7 @@ export default function AppleIcon() {
           justifyContent: "center",
           width: "100%",
           height: "100%",
-          background: "#041f3d",
+          background: "#060B1C",
           borderRadius: 40,
           color: "#FFFFFF",
           fontSize: 130,

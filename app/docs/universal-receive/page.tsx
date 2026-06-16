@@ -34,7 +34,7 @@ export default function Page() {
       </p>
 
       <h2>What actually happens under the hood</h2>
-      <ol className="mt-4 list-decimal space-y-1.5 pl-5 text-[#041f3d]/72">
+      <ol className="mt-4 list-decimal space-y-1.5 pl-5 text-[#1F2937]/72">
         <li>Inbound USDC at the user&apos;s receive address triggers a Circle webhook.</li>
         <li>Our handler claims the event atomically (dedup against retries).</li>
         <li>If the user&apos;s source-chain wallet is low on native gas, our

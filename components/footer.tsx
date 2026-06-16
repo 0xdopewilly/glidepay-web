@@ -4,7 +4,7 @@ export function Footer({ appUrl }: { appUrl: string }) {
   return (
     <footer
       data-theme="dark"
-      className="border-t border-[rgba(255,255,255,0.08)] bg-[#041f3d]"
+      className="border-t border-[rgba(255,255,255,0.08)] bg-[#060B1C]"
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-14 grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
         <div>

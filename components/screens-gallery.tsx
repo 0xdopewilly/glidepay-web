@@ -32,7 +32,7 @@ export function ScreensGallery() {
   return (
     <section
       data-theme="dark"
-      className="border-t border-[rgba(255,255,255,0.08)] bg-[#041f3d] px-5 py-28 sm:px-8 sm:py-36"
+      className="border-t border-[rgba(255,255,255,0.08)] bg-[#060B1C] px-5 py-28 sm:px-8 sm:py-36"
     >
       <div className="mx-auto max-w-6xl">
         <Reveal>
@@ -54,7 +54,7 @@ export function ScreensGallery() {
           {SCREENS.map((s, i) => (
             <Reveal key={s.src} delay={i * 90}>
               <figure className="flex h-full flex-col">
-                <div className="overflow-hidden rounded-[2rem] border border-[rgba(255,255,255,0.08)] bg-[#0a2a4d] p-1.5">
+                <div className="overflow-hidden rounded-[2rem] border border-[rgba(255,255,255,0.08)] bg-[#101935] p-1.5">
                   <Image
                     src={s.src}
                     alt={`${s.title} screen in the glidepay testnet app.`}

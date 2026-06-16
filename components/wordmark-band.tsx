@@ -7,7 +7,7 @@ export function WordmarkBand() {
     <section
       aria-hidden
       data-theme="dark"
-      className="overflow-hidden border-t border-[rgba(255,255,255,0.08)] bg-[#041f3d] pt-12 pb-8"
+      className="overflow-hidden border-t border-[rgba(255,255,255,0.08)] bg-[#060B1C] pt-12 pb-8"
     >
       <div
         aria-hidden

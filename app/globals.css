@@ -1,48 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-  /* Glidepay palette: deep-navy primary on a pure-white light surface,
-     deep-navy page bg in dark mode. Tokens live here. Components
+  /* Glidepay palette: violet primary on a pure-white light surface,
+     deep navy-black page bg in dark mode. Tokens live here. Components
      reference via var(--brand-*) etc. */
 
-  /* Brand primary (deep navy) */
-  --brand-primary: #041f3d;
-  --brand-primary-hover: #1a4877;
-  --brand-primary-deep: #03152a;
+  /* Brand primary (violet) */
+  --brand-primary: #8B5CF6;
+  --brand-primary-hover: #7C3AED;
+  --brand-primary-deep: #6D28D9;
 
   /* Surfaces — light defaults. Page bg is pure white; soft off-white
      for tonal containers; white for elevated cards / inputs. */
   --background: #FFFFFF;
-  --surface: #F5F7FB;
+  --surface: #F8FAFC;
   --surface-elevated: #FFFFFF;
-  --surface-dark-card: #041f3d;
-  --border: rgba(4, 31, 61, 0.08);
+  --surface-dark-card: #060B1C;
+  --border: #E5E7EB;
 
   /* Text */
-  --text-primary: #041f3d;
-  --text-secondary: rgba(4, 31, 61, 0.55);
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+  --text-tertiary: #9CA3AF;
   --text-on-dark: #FFFFFF;
   --text-on-dark-muted: rgba(255, 255, 255, 0.65);
 
   /* Status (kept as universal financial semantic colors) */
-  --success: #16A34A;
-  --error: #DC2626;
-  --accent: #1a4877;
+  --success: #10B981;
+  --error: #EF4444;
+  --accent: #8B5CF6;
 
-  /* Brand glow halo (light mode) — navy-tinted */
-  --brand-glow: rgba(4, 31, 61, 0.35);
+  /* Brand glow halo (light mode) — violet-tinted */
+  --brand-glow: rgba(139, 92, 246, 0.35);
 
   /* Legacy color names mapped to the new palette so any straggling
-     references keep working. Cards on the white bg are NAVY now. */
-  --color-brand-bg: #041f3d;
-  --color-brand-bg-dark: #03070d;
+     references keep working. Dark sections use deep navy-black bg. */
+  --color-brand-bg: #060B1C;
+  --color-brand-bg-dark: #060B1C;
   --color-brand-bg-light: var(--surface);
   --color-brand-white: #ffffff;
   --color-brand-accent: var(--brand-primary);
 
   --color-text-on-light: var(--text-primary);
-  --color-text-on-light-muted: rgba(4, 31, 61, 0.55);
-  --color-text-on-light-soft: rgba(4, 31, 61, 0.75);
+  --color-text-on-light-muted: #6B7280;
+  --color-text-on-light-soft: #4B5563;
   --color-text-on-dark: #FFFFFF;
   --color-text-on-dark-muted: rgba(255, 255, 255, 0.65);
   --color-text-on-dark-soft: rgba(255, 255, 255, 0.78);
@@ -58,43 +59,44 @@
   --btn-primary-bg-hover: var(--brand-primary-hover);
   --btn-primary-fg: #FFFFFF;
 
-  --btn-ghost-border: rgba(4, 31, 61, 0.25);
-  --btn-ghost-border-hover: rgba(4, 31, 61, 0.45);
-  --btn-ghost-bg-hover: rgba(4, 31, 61, 0.04);
+  --btn-ghost-border: rgba(31, 41, 55, 0.25);
+  --btn-ghost-border-hover: rgba(31, 41, 55, 0.45);
+  --btn-ghost-bg-hover: rgba(31, 41, 55, 0.04);
   --btn-ghost-fg: var(--text-primary);
 
   --eyebrow-fg: var(--text-secondary);
 
-  --border-hairline: var(--border);
+  --border-hairline: rgba(31, 41, 55, 0.06);
 }
 
 /* Re-bind variables under the dark subtree. Tailwind v4 leaves variable
    bindings alone, unlike attribute-selector rules. */
 [data-theme="dark"] {
   /* Dark-mode palette */
-  --brand-primary: #FFFFFF;
-  --brand-primary-hover: rgba(255, 255, 255, 0.85);
-  --brand-primary-deep: #FFFFFF;
+  --brand-primary: #A78BFA;
+  --brand-primary-hover: #C4B5FD;
+  --brand-primary-deep: #8B5CF6;
 
-  --background: #041f3d;
-  --surface: #0a2a4d;
-  --surface-elevated: #103861;
-  --surface-dark-card: #0a2a4d;
+  --background: #060B1C;
+  --surface: #101935;
+  --surface-elevated: #1A2347;
+  --surface-dark-card: #101935;
   --border: rgba(255, 255, 255, 0.08);
 
   --text-primary: #FFFFFF;
-  --text-secondary: rgba(255, 255, 255, 0.65);
+  --text-secondary: #94A3B8;
+  --text-tertiary: #64748B;
 
-  --success: #4ADE80;
+  --success: #34D399;
   --error: #F87171;
-  --accent: #FFFFFF;
+  --accent: #A78BFA;
 
-  --brand-glow: rgba(255, 255, 255, 0.18);
+  --brand-glow: rgba(167, 139, 250, 0.35);
 
-  /* CTA in dark sections: white fill, navy text for contrast. */
+  /* CTA in dark sections: violet fill, navy text for contrast. */
   --btn-primary-bg: var(--brand-primary);
   --btn-primary-bg-hover: var(--brand-primary-hover);
-  --btn-primary-fg: #041f3d;
+  --btn-primary-fg: #060B1C;
 
   --btn-ghost-border: rgba(255, 255, 255, 0.25);
   --btn-ghost-border-hover: rgba(255, 255, 255, 0.45);
@@ -178,19 +180,19 @@ html.lenis body {
   color: var(--eyebrow-fg);
 }
 
-/* Navy halo. Apply sparingly to primary CTAs + the focal-point card on a
+/* Violet halo. Apply sparingly to primary CTAs + the focal-point card on a
    section. The hairline ring + outer + soft inner blur give the brand feel. */
 .glow-green {
   box-shadow:
-    0 0 0 1px rgba(4, 31, 61, 0.18),
-    0 20px 60px -20px rgba(4, 31, 61, 0.35),
-    0 0 80px -20px rgba(4, 31, 61, 0.25);
+    0 0 0 1px rgba(139, 92, 246, 0.18),
+    0 20px 60px -20px rgba(139, 92, 246, 0.35),
+    0 0 80px -20px rgba(139, 92, 246, 0.25);
 }
 .glow-green-soft {
   box-shadow:
-    0 0 0 1px rgba(4, 31, 61, 0.12),
-    0 12px 36px -16px rgba(4, 31, 61, 0.2),
-    0 0 50px -20px rgba(4, 31, 61, 0.15);
+    0 0 0 1px rgba(139, 92, 246, 0.12),
+    0 12px 36px -16px rgba(139, 92, 246, 0.2),
+    0 0 50px -20px rgba(139, 92, 246, 0.15);
 }
 
 /* Primary pill button. */
@@ -206,9 +208,9 @@ html.lenis body {
   font-weight: 700;
   font-size: 14px;
   box-shadow:
-    0 0 0 1px rgba(4, 31, 61, 0.18),
-    0 20px 60px -20px rgba(4, 31, 61, 0.35),
-    0 0 80px -20px rgba(4, 31, 61, 0.25);
+    0 0 0 1px rgba(139, 92, 246, 0.18),
+    0 20px 60px -20px rgba(139, 92, 246, 0.35),
+    0 0 80px -20px rgba(139, 92, 246, 0.25);
   transition:
     transform 0.22s var(--ease-smooth),
     background-color 0.18s var(--ease-smooth),
@@ -217,9 +219,9 @@ html.lenis body {
 .btn-primary:hover {
   background: var(--btn-primary-bg-hover);
   box-shadow:
-    0 0 0 1px rgba(4, 31, 61, 0.25),
-    0 24px 70px -20px rgba(4, 31, 61, 0.45),
-    0 0 90px -20px rgba(4, 31, 61, 0.3);
+    0 0 0 1px rgba(139, 92, 246, 0.25),
+    0 24px 70px -20px rgba(139, 92, 246, 0.45),
+    0 0 90px -20px rgba(139, 92, 246, 0.3);
 }
 .btn-primary:active {
   transform: scale(0.96);
@@ -270,21 +272,21 @@ html.lenis body {
   color: var(--text-primary);
 }
 .prose-doc p {
-  color: rgba(4, 31, 61, 0.75);
+  color: #4B5563;
 }
 .prose-doc a {
   color: var(--brand-primary);
-  border-bottom: 1px solid rgba(4, 31, 61, 0.3);
+  border-bottom: 1px solid rgba(139, 92, 246, 0.3);
   transition: border-color 180ms var(--ease-smooth);
 }
 .prose-doc a:hover {
-  border-bottom-color: rgba(4, 31, 61, 0.7);
+  border-bottom-color: rgba(139, 92, 246, 0.7);
 }
 .prose-doc code {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-size: 0.875em;
-  background: rgba(4, 31, 61, 0.07);
-  border: 1px solid rgba(4, 31, 61, 0.1);
+  background: rgba(31, 41, 55, 0.07);
+  border: 1px solid rgba(31, 41, 55, 0.1);
   border-radius: 6px;
   padding: 0.1em 0.4em;
   color: var(--text-primary);
@@ -295,7 +297,7 @@ html.lenis body {
   list-style: disc;
 }
 .prose-doc ul li {
-  color: rgba(4, 31, 61, 0.75);
+  color: #4B5563;
   margin-top: 0.4rem;
 }
 .prose-doc strong {
@@ -303,9 +305,9 @@ html.lenis body {
   font-weight: 600;
 }
 .prose-doc blockquote {
-  border-left: 2px solid rgba(4, 31, 61, 0.2);
+  border-left: 2px solid rgba(31, 41, 55, 0.2);
   padding-left: 1rem;
-  color: rgba(4, 31, 61, 0.6);
+  color: #6B7280;
   font-style: italic;
 }
 

@@ -21,7 +21,7 @@ export function ProofBand({ appUrl }: { appUrl: string }) {
   return (
     <section
       data-theme="dark"
-      className="flex min-h-[60vh] items-center border-t border-[rgba(255,255,255,0.08)] bg-[#041f3d] px-5 py-24 sm:px-8"
+      className="flex min-h-[60vh] items-center border-t border-[rgba(255,255,255,0.08)] bg-[#060B1C] px-5 py-24 sm:px-8"
     >
       <div className="mx-auto w-full max-w-6xl">
         <h2
