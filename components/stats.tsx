@@ -3,7 +3,7 @@ import { Reveal } from "@/components/reveal";
 const STATS = [
   { value: "5", suffix: "+", label: "Chains supported" },
   { value: "60", suffix: "s", label: "Testnet median receive" },
-  { value: "$0", suffix: "", label: "User pays in gas" },
+  { value: "0", suffix: "", label: "Gas tokens to buy" },
   { value: "1", suffix: "", label: "Handle for all" },
 ];
 

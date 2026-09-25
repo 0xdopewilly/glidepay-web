@@ -17,7 +17,7 @@ export function GetStarted({ appUrl }: { appUrl: string }) {
     {
       label: "FOR SENDERS",
       title: "Open the app",
-      body: "Email or Google sign-in. Grab @yourhandle. Receive USDC from any major chain and glidepay bridges to Arc automatically.",
+      body: "Email or Google sign-in. Grab @yourhandle. Receive USDC on Arc, or from Base, Arbitrum and Polygon, and glidepay bridges it to Arc automatically.",
       href: appUrl,
       external: true,
       icon: ArrowUpRight,

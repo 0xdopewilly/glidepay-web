@@ -22,7 +22,7 @@ export function ChainsStrip() {
           </Reveal>
           <Reveal delay={80}>
             <h2 className="mt-3 text-2xl font-bold tracking-[-0.02em] text-[#FFFFFF] sm:text-3xl">
-              Send from <span className="text-[rgba(255,255,255,0.65)]">any chain.</span>
+              Get paid <span className="text-[rgba(255,255,255,0.65)]">across chains.</span>
             </h2>
           </Reveal>
         </div>

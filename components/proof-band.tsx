@@ -33,7 +33,7 @@ export function ProofBand({ appUrl }: { appUrl: string }) {
           }}
         >
           <Reveal as="span" className="block">
-            $0 in gas.
+            No gas token.
           </Reveal>
           <Reveal as="span" delay={80} className="block">
             Real USDC.

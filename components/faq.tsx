@@ -25,7 +25,7 @@ const ITEMS: { question: string; answer: string }[] = [
   {
     question: "Is my money safe?",
     answer:
-      "Wallets are non-custodial smart accounts on Arc, signed via Circle's developer-controlled key infrastructure. You authenticate; we never touch your funds. Funds move only when you confirm.",
+      "Your account is a smart account on Arc, secured by Circle's wallet infrastructure. Circle holds the keys, so there's no seed phrase to lose or leak. Money only moves when you confirm it with your PIN, or on a schedule you set up yourself.",
   },
   {
     question: "What is Universal Receive?",

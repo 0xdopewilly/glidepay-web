@@ -19,7 +19,7 @@ const SCREENS = [
   {
     src: "/screens/trade.png",
     title: "Trade",
-    caption: "Swap USDC ↔ EURC ↔ cirBTC. Bridge USDC to any chain.",
+    caption: "Swap USDC ↔ EURC ↔ cirBTC. Bridge USDC to Base, Ethereum, Polygon, and Arbitrum.",
     width: 926,
     height: 1600,
   },
