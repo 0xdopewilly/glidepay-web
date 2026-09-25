@@ -11,8 +11,9 @@ export default function Page() {
       <p>
         Universal Receive is glidepay&apos;s flagship feature: one handle, any
         chain. USDC sent to your glidepay address from Ethereum, Base, Polygon,
-        or Arbitrum automatically lands in your wallet on Arc, usually within
-        60 seconds.
+        or Arbitrum automatically lands in your wallet on Arc. On mainnet it&apos;s
+        rolling out chain by chain: the app only shows a chain&apos;s receive
+        address once that chain is enabled.
       </p>
 
       <h2>For the sender</h2>
@@ -38,7 +39,7 @@ export default function Page() {
         <li>Inbound USDC at the user&apos;s receive address triggers a Circle webhook.</li>
         <li>Our handler claims the event atomically (dedup against retries).</li>
         <li>If the user&apos;s source-chain wallet is low on native gas, our
-          gas service wallet tops it up automatically (~$0.0005).</li>
+          gas service wallet tops it up automatically.</li>
         <li>We call CCTP V2 Fast Transfer to burn USDC on the source chain
           and mint it on Arc.</li>
         <li>One push notification fires when the mint lands.</li>
@@ -46,10 +47,10 @@ export default function Page() {
 
       <h2>Supported chains</h2>
       <ul>
-        <li><strong>Base Sepolia</strong>. Fastest, lowest gas.</li>
-        <li><strong>Ethereum Sepolia</strong>. Most expensive (L1), still ~$0.01.</li>
-        <li><strong>Polygon Amoy</strong>. Native MATIC for gas.</li>
-        <li><strong>Arbitrum Sepolia</strong>. L2, fast and cheap.</li>
+        <li><strong>Base</strong>. L2, low gas.</li>
+        <li><strong>Ethereum</strong>. L1, the most expensive to sweep from, so its minimum is higher.</li>
+        <li><strong>Polygon</strong>. Low gas.</li>
+        <li><strong>Arbitrum</strong>. L2, fast and cheap.</li>
       </ul>
       <p>
         Solana support is on the roadmap. It uses Circle&apos;s Solana CCTP path.
@@ -57,10 +58,9 @@ export default function Page() {
 
       <h2>What about gas?</h2>
       <p>
-        End users never fund gas. Glidepay operates a small ETH/MATIC service
-        wallet on each source chain that refills user wallets just before
-        each sweep. On mainnet this will be a metered service; on testnet
-        it&apos;s free.
+        End users never fund gas. Glidepay operates a small service wallet
+        on each source chain that refills user wallets with native gas just
+        before each sweep. Glidepay doesn&apos;t currently charge for this.
       </p>
 
       <h2>Why this works only on Arc</h2>
@@ -73,9 +73,8 @@ export default function Page() {
 
       <h2>Limits</h2>
       <ul>
-        <li>Median sweep time on testnet: ~60 seconds end-to-end</li>
-        <li>Worst case (cold start + Ethereum mainnet block time): ~3 minutes</li>
-        <li>No upper limit on send amount (testnet)</li>
+        <li>Minimum sweep: $10 from Ethereum, $1 from Base, Polygon, and Arbitrum; smaller deposits wait on the Receive screen until they add up</li>
+        <li>Chains go live one at a time on mainnet; only send on a chain your Receive screen shows</li>
         <li>Sender pays their source-chain network fee normally; glidepay pays the destination mint fee</li>
       </ul>
 

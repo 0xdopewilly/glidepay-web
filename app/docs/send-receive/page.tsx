@@ -37,8 +37,9 @@ export default function Page() {
       <p>
         Open the in-app <strong>Receive</strong> screen. By default it shows
         your Arc address with a QR. Tap the chain pills to switch to your
-        per-chain receive address (Base, Ethereum, Polygon, Arbitrum). Any
-        USDC sent to one of those addresses auto-sweeps to Arc. See{" "}
+        per-chain receive address (Base, Ethereum, Polygon, Arbitrum). A
+        chain&apos;s pill only appears once that chain is enabled. Any USDC
+        sent to one of those addresses auto-sweeps to Arc. See{" "}
         <Link href="/docs/universal-receive">Universal Receive</Link>.
       </p>
 

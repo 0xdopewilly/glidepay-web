@@ -46,22 +46,19 @@ export default function Page() {
         <Link href={`${APP_URL}/receive`} target="_blank" rel="noreferrer">
           Receive
         </Link>{" "}
-        page, copy your address, and grab some testnet USDC from the{" "}
-        <a
-          href="https://faucet.circle.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Circle faucet
-        </a>
-        . Pick Arc Testnet. The money lands in ~10 seconds.
+        page and copy your Arc address. Send USDC or EURC to it on Arc from
+        another wallet, or from an exchange that supports Arc. Or get paid by
+        another glidepay user: share your @paytag, a request link, or your QR
+        code. This is real money, so make sure it&apos;s sent on Arc.
       </p>
 
       <h2>5. Try Universal Receive</h2>
       <p>
         On the Receive page, tap Base / Ethereum / Polygon / Arbitrum. Each gives
-        you a unique address on that chain. Send USDC from any wallet and it
-        auto-bridges to Arc in ~60 seconds. See{" "}
+        you a unique address on that chain. Send USDC to it from any wallet on
+        that chain and it auto-bridges to Arc. Chains switch on one at a time,
+        so the app only shows a chain once it&apos;s enabled. Minimum sweep:
+        $10 from Ethereum, $1 from the others. See{" "}
         <Link href="/docs/universal-receive">Universal Receive</Link> for the
         full story.
       </p>

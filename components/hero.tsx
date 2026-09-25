@@ -42,7 +42,7 @@ export function Hero({ appUrl }: { appUrl: string }) {
         <div className="text-center md:text-left">
           <Reveal>
             <span className="eyebrow text-[11px]">
-              NOW LIVE ON ARC TESTNET
+              NOW LIVE ON ARC MAINNET
             </span>
           </Reveal>
 

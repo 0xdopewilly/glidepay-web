@@ -51,8 +51,8 @@ export default function DocsIndex() {
           keys, what we store, what stays on chain.
         </li>
         <li>
-          <Link href="/docs/faq">FAQ</Link>. Testnet, mainnet, real money,
-          accounts, deletion.
+          <Link href="/docs/faq">FAQ</Link>. Mainnet, real money, accounts,
+          deletion.
         </li>
       </ul>
     </DocsShell>

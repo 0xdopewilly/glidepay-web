@@ -32,7 +32,7 @@ export function RealMoneyStatement() {
         <Reveal delay={200}>
           <p className="mx-auto mt-8 max-w-2xl text-center text-base leading-relaxed text-[#FFFFFF]/70 sm:text-lg">
             Stablecoins on Arc, sent like a text. Sub-second finality. USDC as
-            gas. 60-second cross-chain receive. The sender doesn&apos;t need to
+            gas. Cross-chain receive via CCTP V2. The sender doesn&apos;t need to
             know what Arc is.
           </p>
         </Reveal>

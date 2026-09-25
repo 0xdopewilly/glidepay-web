@@ -21,8 +21,8 @@ const ITEMS: Item[] = [
   },
   {
     icon: Gauge,
-    title: "60-second median sweep",
-    body: "Our service wallet covers any source-chain gas so the funds drain instantly. Median end-to-end ~60 seconds.",
+    title: "Source-chain gas covered",
+    body: "Our service wallet covers source-chain gas, so you never need ETH or any other gas token. Minimum sweep: $10 from Ethereum, $1 from the others.",
   },
   {
     icon: AtSign,
@@ -57,9 +57,10 @@ export function UniversalReceive() {
         <Reveal delay={160}>
           <p className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-[#062448]/75">
             USDC sent to your glidepay @handle from Ethereum, Base, Polygon, or
-            Arbitrum automatically lands in your wallet on Arc, usually inside
-            60 seconds. The sender doesn&apos;t need to know what Arc is. The
-            receiver doesn&apos;t need to know a bridge happened.
+            Arbitrum automatically lands in your wallet on Arc. The sender
+            doesn&apos;t need to know what Arc is. The receiver doesn&apos;t
+            need to know a bridge happened. Chains switch on one at a time,
+            and the app shows a chain&apos;s address once it&apos;s live.
           </p>
         </Reveal>
 

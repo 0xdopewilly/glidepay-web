@@ -18,11 +18,11 @@ export default function PrivacyPage() {
           Privacy Policy
         </h1>
         <p className="mt-4 text-sm text-[#5D6B85]">
-          Last updated: 2026-06-01.
+          Last updated: 2026-09-25.
         </p>
         <div className="prose-doc mt-10 space-y-6 text-[15px] leading-[1.7] text-[#062448]/75">
           <p>
-            glidepay is a mobile-first stablecoin wallet built on Arc testnet.
+            glidepay is a mobile-first stablecoin wallet built on Arc.
             This page explains what data we collect, why we collect it, and what
             we do not do with it. We&apos;ve tried to keep it human.
           </p>
@@ -168,11 +168,11 @@ export default function PrivacyPage() {
             </li>
           </ul>
 
-          <h2>Testnet</h2>
+          <h2>Mainnet</h2>
           <p>
-            glidepay currently operates on Arc testnet. Test tokens have no
-            real monetary value. When we ship on mainnet we&apos;ll update
-            this policy and notify you in-app.
+            glidepay operates on Arc mainnet. Balances in the app are real
+            USDC, EURC, and cirBTC, and payments on Arc are final and
+            can&apos;t be reversed.
           </p>
 
           <h2>Contact</h2>

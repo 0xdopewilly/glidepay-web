@@ -8,12 +8,12 @@ const DETAILS = [
     body: "Arc settles in USDC. No second token to acquire, hold, or budget for.",
   },
   {
-    label: "60S MEDIAN",
-    body: "CCTP V2 sweeps from Base, Ethereum, Polygon, Arbitrum to your @handle on Arc.",
+    label: "UNIVERSAL RECEIVE",
+    body: "CCTP V2 sweeps USDC from Base, Ethereum, Polygon, and Arbitrum to your @handle on Arc. Rolling out chain by chain.",
   },
   {
-    label: "TESTNET, FREE",
-    body: "Sign in, grab a handle, send your first $5. No real funds at risk.",
+    label: "ARC MAINNET",
+    body: "Sign in, grab a handle, send your first $5. Real funds. Payments are final.",
   },
 ];
 
@@ -36,7 +36,7 @@ export function ProofBand({ appUrl }: { appUrl: string }) {
             $0 in gas.
           </Reveal>
           <Reveal as="span" delay={80} className="block">
-            60-second receives.
+            Real USDC.
           </Reveal>
           <Reveal as="span" delay={160} className="block">
             Live <span className="text-[rgba(255,255,255,0.65)]">now.</span>

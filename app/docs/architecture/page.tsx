@@ -90,8 +90,8 @@ export default function Page() {
         users who lose access permanently. Server-side custody (via Circle)
         means: email-and-Google sign-in, accounts you can recover, a UX that
         looks like Venmo. The trade-off is trust. You trust glidepay and
-        Circle to operate your wallet honestly. On testnet that&apos;s no
-        meaningful trust burden. See{" "}
+        Circle to operate your wallet honestly, and on mainnet that trust
+        covers real money. See{" "}
         <Link href="/docs/security">Security model</Link> for the longer
         version.
       </p>

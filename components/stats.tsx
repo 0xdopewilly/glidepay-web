@@ -2,7 +2,7 @@ import { Reveal } from "@/components/reveal";
 
 const STATS = [
   { value: "5", suffix: "+", label: "Chains supported" },
-  { value: "60", suffix: "s", label: "Median receive" },
+  { value: "60", suffix: "s", label: "Testnet median receive" },
   { value: "$0", suffix: "", label: "User pays in gas" },
   { value: "1", suffix: "", label: "Handle for all" },
 ];
@@ -16,13 +16,13 @@ export function Stats() {
         </Reveal>
         <Reveal delay={80}>
           <h2 className="font-bold text-[clamp(2.25rem,5vw,3.5rem)] tracking-[-0.03em] text-[#062448] max-w-3xl mt-5">
-            Public testnet.{" "}
+            Arc mainnet.{" "}
             <span className="text-[rgba(6,36,72,0.55)]">Running today.</span>
           </h2>
         </Reveal>
         <Reveal delay={160}>
           <p className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-[#062448]/75">
-            Glidepay runs on Arc testnet today. Every send, every Universal Receive sweep, every Billy chat. Already shipping.
+            Glidepay runs on Arc mainnet today, with real USDC, EURC, and cirBTC. Every send, every swap, every Billy chat. Already shipping.
           </p>
         </Reveal>
 

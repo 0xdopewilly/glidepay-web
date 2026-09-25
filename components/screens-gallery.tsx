@@ -45,8 +45,8 @@ export function ScreensGallery() {
         </Reveal>
         <Reveal delay={160}>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#FFFFFF]/70 sm:text-lg">
-            No mocks. These are screenshots straight from the live testnet
-            app. Same surfaces you&apos;ll see thirty seconds after sign-in.
+            No mocks. These are screenshots straight from the app. Same
+            surfaces you&apos;ll see thirty seconds after sign-in.
           </p>
         </Reveal>
 
@@ -57,7 +57,7 @@ export function ScreensGallery() {
                 <div className="overflow-hidden rounded-[2rem] border border-[rgba(255,255,255,0.08)] bg-[#0A2F5C] p-1.5">
                   <Image
                     src={s.src}
-                    alt={`${s.title} screen in the glidepay testnet app.`}
+                    alt={`${s.title} screen in the glidepay app.`}
                     width={s.width}
                     height={s.height}
                     sizes="(max-width: 768px) 92vw, 360px"

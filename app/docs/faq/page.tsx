@@ -9,8 +9,9 @@ export default function Page() {
     <DocsShell title="FAQ">
       <h2>Is this real money?</h2>
       <p>
-        No. Glidepay is currently on Arc <em>Testnet</em>. Tokens here have no
-        monetary value. Mainnet is on the roadmap.
+        Yes. Glidepay runs on Arc <em>mainnet</em>. Balances are real USDC,
+        EURC, and cirBTC. Payments on Arc are final and can&apos;t be
+        reversed, so check who you&apos;re paying before you tap Pay.
       </p>
 
       <h2>Do I need a wallet extension?</h2>
@@ -45,7 +46,7 @@ export default function Page() {
 
       <h2>Why USDC, EURC, and cirBTC?</h2>
       <p>
-        These are the three stablecoins live on Arc testnet. USDC and EURC are
+        These are the three tokens glidepay supports on Arc. USDC and EURC are
         Circle&apos;s USD and EUR-pegged stablecoins. cirBTC is Circle&apos;s
         BTC-backed token. As Circle expands Arc&apos;s token set, we&apos;ll
         add support.
@@ -53,10 +54,8 @@ export default function Page() {
 
       <h2>Is glidepay regulated?</h2>
       <p>
-        No, and it doesn&apos;t need to be on testnet. No real money moves.
-        On mainnet, this depends on jurisdiction and the eventual product
-        scope. We&apos;ll surface the relevant licensing as we work through
-        it.
+        It depends on jurisdiction and the eventual product scope.
+        We&apos;ll surface the relevant licensing as we work through it.
       </p>
 
       <h2>Why &quot;Billy&quot;?</h2>

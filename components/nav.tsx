@@ -126,7 +126,7 @@ export function Nav({ appUrl }: { appUrl: string }) {
               maskPosition: "left center",
             }}
           />
-          <span className={pillClass}>Testnet</span>
+          <span className={pillClass}>Mainnet</span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

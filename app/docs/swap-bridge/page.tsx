@@ -43,14 +43,18 @@ export default function Page() {
       <ul>
         <li>
           <strong>Swap</strong>: Circle&apos;s App Kit takes a small spread
-          (slippage cap default 3%). On Arc testnet, no real value moves.
+          (slippage cap default 3%). This is real value on Arc mainnet, so
+          check the quote before you confirm.
         </li>
         <li>
           <strong>Bridge</strong>: Arc-side gas (paid in USDC, very small),
-          plus CCTP V2 Fast Transfer fee (also tiny, often free at low
-          amounts).
+          plus the CCTP V2 Fast Transfer fee.
         </li>
       </ul>
+      <p>
+        Glidepay doesn&apos;t currently add a fee of its own to swaps or
+        bridges.
+      </p>
 
       <p>
         See also: <Link href="/docs/universal-receive">Universal Receive</Link>

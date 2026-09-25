@@ -19,7 +19,7 @@ export default function SupportPage() {
           Support
         </h1>
         <p className="mt-4 text-sm text-[#5D6B85]">
-          Last updated: 2026-06-01.
+          Last updated: 2026-09-25.
         </p>
         <div className="prose-doc mt-10 space-y-6 text-[15px] leading-[1.7] text-[#062448]/75">
           <p>
@@ -54,12 +54,11 @@ export default function SupportPage() {
 
           <h2>Common questions</h2>
 
-          <h3>What is testnet?</h3>
+          <h3>Is this real money?</h3>
           <p>
-            glidepay runs on Arc testnet, a sandbox version of the blockchain
-            used for development. Test tokens (USDC, EURC, cirBTC) on testnet
-            have no real monetary value. You can play with all features
-            risk-free.
+            Yes. glidepay runs on Arc mainnet, and your balances are real USDC,
+            EURC, and cirBTC. Payments on Arc are final and can&apos;t be
+            reversed, so double-check the @paytag or address before you pay.
           </p>
 
           <h3>I sent money and the recipient did not receive it</h3>
@@ -90,7 +89,7 @@ export default function SupportPage() {
           <h3>How can I follow updates?</h3>
           <p>
             We post product updates and announcements in-app. We do not have a
-            social or newsletter yet, coming when we hit mainnet.
+            social or newsletter yet.
           </p>
         </div>
       </article>

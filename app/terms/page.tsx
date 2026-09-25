@@ -16,7 +16,7 @@ export default function TermsPage() {
         <h1 className="font-bold text-[clamp(2rem,4vw,3.25rem)] tracking-[-0.03em] leading-[1.05] text-[#062448]">
           Terms of Service
         </h1>
-        <p className="mt-4 text-sm text-[#5D6B85]">Last updated: 2026-06-01.</p>
+        <p className="mt-4 text-sm text-[#5D6B85]">Last updated: 2026-09-25.</p>
         <div className="prose-doc mt-10 space-y-6 text-[15px] leading-[1.7] text-[#062448]/75">
           <p>
             Welcome to glidepay. By using the app you agree to these terms. Read
@@ -32,13 +32,13 @@ export default function TermsPage() {
             transmitter. We do not take custody of your funds. Circle does.
           </p>
 
-          <h2>Testnet status</h2>
+          <h2>Mainnet status</h2>
           <p>
-            glidepay currently operates on <strong>Arc testnet</strong>. Tokens
-            on testnet have <strong>no monetary value</strong>. Do not treat
-            anything you see in the app as real money. We make no guarantees
-            about availability, performance, or data retention during the
-            testnet phase.
+            glidepay operates on <strong>Arc mainnet</strong>. Balances in the
+            app are <strong>real funds</strong> (USDC, EURC, and cirBTC).
+            Payments on Arc are final and cannot be reversed, so check who
+            you are paying before you confirm. We make no guarantees about
+            availability, performance, or data retention.
           </p>
 
           <h2>Your responsibilities</h2>
@@ -67,7 +67,7 @@ export default function TermsPage() {
             </li>
             <li>
               We do not guarantee that any feature will continue to exist.
-              Testnet features may change or disappear.
+              Features may change or disappear.
             </li>
             <li>
               We will give reasonable notice before deleting accounts or data
@@ -89,8 +89,7 @@ export default function TermsPage() {
             Cryptocurrencies, stablecoins, and on-chain transactions involve
             risk. Smart contracts can have bugs. Blockchains can have outages.
             Stablecoins can de-peg. You accept these risks when using glidepay.
-            On mainnet (when we get there) this will matter much more than on
-            testnet.
+            glidepay runs on Arc mainnet, so these risks apply to real funds.
           </p>
 
           <h2>No warranty, limited liability</h2>
@@ -99,9 +98,8 @@ export default function TermsPage() {
             kind, express or implied. To the maximum extent permitted by law,
             our total liability for any claim arising from your use of glidepay
             is limited to USD $100 or the amount you have paid us in the last
-            12 months, whichever is greater. (You have not paid us anything; we
-            do not charge for the testnet app. The cap exists for legal
-            completeness.)
+            12 months, whichever is greater. (glidepay does not currently
+            charge a fee of its own. The cap exists for legal completeness.)
           </p>
 
           <h2>Changes</h2>

@@ -27,7 +27,7 @@ export function Footer({ appUrl }: { appUrl: string }) {
               }}
             />
             <span className="rounded-full border border-[rgba(255,255,255,0.25)] px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-[#FFFFFF]/70">
-              Testnet
+              Mainnet
             </span>
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#FFFFFF]/65">
@@ -72,7 +72,7 @@ export function Footer({ appUrl }: { appUrl: string }) {
 
       <div className="border-t border-[rgba(255,255,255,0.08)]">
         <div className="mx-auto max-w-6xl px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[rgba(255,255,255,0.65)]">
-          <span>© 2026 glidepay. Testnet, no real money at risk.</span>
+          <span>© 2026 glidepay. Real money on Arc mainnet. Payments are final.</span>
           <span>Built on Arc.</span>
         </div>
       </div>

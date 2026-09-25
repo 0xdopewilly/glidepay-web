@@ -18,9 +18,9 @@ const ITEMS: { question: string; answer: string }[] = [
       "Circle's payments blockchain. Sub-second finality. USDC is the gas token. Native support for CCTP V2 cross-chain transfers, which is what makes Universal Receive work.",
   },
   {
-    question: "Why testnet only?",
+    question: "Is this real money?",
     answer:
-      "Glidepay is a beta product. Arc itself is on public testnet. When Arc mainnet launches, glidepay moves with it. Until then, no real funds at risk. Every dollar shown is testnet USDC.",
+      "Yes. Arc mainnet is live, and glidepay moved with it. Balances are real USDC, EURC, and cirBTC. Payments on Arc are final and can't be reversed, so check who you're paying before you confirm.",
   },
   {
     question: "Is my money safe?",
@@ -30,7 +30,7 @@ const ITEMS: { question: string; answer: string }[] = [
   {
     question: "What is Universal Receive?",
     answer:
-      "A USDC send to your @glidepay handle on Base, Ethereum, Polygon, or Arbitrum is automatically bridged to Arc via CCTP V2. Median ~60 seconds end-to-end. The sender doesn't need to know what Arc is. They just send USDC to your handle.",
+      "A USDC send to your @glidepay handle on Base, Ethereum, Polygon, or Arbitrum is automatically bridged to Arc via CCTP V2. The sender doesn't need to know what Arc is. They just send USDC to your handle. It's rolling out chain by chain; the app shows a chain's address once that chain is enabled.",
   },
   {
     question: "Who is Billy?",
