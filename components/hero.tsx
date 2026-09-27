@@ -97,15 +97,15 @@ export function Hero({ appUrl }: { appUrl: string }) {
 
         {/* RIGHT: phone mockup */}
         <Reveal delay={200}>
-          <div className="relative mx-auto aspect-[902/1586] w-full max-w-[360px]">
+          <div className="relative mx-auto aspect-[780/1688] w-full max-w-[300px] sm:max-w-[320px]">
             <div className="glow-green relative h-full w-full overflow-hidden rounded-[2.75rem] border border-[rgba(6,36,72,0.18)] bg-[#0D3568] p-1.5">
               <Image
-                src="/screens/home.png"
-                alt="The glidepay home screen, showing balance across USDC, EURC, and cirBTC on Arc."
-                width={902}
-                height={1586}
+                src="/screens/v2/home.png"
+                alt="The glidepay home screen: a $1,703.10 balance, Send, Receive, Swap and More, the Billy card, and USDC, EURC and cirBTC assets."
+                width={780}
+                height={1688}
                 priority
-                sizes="(max-width: 768px) 320px, 360px"
+                sizes="(max-width: 640px) 300px, 320px"
                 className="block h-auto w-full rounded-[2.25rem]"
               />
             </div>

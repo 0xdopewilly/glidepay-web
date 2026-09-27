@@ -55,10 +55,10 @@ export function Billy() {
           <div className="mx-auto w-full max-w-[340px]">
             <div className="glow-green-soft relative overflow-hidden rounded-[2.75rem] border border-[rgba(255,255,255,0.08)] bg-[#0A2F5C] p-1.5">
               <Image
-                src="/screens/billy.png"
-                alt="Billy chat showing a conversational money move: a natural-language request, a confirm card, and a payment-sent receipt."
-                width={920}
-                height={1592}
+                src="/screens/v2/billy.png"
+                alt="Billy chat: a bill split between @ada and @tunde, then 'Send $25 to @tunde for the tickets' with a confirm card and a payment-sent receipt."
+                width={780}
+                height={1688}
                 sizes="(max-width: 640px) 320px, 340px"
                 className="block h-auto w-full rounded-[2.25rem]"
               />

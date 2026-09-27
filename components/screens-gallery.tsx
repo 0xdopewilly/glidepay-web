@@ -3,29 +3,32 @@ import { Reveal } from "@/components/reveal";
 
 const SCREENS = [
   {
-    src: "/screens/home.png",
-    title: "Balance",
-    caption: "USDC, EURC, and cirBTC on Arc, at a glance.",
-    width: 902,
-    height: 1586,
+    src: "/screens/v2/send.png",
+    title: "Send",
+    caption: "Amount first, then who. An @paytag, a contact or an address, in USDC, EURC or any token you hold.",
   },
   {
-    src: "/screens/payments.png",
+    src: "/screens/v2/thread.png",
+    title: "Payment threads",
+    caption: "Every payment and request with one person, as a conversation.",
+  },
+  {
+    src: "/screens/v2/payments.png",
     title: "Payments",
-    caption: "Send, receive, request, scan, schedule, split a bill.",
-    width: 888,
-    height: 1600,
+    caption: "Send, request, receive, scan, split a bill, schedule and bridge.",
   },
   {
-    src: "/screens/trade.png",
-    title: "Trade",
-    caption: "Swap USDC ↔ EURC ↔ cirBTC. Bridge USDC to Base, Ethereum, Polygon, and Arbitrum.",
-    width: 926,
-    height: 1600,
+    src: "/screens/v2/automate.png",
+    title: "Automate",
+    caption: "Savings, auto-save rules, recurring payments and a balance ceiling.",
   },
 ];
 
-/** A three-up gallery of the real app surfaces — the things the hero shot
+/** App screenshots are captured at 390×844 @2x. */
+const SCREEN_WIDTH = 780;
+const SCREEN_HEIGHT = 1688;
+
+/** A four-up gallery of the real app surfaces — the things the hero shot
  * doesn't show. Each card is a flat tile with a hairline border and the
  * actual screenshot; no glow, no gradient. */
 export function ScreensGallery() {
@@ -50,7 +53,7 @@ export function ScreensGallery() {
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-6 lg:grid-cols-4">
           {SCREENS.map((s, i) => (
             <Reveal key={s.src} delay={i * 90}>
               <figure className="flex h-full flex-col">
@@ -58,9 +61,9 @@ export function ScreensGallery() {
                   <Image
                     src={s.src}
                     alt={`${s.title} screen in the glidepay app.`}
-                    width={s.width}
-                    height={s.height}
-                    sizes="(max-width: 768px) 92vw, 360px"
+                    width={SCREEN_WIDTH}
+                    height={SCREEN_HEIGHT}
+                    sizes="(max-width: 1024px) 46vw, 270px"
                     className="block h-auto w-full rounded-[1.625rem]"
                   />
                 </div>
