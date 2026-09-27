@@ -6,12 +6,17 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { SMOOTH_EASE } from "@/lib/easing";
+import {
+  AnnouncementBar,
+  ANNOUNCEMENT_BAR_HEIGHT,
+} from "@/components/announcement-bar";
 
 const LINKS = [
-  { label: "Universal Receive", href: "/#universal-receive" },
-  { label: "Billy", href: "/#billy" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "Features", href: "/#features" },
+  { label: "Security", href: "/#security" },
+  { label: "Mainnet", href: "/mainnet" },
   { label: "Docs", href: "/docs" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 type Theme = "light" | "dark";
@@ -64,7 +69,7 @@ export function Nav({ appUrl }: { appUrl: string }) {
   const isDark = theme === "dark";
 
   const headerClass = [
-    "fixed inset-x-0 top-0 z-[100] transition-colors duration-200",
+    "fixed inset-x-0 top-0 z-[100] transition-[background-color,border-color,color,transform] duration-300 [transition-timing-function:var(--ease-smooth)]",
     scrolled
       ? isDark
         ? "border-b border-white/10 bg-[#062448]"
@@ -106,7 +111,19 @@ export function Nav({ appUrl }: { appUrl: string }) {
   };
 
   return (
-    <header ref={headerRef} className={headerClass} data-theme={theme}>
+    <header
+      ref={headerRef}
+      className={headerClass}
+      data-theme={theme}
+      // Once scrolled, slide the announcement bar out of view (transform only)
+      // so just the nav row stays pinned.
+      style={{
+        transform: scrolled
+          ? `translate3d(0, -${ANNOUNCEMENT_BAR_HEIGHT}px, 0)`
+          : "translate3d(0, 0, 0)",
+      }}
+    >
+      <AnnouncementBar hideLink={pathname === "/mainnet"} />
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4 sm:px-8">
         <Link href="/" className="tap-press flex items-center gap-2.5">
           <span
@@ -129,7 +146,7 @@ export function Nav({ appUrl }: { appUrl: string }) {
           <span className={pillClass}>Mainnet</span>
         </Link>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-6 md:flex lg:gap-8">
           {LINKS.map((l) => {
             const active = isLinkActive(l.href);
             return (

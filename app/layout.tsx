@@ -35,18 +35,24 @@ export const viewport: Viewport = {
   ],
 };
 
+const SITE_TITLE = "glidepay is live on Arc mainnet";
+const SITE_DESCRIPTION =
+  "glidepay is live on Arc mainnet. A Cash App for stablecoins: pay and request USDC and EURC by @paytag, split bills, swap to cirBTC, bridge USDC to four chains and automate your savings. No seed phrase, no gas token to buy.";
+const SHARE_DESCRIPTION =
+  "Live on Arc mainnet. Pay anyone by @paytag in USDC or EURC, with no seed phrase and no gas token to buy.";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "glidepay, money like a text",
+    default: SITE_TITLE,
     template: "%s, glidepay",
   },
-  description:
-    "A Cash App for stablecoins. Send and receive USDC, EURC, and cirBTC on Arc, Circle's payments chain.",
+  description: SITE_DESCRIPTION,
   applicationName: "glidepay",
   keywords: [
     "USDC wallet",
     "stablecoin payments",
+    "Arc mainnet",
     "Arc blockchain",
     "Circle wallet",
     "CCTP",
@@ -58,16 +64,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "glidepay",
-    title: "glidepay, money like a text",
-    description:
-      "Send and receive stablecoins instantly. A Cash App for USDC on Arc.",
+    title: SITE_TITLE,
+    description: SHARE_DESCRIPTION,
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "glidepay",
-    description:
-      "Send and receive stablecoins instantly. A Cash App for USDC on Arc.",
+    title: SITE_TITLE,
+    description: SHARE_DESCRIPTION,
   },
 };
 

@@ -18,11 +18,14 @@ export function ChainsStrip() {
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12">
         <div>
           <Reveal>
-            <span className="eyebrow">UNIVERSAL RECEIVE</span>
+            <span className="eyebrow">ARC MAINNET · CCTP V2</span>
           </Reveal>
           <Reveal delay={80}>
             <h2 className="mt-3 text-2xl font-bold tracking-[-0.02em] text-[#FFFFFF] sm:text-3xl">
-              Get paid <span className="text-[rgba(255,255,255,0.65)]">across chains.</span>
+              Runs on Arc.{" "}
+              <span className="text-[rgba(255,255,255,0.65)]">
+                Bridges to four chains.
+              </span>
             </h2>
           </Reveal>
         </div>

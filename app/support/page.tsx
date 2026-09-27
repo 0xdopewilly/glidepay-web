@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function SupportPage() {
   return (
     <>
-      <article className="mx-auto max-w-3xl px-5 sm:px-8 pt-32 pb-24 sm:pt-40">
+      <article className="mx-auto max-w-3xl px-5 sm:px-8 pt-40 pb-24 sm:pt-48">
         <p className="eyebrow mb-4">GET HELP</p>
         <h1 className="font-bold text-[clamp(2rem,4vw,3.25rem)] tracking-[-0.03em] leading-[1.05] text-[#062448]">
           Support
@@ -80,10 +80,11 @@ export default function SupportPage() {
 
           <h3>How do I withdraw my funds before deleting my account?</h3>
           <p>
-            Use Bridge (Arc to another chain) or Send (any wallet address) to
-            move your stablecoins out of your glidepay-managed wallet before
-            deleting. Once deleted, your account-side data is gone but the
-            on-chain balance remains, just orphaned from your glidepay login.
+            Use Send (any Arc address, including an exchange that supports
+            Arc) or Bridge (USDC from Arc to Base, Ethereum, Polygon or
+            Arbitrum) to move your money out first. Closing your account
+            requires your PIN and an empty balance, so the app won&apos;t let
+            you close it with funds still inside.
           </p>
 
           <h3>How can I follow updates?</h3>

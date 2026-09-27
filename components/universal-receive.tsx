@@ -1,4 +1,5 @@
-import { AtSign, Gauge, Network, Send, Zap } from "lucide-react";
+import { Gauge, MapPin, Network, Send, Zap } from "lucide-react";
+import Image from "next/image";
 import { Reveal } from "@/components/reveal";
 import { DotGrid } from "@/components/dot-grid";
 
@@ -10,25 +11,34 @@ type Item = {
 
 const ITEMS: Item[] = [
   {
+    icon: MapPin,
+    title: "One address per chain",
+    body: "Receive shows a separate deposit address for each chain once it's enabled. Senders use that address, not your @paytag.",
+  },
+  {
     icon: Send,
     title: "Sent like a normal transfer",
-    body: "The sender uses any USDC-supporting wallet on their chain. No bespoke bridge UI. No address translation.",
+    body: "The sender uses any wallet that holds USDC on their chain. No bridge screens, nothing new to learn.",
   },
   {
     icon: Network,
     title: "CCTP V2, never wrapped",
-    body: "Arc is a first-class Circle CCTP V2 destination. USDC bridges natively. Never wrapped, never de-pegged.",
+    body: "USDC moves to Arc over Circle's CCTP V2 and arrives as native USDC in your balance. Never a wrapped copy.",
   },
   {
     icon: Gauge,
     title: "Source-chain gas covered",
-    body: "Our service wallet covers source-chain gas, so you never need ETH or any other gas token. Minimum sweep: $10 from Ethereum, $1 from the others.",
+    body: "glidepay covers the gas on the source chain, so you never need ETH or another gas token. Minimum sweep: $10 from Ethereum, $1 from the others.",
   },
-  {
-    icon: AtSign,
-    title: "Universal @handle",
-    body: "@yourname is the same address on every chain. No copy-pasting hex strings, no asking which network you're on.",
-  },
+];
+
+/** Rollout order for Universal Receive. No dates: chains switch on one at a
+ * time, and the app shows a chain's address only once it's live. */
+export const ROLLOUT: { name: string; src: string; status: string }[] = [
+  { name: "Base", src: "/chains/base.png", status: "First" },
+  { name: "Arbitrum", src: "/chains/arbitrum.png", status: "First" },
+  { name: "Polygon", src: "/chains/polygon.png", status: "First" },
+  { name: "Ethereum", src: "/chains/ethereum.png", status: "Later" },
 ];
 
 export function UniversalReceive() {
@@ -42,29 +52,63 @@ export function UniversalReceive() {
 
       <div className="max-w-6xl mx-auto">
         <Reveal>
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <Zap className="h-3.5 w-3.5 text-[#062448]" />
             <span className="eyebrow">UNIVERSAL RECEIVE</span>
+            <span className="rounded-full bg-[rgba(91,61,245,0.10)] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[#5B3DF5]">
+              Rolling out
+            </span>
           </div>
         </Reveal>
 
         <Reveal delay={80}>
-          <h2 className="font-bold text-[clamp(2.25rem,5vw,3.5rem)] tracking-[-0.03em] text-[#062448] max-w-3xl mt-5">
-            One handle. <span className="text-[#5D6B85]">Any chain.</span>
+          <h2 className="font-bold text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.05] tracking-[-0.03em] text-[#062448] max-w-3xl mt-5">
+            Get paid from other chains.{" "}
+            <span className="text-[#5D6B85]">Rolling out next.</span>
           </h2>
         </Reveal>
 
         <Reveal delay={160}>
           <p className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-[#062448]/75">
-            USDC sent to your glidepay @handle from Ethereum, Base, Polygon, or
-            Arbitrum automatically lands in your wallet on Arc. The sender
-            doesn&apos;t need to know what Arc is. The receiver doesn&apos;t
-            need to know a bridge happened. Chains switch on one at a time,
-            and the app shows a chain&apos;s address once it&apos;s live.
+            Universal Receive gives you a deposit address on other chains. USDC
+            sent there bridges to your Arc balance automatically over CCTP V2.
+            It isn&apos;t live on any chain yet. Chains switch on one at a
+            time, starting with Base, Arbitrum and Polygon, with Ethereum
+            later.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid md:grid-cols-4 gap-6">
+        <Reveal delay={200}>
+          <ul
+            aria-label="Rollout order"
+            className="mt-10 flex flex-wrap gap-2.5"
+          >
+            {ROLLOUT.map((c) => (
+              <li
+                key={c.name}
+                className="flex items-center gap-2.5 rounded-full border border-[#E7EDF5] bg-white py-1.5 pl-1.5 pr-3.5"
+              >
+                <span className="flex h-7 w-7 items-center justify-center overflow-hidden rounded-full bg-white">
+                  <Image
+                    src={c.src}
+                    alt=""
+                    width={28}
+                    height={28}
+                    className="h-full w-full object-contain"
+                  />
+                </span>
+                <span className="text-sm font-semibold text-[#062448]">
+                  {c.name}
+                </span>
+                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.12em] text-[#5D6B85]">
+                  {c.status}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4 lg:gap-6">
           {ITEMS.map((item, i) => {
             const Icon = item.icon;
             return (

@@ -8,12 +8,12 @@ const DETAILS = [
     body: "Arc settles in USDC. No second token to acquire, hold, or budget for.",
   },
   {
-    label: "UNIVERSAL RECEIVE",
-    body: "CCTP V2 sweeps USDC from Base, Ethereum, Polygon, and Arbitrum to your @handle on Arc. Rolling out chain by chain.",
+    label: "BRIDGE OUT TODAY",
+    body: "Move USDC from Arc to Base, Ethereum, Polygon or Arbitrum over CCTP V2. Universal Receive, the other direction, is rolling out.",
   },
   {
     label: "ARC MAINNET",
-    body: "Sign in, grab a handle, send your first $5. Real funds. Payments are final.",
+    body: "Sign in, claim your @paytag, send your first $5. Real funds. Payments are final.",
   },
 ];
 
@@ -65,8 +65,8 @@ export function ProofBand({ appUrl }: { appUrl: string }) {
               Open glidepay
               <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
             </Link>
-            <Link href="/docs" className="btn-ghost">
-              Read the docs
+            <Link href="/mainnet" className="btn-ghost">
+              Read the launch note
             </Link>
           </div>
         </Reveal>

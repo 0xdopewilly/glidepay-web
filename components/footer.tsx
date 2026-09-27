@@ -6,8 +6,8 @@ export function Footer({ appUrl }: { appUrl: string }) {
       data-theme="dark"
       className="border-t border-[rgba(255,255,255,0.08)] bg-[#062448]"
     >
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 py-14 grid gap-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
-        <div>
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 py-14 grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
+        <div className="col-span-2 md:col-span-1">
           <Link href="/" className="inline-flex items-center gap-2">
             <span
               aria-label="glidepay"
@@ -32,7 +32,8 @@ export function Footer({ appUrl }: { appUrl: string }) {
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-[#FFFFFF]/65">
             A Cash App for stablecoins. Send and receive USDC, EURC, and cirBTC
-            on Arc, Circle&apos;s payments chain.
+            on Arc, Circle&apos;s payments chain. Live on Arc mainnet since 24
+            September 2026.
           </p>
         </div>
 
@@ -40,9 +41,13 @@ export function Footer({ appUrl }: { appUrl: string }) {
           title="Product"
           links={[
             { label: "Open app", href: appUrl, external: true },
-            { label: "Universal Receive", href: "/#universal-receive" },
+            { label: "Mainnet launch", href: "/mainnet" },
+            { label: "Features", href: "/#features" },
             { label: "How it works", href: "/#how-it-works" },
-            { label: "Why Arc", href: "/#why-arc" },
+            { label: "Security", href: "/#security" },
+            { label: "Fees", href: "/#fees" },
+            { label: "Built on Circle", href: "/#built-on-circle" },
+            { label: "Universal Receive", href: "/#universal-receive" },
           ]}
         />
 
@@ -50,7 +55,10 @@ export function Footer({ appUrl }: { appUrl: string }) {
           title="Docs"
           links={[
             { label: "Getting started", href: "/docs/getting-started" },
-            { label: "Universal Receive", href: "/docs/universal-receive" },
+            { label: "Requests & splits", href: "/docs/requests" },
+            { label: "Automations & Savings", href: "/docs/automations" },
+            { label: "Fees & limits", href: "/docs/fees" },
+            { label: "Security model", href: "/docs/security" },
             { label: "Billy", href: "/docs/billy" },
             { label: "All docs", href: "/docs" },
           ]}
@@ -88,7 +96,7 @@ function FooterColumn({
   links: { label: string; href: string; external?: boolean }[];
 }) {
   return (
-    <div>
+    <div className="min-w-0">
       <p className="eyebrow mb-3">{title}</p>
       <ul className="space-y-2.5">
         {links.map((l) => (

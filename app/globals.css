@@ -316,6 +316,30 @@ html.lenis body {
   color: var(--text-primary);
   font-weight: 600;
 }
+.prose-doc table {
+  width: 100%;
+  margin-top: 0.75rem;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.prose-doc th,
+.prose-doc td {
+  padding: 0.7rem 0.75rem 0.7rem 0;
+  border-bottom: 1px solid #E7EDF5;
+  text-align: left;
+  vertical-align: top;
+}
+.prose-doc th {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.prose-doc td {
+  color: #5D6B85;
+}
+.prose-doc td:first-child {
+  color: var(--text-primary);
+  font-weight: 600;
+}
 .prose-doc blockquote {
   border-left: 2px solid rgba(6, 36, 72, 0.2);
   padding-left: 1rem;

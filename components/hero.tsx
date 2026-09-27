@@ -32,10 +32,10 @@ export function Hero({ appUrl }: { appUrl: string }) {
     <motion.section
       ref={ref}
       style={heroStyle}
-      className="relative min-h-screen overflow-hidden bg-[#F7F9FC] px-5 pt-32 sm:px-8 sm:pt-40"
+      className="relative min-h-screen overflow-hidden bg-[#F7F9FC] px-5 pb-16 pt-40 sm:px-8 sm:pt-48"
     >
-      <DotGrid tint="light" position="left" className="top-32" />
-      <DotGrid tint="light" position="right" className="top-32" />
+      <DotGrid tint="light" position="left" className="top-40" />
+      <DotGrid tint="light" position="right" className="top-40" />
 
       <div className="relative z-10 mx-auto grid w-full max-w-6xl items-start gap-12 md:grid-cols-[1.2fr_1fr]">
         {/* LEFT: copy and CTAs */}
@@ -58,9 +58,9 @@ export function Hero({ appUrl }: { appUrl: string }) {
 
           <Reveal delay={160}>
             <p className="mx-auto mt-6 max-w-md text-base leading-relaxed text-[#062448]/75 sm:text-lg md:mx-0">
-              A Cash App for stablecoins. Send and receive USDC, EURC, and
-              cirBTC on Arc, Circle&apos;s payments chain. No seed phrases, no
-              gas tokens, no jargon.
+              A Cash App for stablecoins, now on Arc mainnet. Pay anyone by
+              @paytag, request and split in USDC or EURC, and put savings on
+              autopilot. No seed phrase, no gas token to buy, no jargon.
             </p>
           </Reveal>
 
@@ -76,7 +76,7 @@ export function Hero({ appUrl }: { appUrl: string }) {
                 <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
               </Link>
               <Link
-                href="#universal-receive"
+                href="#how-it-works"
                 className="btn-ghost w-full sm:w-auto"
               >
                 See how it works
@@ -86,9 +86,9 @@ export function Hero({ appUrl }: { appUrl: string }) {
 
           <Reveal delay={320}>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs font-medium text-[#5D6B85] md:justify-start">
-              <span>Free</span>
-              <span className="h-3 w-px bg-[rgba(6,36,72,0.18)]" />
               <span>Email or Google sign-in</span>
+              <span className="h-3 w-px bg-[rgba(6,36,72,0.18)]" />
+              <span>No seed phrase</span>
               <span className="h-3 w-px bg-[rgba(6,36,72,0.18)]" />
               <span>No wallet extension needed</span>
             </div>
@@ -111,7 +111,7 @@ export function Hero({ appUrl }: { appUrl: string }) {
             </div>
             <div className="absolute -bottom-3 -left-3 flex items-center gap-2 rounded-2xl border border-[rgba(6,36,72,0.18)] bg-white px-3.5 py-2.5 text-xs font-medium text-[#062448] shadow-lg sm:-bottom-4 sm:-left-4">
               <span className="h-2 w-2 rounded-full bg-[#16C784]" />
-              Received +$20 via Base
+              Received $20.00 USDC
             </div>
           </div>
         </Reveal>

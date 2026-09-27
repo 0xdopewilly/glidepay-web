@@ -25,10 +25,9 @@ export default function Page() {
         in the reverse direction.
       </p>
       <p>
-        Pick the destination network, type the amount, confirm. The funds
-        arrive on the chosen chain at <em>the same address</em> Circle holds
-        for you across EVM chains. From there you can pull them into MetaMask,
-        Coinbase, etc.
+        Pick the destination network and the address that should receive the
+        USDC: your own wallet on that chain, or someone else&apos;s. Type the
+        amount and confirm. Double-check the address: payments are final.
       </p>
 
       <h2>What about cirBTC?</h2>
@@ -42,18 +41,18 @@ export default function Page() {
       <h2>Fees</h2>
       <ul>
         <li>
-          <strong>Swap</strong>: Circle&apos;s App Kit takes a small spread
-          (slippage cap default 3%). This is real value on Arc mainnet, so
-          check the quote before you confirm.
+          <strong>Swap</strong>: market rate, with slippage capped at 3%.
+          This is real value on Arc mainnet, so check the quote before you
+          confirm.
         </li>
         <li>
-          <strong>Bridge</strong>: Arc-side gas (paid in USDC, very small),
-          plus the CCTP V2 Fast Transfer fee.
+          <strong>Bridge</strong>: network and bridge fees may apply. Arc
+          network fees are paid in USDC.
         </li>
       </ul>
       <p>
-        Glidepay doesn&apos;t currently add a fee of its own to swaps or
-        bridges.
+        glidepay doesn&apos;t currently add a fee of its own to swaps or
+        bridges. See <Link href="/docs/fees">Fees &amp; limits</Link>.
       </p>
 
       <p>

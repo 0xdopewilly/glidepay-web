@@ -3,29 +3,38 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Universal Receive",
+  description:
+    "Universal Receive is rolling out: a deposit address on other chains whose USDC bridges to your Arc balance over CCTP V2. Rollout order, sweep minimums and how it works.",
 };
 
 export default function Page() {
   return (
     <DocsShell title="Universal Receive">
       <p>
-        Universal Receive is glidepay&apos;s flagship feature: one handle, any
-        chain. USDC sent to your glidepay address from Ethereum, Base, Polygon,
-        or Arbitrum automatically lands in your wallet on Arc. On mainnet it&apos;s
-        rolling out chain by chain: the app only shows a chain&apos;s receive
-        address once that chain is enabled.
+        Universal Receive gives you a deposit address on other chains. USDC
+        sent to it bridges to your Arc balance automatically over CCTP V2.
+      </p>
+      <p>
+        <strong>It isn&apos;t live on any chain yet.</strong> It&apos;s rolling
+        out chain by chain, starting with Base, Arbitrum and Polygon, with
+        Ethereum later. Your Receive screen shows a chain&apos;s deposit
+        address only once that chain is enabled. Until then, add money with
+        USDC or EURC on Arc.
       </p>
 
       <h2>For the sender</h2>
       <p>
-        Open whatever wallet they use (Coinbase, MetaMask, Phantom, etc.).
-        Send USDC to your glidepay address on whichever chain they hold USDC
-        on. They don&apos;t need to know Arc exists.
+        They use whatever wallet holds their USDC and send it to{" "}
+        <strong>your deposit address for their chain</strong>, copied from
+        your Receive screen. Not to your @paytag: each chain has its own
+        address, so share the one for the chain they&apos;re sending from.
+        They don&apos;t need to know Arc exists.
       </p>
 
       <h2>For the receiver (you)</h2>
       <p>
-        A push notification arrives:{" "}
+        Once a chain is live and a sweep lands, a push notification arrives
+        on the installed app:{" "}
         <strong>&quot;You received $20 USDC via Base.&quot;</strong>
       </p>
       <p>
@@ -45,22 +54,19 @@ export default function Page() {
         <li>One push notification fires when the mint lands.</li>
       </ol>
 
-      <h2>Supported chains</h2>
+      <h2>Rollout order</h2>
       <ul>
-        <li><strong>Base</strong>. L2, low gas.</li>
-        <li><strong>Ethereum</strong>. L1, the most expensive to sweep from, so its minimum is higher.</li>
-        <li><strong>Polygon</strong>. Low gas.</li>
-        <li><strong>Arbitrum</strong>. L2, fast and cheap.</li>
+        <li><strong>Base</strong>. First. Minimum sweep $1.</li>
+        <li><strong>Arbitrum</strong>. First. Minimum sweep $1.</li>
+        <li><strong>Polygon</strong>. First. Minimum sweep $1.</li>
+        <li><strong>Ethereum</strong>. Later. The most expensive chain to sweep from, so its minimum is $10.</li>
       </ul>
-      <p>
-        Solana support is on the roadmap. It uses Circle&apos;s Solana CCTP path.
-      </p>
 
       <h2>What about gas?</h2>
       <p>
-        End users never fund gas. Glidepay operates a small service wallet
-        on each source chain that refills user wallets with native gas just
-        before each sweep. Glidepay doesn&apos;t currently charge for this.
+        You never fund gas: glidepay covers the source-chain gas for each
+        sweep, from a service wallet on each source chain. glidepay
+        doesn&apos;t currently charge for this.
       </p>
 
       <h2>Why this works only on Arc</h2>
@@ -74,7 +80,7 @@ export default function Page() {
       <h2>Limits</h2>
       <ul>
         <li>Minimum sweep: $10 from Ethereum, $1 from Base, Polygon, and Arbitrum; smaller deposits wait on the Receive screen until they add up</li>
-        <li>Chains go live one at a time on mainnet; only send on a chain your Receive screen shows</li>
+        <li>Chains go live one at a time; only send on a chain your Receive screen shows an address for</li>
         <li>Sender pays their source-chain network fee normally; glidepay pays the destination mint fee</li>
       </ul>
 

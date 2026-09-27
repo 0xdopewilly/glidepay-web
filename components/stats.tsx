@@ -1,10 +1,10 @@
 import { Reveal } from "@/components/reveal";
 
 const STATS = [
-  { value: "5", suffix: "+", label: "Chains supported" },
-  { value: "60", suffix: "s", label: "Testnet median receive" },
-  { value: "0", suffix: "", label: "Gas tokens to buy" },
-  { value: "1", suffix: "", label: "Handle for all" },
+  { value: "1", label: "@paytag to share" },
+  { value: "3", label: "Tokens counted in balance" },
+  { value: "5", label: "Chains, Arc plus four" },
+  { value: "0", label: "Gas tokens to buy" },
 ];
 
 export function Stats() {
@@ -12,17 +12,20 @@ export function Stats() {
     <section className="border-t border-[#E7EDF5] px-5 sm:px-8 py-28 sm:py-36">
       <div className="max-w-6xl mx-auto">
         <Reveal>
-          <span className="eyebrow">BATTLE TESTED</span>
+          <span className="eyebrow">BY THE NUMBERS</span>
         </Reveal>
         <Reveal delay={80}>
-          <h2 className="font-bold text-[clamp(2.25rem,5vw,3.5rem)] tracking-[-0.03em] text-[#062448] max-w-3xl mt-5">
-            Arc mainnet.{" "}
-            <span className="text-[rgba(6,36,72,0.55)]">Running today.</span>
+          <h2 className="font-bold text-[clamp(2.25rem,5vw,3.5rem)] leading-[1.05] tracking-[-0.03em] text-[#062448] max-w-3xl mt-5">
+            Fewer things
+            <span className="block text-[#5D6B85]">to think about.</span>
           </h2>
         </Reveal>
         <Reveal delay={160}>
           <p className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-[#062448]/75">
-            Glidepay runs on Arc mainnet today, with real USDC, EURC, and cirBTC. Every send, every swap, every Billy chat. Already shipping.
+            One @paytag instead of a hex address. USDC, EURC and cirBTC,
+            valued at live market prices. Arc, plus four chains you can bridge
+            USDC to. And no gas token to buy: network fees on Arc are paid in
+            USDC.
           </p>
         </Reveal>
 
@@ -38,9 +41,8 @@ export function Stats() {
                   className="font-black leading-none tracking-[-0.05em] text-[#062448] tabular-nums"
                 >
                   {stat.value}
-                  <span className="text-[rgba(6,36,72,0.55)]">{stat.suffix}</span>
                 </p>
-                <p className="mt-3 text-xs font-bold uppercase tracking-[0.18em] text-[rgba(6,36,72,0.55)]">
+                <p className="mt-3 text-xs font-bold uppercase tracking-[0.18em] text-[#5D6B85]">
                   {stat.label}
                 </p>
               </div>

@@ -36,17 +36,17 @@ export function ScreensGallery() {
     >
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <span className="eyebrow">EVERY SCREEN, REAL</span>
+          <span className="eyebrow">THE APP</span>
         </Reveal>
         <Reveal delay={80}>
-          <h2 className="mt-5 max-w-3xl text-[clamp(2.25rem,5vw,3.5rem)] font-bold tracking-[-0.03em] text-[#FFFFFF]">
+          <h2 className="mt-5 max-w-3xl text-[clamp(2.25rem,5vw,3.5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-[#FFFFFF]">
             What it actually <span className="text-[rgba(255,255,255,0.65)]">looks like.</span>
           </h2>
         </Reveal>
         <Reveal delay={160}>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#FFFFFF]/70 sm:text-lg">
-            No mocks. These are screenshots straight from the app. Same
-            surfaces you&apos;ll see thirty seconds after sign-in.
+            The real app, the same screens you&apos;ll see after sign-in.
+            Balances shown are sample data.
           </p>
         </Reveal>
 

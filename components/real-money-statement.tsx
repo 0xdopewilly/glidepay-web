@@ -9,7 +9,7 @@ export function RealMoneyStatement() {
       <div className="mx-auto max-w-6xl">
         <Reveal delay={0}>
           <div className="flex justify-center">
-            <span className="eyebrow">BUILT FOR ARC</span>
+            <span className="eyebrow">LIVE ON ARC MAINNET SINCE 24 SEP 2026</span>
           </div>
         </Reveal>
 
@@ -32,8 +32,8 @@ export function RealMoneyStatement() {
         <Reveal delay={200}>
           <p className="mx-auto mt-8 max-w-2xl text-center text-base leading-relaxed text-[#FFFFFF]/70 sm:text-lg">
             Stablecoins on Arc, sent like a text. Sub-second finality. USDC as
-            gas. Cross-chain receive via CCTP V2. The sender doesn&apos;t need to
-            know what Arc is.
+            gas. Bridges to Base, Ethereum, Polygon and Arbitrum over CCTP V2.
+            The person you pay doesn&apos;t need to know what Arc is.
           </p>
         </Reveal>
       </div>

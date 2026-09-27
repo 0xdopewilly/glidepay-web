@@ -5,48 +5,18 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 import { SMOOTH_EASE } from "@/lib/easing";
+import type { FaqItem } from "@/lib/faq";
 
-const ITEMS: { question: string; answer: string }[] = [
-  {
-    question: "How is glidepay different from a regular crypto wallet?",
-    answer:
-      "No seed phrases. No browser extension. No 'export private key' anxiety. Sign in with email or Google like any other app, and glidepay provisions a Circle smart-account wallet for you in the background.",
-  },
-  {
-    question: "What is Arc?",
-    answer:
-      "Circle's payments blockchain. Sub-second finality. USDC is the gas token. Native support for CCTP V2 cross-chain transfers, which is what makes Universal Receive work.",
-  },
-  {
-    question: "Is this real money?",
-    answer:
-      "Yes. Arc mainnet is live, and glidepay moved with it. Balances are real USDC, EURC, and cirBTC. Payments on Arc are final and can't be reversed, so check who you're paying before you confirm.",
-  },
-  {
-    question: "Is my money safe?",
-    answer:
-      "Your account is a smart account on Arc, secured by Circle's wallet infrastructure. Circle holds the keys, so there's no seed phrase to lose or leak. Money only moves when you confirm it with your PIN, or on a schedule you set up yourself.",
-  },
-  {
-    question: "What is Universal Receive?",
-    answer:
-      "A USDC send to your @glidepay handle on Base, Ethereum, Polygon, or Arbitrum is automatically bridged to Arc via CCTP V2. The sender doesn't need to know what Arc is. They just send USDC to your handle. It's rolling out chain by chain; the app shows a chain's address once that chain is enabled.",
-  },
-  {
-    question: "Who is Billy?",
-    answer:
-      "The in-app AI assistant. Send, swap, bridge, split bills, just by asking. Every money move surfaces a confirm card before executing. Slash commands for power users.",
-  },
-];
-
-export function Faq() {
+/** Accordion FAQ on a dark band. Items come from lib/faq.ts so server pages
+ * can pick the set (landing vs. mainnet note). */
+export function Faq({ items }: { items: FaqItem[] }) {
   const [openIdx, setOpenIdx] = useState<number | null>(null);
 
   return (
     <section
       id="faq"
       data-theme="dark"
-      className="bg-[#062448] border-t border-[rgba(255,255,255,0.08)] px-5 sm:px-8 py-28 sm:py-36"
+      className="scroll-mt-20 bg-[#062448] border-t border-[rgba(255,255,255,0.08)] px-5 sm:px-8 py-28 sm:py-36"
     >
       <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_2fr] gap-12">
         <div>
@@ -68,13 +38,17 @@ export function Faq() {
         </div>
 
         <div>
-          {ITEMS.map((item, i) => {
+          {items.map((item, i) => {
             const open = openIdx === i;
-            const isLast = i === ITEMS.length - 1;
+            const isLast = i === items.length - 1;
+            const panelId = `faq-panel-${i}`;
             return (
-              <Reveal key={item.question} delay={i * 60}>
+              <Reveal key={item.question} delay={Math.min(i, 6) * 60}>
                 <div className={isLast ? "border-b border-[rgba(255,255,255,0.08)]" : ""}>
                   <button
+                    type="button"
+                    aria-expanded={open}
+                    aria-controls={panelId}
                     className="w-full flex items-center justify-between py-5 text-left border-t border-[rgba(255,255,255,0.08)]"
                     onClick={() => setOpenIdx(open ? null : i)}
                   >
@@ -92,6 +66,7 @@ export function Faq() {
                     {open && (
                       <motion.div
                         key="answer"
+                        id={panelId}
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}

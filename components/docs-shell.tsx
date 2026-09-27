@@ -13,15 +13,18 @@ const DOCS_NAV: { section: string; links: { href: string; label: string }[] }[] 
     links: [
       { href: "/docs", label: "Overview" },
       { href: "/docs/getting-started", label: "Getting started" },
+      { href: "/docs/fees", label: "Fees & limits" },
     ],
   },
   {
     section: "Core features",
     links: [
-      { href: "/docs/universal-receive", label: "Universal Receive" },
       { href: "/docs/send-receive", label: "Send & receive" },
+      { href: "/docs/requests", label: "Requests & splits" },
+      { href: "/docs/automations", label: "Automations & Savings" },
       { href: "/docs/swap-bridge", label: "Swap & bridge" },
       { href: "/docs/billy", label: "Billy (AI assistant)" },
+      { href: "/docs/universal-receive", label: "Universal Receive" },
     ],
   },
   {
@@ -44,7 +47,7 @@ export function DocsShell({
   const pathname = usePathname();
 
   return (
-    <div className="mx-auto max-w-7xl px-5 pb-24 pt-28 sm:px-8 sm:pt-36">
+    <div className="mx-auto max-w-7xl px-5 pb-24 pt-36 sm:px-8 sm:pt-44">
       <div className="grid gap-10 md:grid-cols-[260px_1fr]">
         <aside className="md:sticky md:top-28 md:self-start">
           <p className="eyebrow mb-4">Documentation</p>
