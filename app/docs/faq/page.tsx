@@ -1,82 +1,60 @@
+import { Fragment, type ReactNode } from "react";
 import { DocsShell } from "@/components/docs-shell";
+import { docsFaq, hostOf } from "@/lib/faq";
+
+const APP_URL =
+  process.env.NEXT_PUBLIC_APP_URL?.trim() || "https://glide-arc.vercel.app";
 
 export const metadata = {
   title: "FAQ",
+  description:
+    "Answers about glidepay on Arc mainnet: real money, fees, adding and cashing out, keys and safety, your account, Billy and automations.",
 };
 
+const SUPPORT_EMAIL = "support@glidepay.cash";
+const REPO = "github.com/0xdopewilly/glide";
+
+/** Answers are plain strings (shared with the landing page); here the
+ * support address and the repo become links. */
+function linkify(text: string): ReactNode {
+  return text.split(/(support@glidepay\.cash|github\.com\/0xdopewilly\/glide)/).map((part, i) => {
+    if (part === SUPPORT_EMAIL) {
+      return (
+        <a key={i} href={`mailto:${SUPPORT_EMAIL}`}>
+          {part}
+        </a>
+      );
+    }
+    if (part === REPO) {
+      return (
+        <a key={i} href={`https://${REPO}`} target="_blank" rel="noreferrer">
+          {part}
+        </a>
+      );
+    }
+    return <Fragment key={i}>{part}</Fragment>;
+  });
+}
+
 export default function Page() {
+  const groups = docsFaq(hostOf(APP_URL));
   return (
     <DocsShell title="FAQ">
-      <h2>Is this real money?</h2>
       <p>
-        Yes. Glidepay runs on Arc <em>mainnet</em>. Balances are real USDC,
-        EURC, and cirBTC. Payments on Arc are final and can&apos;t be
-        reversed, so check who you&apos;re paying before you tap Pay.
+        Short answers about glidepay on Arc mainnet. Can&apos;t find yours?
+        Email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
       </p>
-
-      <h2>Do I need a wallet extension?</h2>
-      <p>
-        No. No MetaMask, no Phantom, no &quot;Connect Wallet&quot; pop-up.
-        Glidepay creates a Circle smart-account for you in the background when
-        you sign in with email or Google.
-      </p>
-
-      <h2>What if I lose access to my email?</h2>
-      <p>
-        Email{" "}
-        <a href="mailto:support@glidepay.cash">support@glidepay.cash</a>. We
-        coordinate with Clerk on recovery. We&apos;ll verify identity through
-        a related email and help you regain access.
-      </p>
-
-      <h2>Can I export my wallet?</h2>
-      <p>
-        Not today. Server-custodial wallets via Circle don&apos;t expose
-        private keys. That&apos;s the point. If/when Circle adds a key-export
-        path for end users, we&apos;ll plug it in.
-      </p>
-
-      <h2>What happens if glidepay shuts down?</h2>
-      <p>
-        Circle still holds your wallet. We&apos;d publish a migration guide
-        for moving funds to a self-custodial wallet via Circle&apos;s API or
-        via the in-app Bridge feature. Bridge funds to Base / Ethereum / etc.
-        before deleting your account if you want them under your own keys.
-      </p>
-
-      <h2>Why USDC, EURC, and cirBTC?</h2>
-      <p>
-        These are the three tokens glidepay supports on Arc. USDC and EURC are
-        Circle&apos;s USD and EUR-pegged stablecoins. cirBTC is Circle&apos;s
-        BTC-backed token. As Circle expands Arc&apos;s token set, we&apos;ll
-        add support.
-      </p>
-
-      <h2>Is glidepay regulated?</h2>
-      <p>
-        It depends on jurisdiction and the eventual product scope.
-        We&apos;ll surface the relevant licensing as we work through it.
-      </p>
-
-      <h2>Why &quot;Billy&quot;?</h2>
-      <p>
-        Named after Billy Luedtke, founder of Intuition. The product owner is
-        a longtime fan of the work, and naming the assistant after someone
-        whose taste he respects felt right.
-      </p>
-
-      <h2>Open source?</h2>
-      <p>
-        The app code lives at{" "}
-        <a
-          href="https://github.com/0xdopewilly/glide"
-          target="_blank"
-          rel="noreferrer"
-        >
-          github.com/0xdopewilly/glide
-        </a>
-        . Not currently MIT-licensed, but PRs and issues are welcome.
-      </p>
+      {groups.map((group) => (
+        <Fragment key={group.title}>
+          <h2>{group.title}</h2>
+          {group.items.map((item) => (
+            <Fragment key={item.question}>
+              <h3>{item.question}</h3>
+              <p>{linkify(item.answer)}</p>
+            </Fragment>
+          ))}
+        </Fragment>
+      ))}
     </DocsShell>
   );
 }
